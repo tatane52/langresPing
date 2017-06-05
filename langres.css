@@ -1,0 +1,463 @@
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+footer {
+    color: white;
+}
+
+header {
+    position: relative;
+    top: 80px;
+}
+
+#presentation,
+#historique,
+#effectif,
+#calendrier,
+#contact,
+footer {
+    position: relative;
+}
+
+footer a {
+    color: white;
+}
+
+.carousel-indicators {
+    margin-left: -30% !important;
+}
+
+#bs-example-navbar-collapse-1 a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.carousel-indicators li {
+    border: 1px solid black;
+    background-color: black;
+}
+
+.navbar-toggle {
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.navbar-default {
+    border: none;
+}
+
+#contact h2 {
+    color: black;
+}
+
+.btn {
+    margin-bottom: 10px;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 25px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Ranga', cursive;
+}
+
+.colorRed {
+    color: #f10d0d;
+}
+
+.colorBlue {
+    color: #3e3eef;
+}
+
+header h2 {
+    color: black;
+}
+
+.article1 p {
+    border: solid 2px #f10d0d;
+}
+
+.article2 p {
+    border: solid 2px #3e3eef;
+}
+
+#presentation .thumbnail {
+    border: 3px solid #f10d0d;
+}
+
+.text-right .thumbnail {
+    border: 3px solid #3e3eef !important;
+}
+
+.article2 h3 {
+    color: #3e3eef;
+}
+
+#presentation p {
+    padding: 10px;
+    font-size: 12px;
+}
+
+#presentation h3 {
+    font-size: 16px;
+    font-style: italic;
+}
+
+nav img {
+    max-width: 70px;
+    margin-top: -10px;
+}
+
+.navbar {
+    background-color: black;
+    height: 80px;
+}
+
+.navbar-nav {
+    background-color: black;
+}
+
+.nav a {
+    margin-top: 15px;
+    color: white !important;
+}
+
+.colorHoverRed {
+    color: #f10d0d;
+}
+
+a[href*="inscription"]:hover {
+    color: #f10d0d !important;
+}
+
+.colorHoverBlue {
+    color: #3e3eef;
+}
+
+a[href*="connexion"]:hover {
+    color: #3e3eef !important;
+}
+
+#banniere {
+    top: 15px;
+    border-radius: 20px;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#presentation {
+    top: 130px;
+}
+
+#historique,
+footer {
+    background-color: black;
+    top: 130px;
+}
+
+#effectif {
+    background-color: #3e3eef;
+    top: 130px;
+}
+
+#calendrier {
+    background-color: #f10d0d;
+    top: 130px;
+}
+
+#calendrier img {
+    width: 100%;
+}
+
+#contact {
+    background: white;
+    top: 130px;
+}
+
+#historique img {
+    width: 400px;
+    height: auto;
+}
+
+.article1 {
+    position: relative;
+}
+
+.article2 {
+    position: relative;
+}
+
+.banniere-large {
+    border-radius: 0px;
+    margin-bottom: 50px;
+}
+
+.t {
+    color: red;
+}
+
+.f {
+    color: blue;
+}
+
+.ft {
+    color: white;
+}
+
+.carousel {
+    top: 20px;
+    margin-bottom: 50px;
+}
+
+#carousel-joueur img {
+    margin: auto;
+}
+
+.carousel-indicators {
+    bottom: -30px;
+    margin-left: -233px;
+}
+
+.histo-para {
+    text-align: center;
+    width: 28%;
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    top: 60px;
+    margin-left: 9%;
+}
+
+#carousel-ping img {
+    margin: auto;
+}
+
+.left,
+.right {
+    background-image: linear-gradient(to right, rgba(255, 0, 11, 0) 0, rgba(0, 0, 0, .0001) 100%) !important;
+}
+
+.header-position {
+    text-align: center;
+    margin-top: 65px;
+}
+
+.img-gymnase1,
+.img-gymnase2,
+.img-gymnase3 {
+    display: block;
+    position: absolute;
+    margin-left: 0px !important;
+}
+
+@media (max-width: 575px) {
+    #effectif p {
+        font-size: 12px;
+    }
+    footer img {
+        width: 160px;
+        margin-top: 30px;
+    }
+    .img-gymnase1 {
+        top: 149px;
+        left: 59%;
+    }
+    .img-gymnase2 {
+        top: 236px;
+        left: 50%;
+    }
+    .img-gymnase3 {
+        top: 236px;
+        left: 68%;
+    }
+    .img-circle {
+        width: 100px !important;
+    }
+    #historique img {
+        width: 370px;
+        height: auto;
+        margin-left: -50%;
+    }
+    .navbar-nav {
+        margin-bottom: 0px;
+    }
+    .navbar-default .navbar-collapse {
+        border: none;
+    }
+    .article1 {
+        top: 100px;
+    }
+    .article2 {
+        top: 100px;
+    }
+    #presentation img {
+        display: block;
+        margin: auto;
+    }
+}
+
+@media (min-width: 576px) {
+    .navbar-default .navbar-collapse {
+        border: none;
+    }
+    .histo-para {
+        width: 29%;
+        font-size: 15px;
+    }
+    #historique img {
+        margin-left: -50%;
+        width: 485px;
+    }
+    .img-circle {
+        width: 130px !important;
+    }
+    .img-gymnase1 {
+        top: 220px;
+        left: 65%;
+    }
+    .img-gymnase2 {
+        top: 340px;
+        left: 56%;
+    }
+    .img-gymnase3 {
+        top: 340px;
+        left: 74%;
+    }
+    footer img {
+        width: 225px;
+        margin-top: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    .histo-para {
+        width: 30%;
+        margin-top: 25px;
+    }
+    .placement {
+        margin-top: 75px;
+    }
+    .navbar {
+        height: 130px;
+    }
+    h1 {
+        display: none;
+    }
+    nav img {
+        max-width: 120px;
+    }
+    footer img {
+        width: 225px;
+        margin-top: 16px;
+    }
+    #historique img {
+        width: 500px;
+    }
+    .img-gymnase1 {
+        top: 228px;
+    }
+}
+
+@media (min-width: 992px) {
+    h1,
+    h2,
+    h3 {
+        font-size: 40px;
+    }
+    body {
+        font-size: 16px;
+    }
+    .btn {
+        font-size: 16px;
+    }
+    #presentation h3 {
+        font-size: 22px;
+    }
+    #presentation p {
+        font-size: 16px;
+    }
+    h1 {
+        display: none;
+    }
+    .placement {
+        margin-top: 75px;
+    }
+    footer img {
+        width: 225px;
+        margin-top: 16px;
+    }
+    .navbar {
+        height: 130px;
+    }
+    nav img {
+        max-width: 120px;
+    }
+    #historique img {
+        width: 600px;
+    }
+    .img-gymnase1 {
+        top: 337px;
+        left: 65%;
+    }
+    .img-gymnase2 {
+        top: 450px;
+        left: 58%;
+    }
+    .img-gymnase3 {
+        top: 450px;
+        left: 72%;
+    }
+    .histo-para {
+        width: 30%;
+        margin-top: 80px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #historique img {
+        width: 700px;
+    }
+    .img-circle {
+        width: 150px !important;
+    }
+    .img-gymnase1 {
+        top: 396px;
+        left: 65%;
+    }
+    .img-gymnase2 {
+        top: 528px;
+        left: 59%;
+    }
+    .img-gymnase3 {
+        top: 528px;
+        left: 71%;
+    }
+    .histo-para {
+        margin-top: 130px;
+    }
+}
+
+@media (min-width: 1600px) {
+    body {
+        font-size: 18px;
+    }
+    .navbar {
+        height: 135px;
+    }
+    #presentation p {
+        font-size: 18px;
+    }
+    #presentation h3 {
+        font-size: 25px;
+    }
+    .btn {
+        font-size: 18px;
+    }
+    .histo-para {
+        font-size: 18px;
+    }
+}
