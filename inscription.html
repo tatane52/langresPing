@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>inscription ping</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="inscription.css" />
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="col-xs-2">
+                <a href="langres.html"><button type="button" class="btn btn-danger">Accueil</button></a>
+            </div>
+            <div class="col-xs-8 text-center">
+                <img src="logofinal.png">
+            </div>
+        </div>
+    </header>
+    <form>
+        <div class="form-group col-xs-offset-2 col-xs-8">
+            <label for="name">Nom(*) :</label>
+            <input type="text" class="form-control" id="name" maxlength="25" required>
+        </div>
+        <div class="form-group col-xs-offset-2 col-xs-8">
+            <label for="firstname">Prénom(*) :</label>
+            <input type="text" class="form-control" id="firstname" maxlength="25" required>
+        </div>
+        <div class="form-group col-xs-offset-2 col-xs-8">
+            <label for="firstname">Pseudo(*) :</label>
+            <input type="text" class="form-control" id="firstname" maxlength="20" required>
+        </div>
+        <div class="form-group col-xs-offset-2 col-xs-8">
+            <label for="phone">N° tel :</label>
+            <input type="tel" class="form-control" id="phone" pattern="^0[1-9][0-9]{8}$">
+        </div>
+        <div class="form-group col-xs-offset-2 col-xs-8">
+            <label for="email">Email(*) :</label>
+            <input type="email" class="form-control" id="email" pattern="^[a-z0-9.-_]+@[a-z0-9.-_]{2,}\.[a-z]{2,4}$" required>
+        </div>
+        <div class="form-group col-xs-offset-2 col-xs-8">
+            <label for="pwd">Mot de passe(*) :</label>
+            <input type="password" class="form-control" id="pwd" required>
+        </div>
+        <div class="form-group col-xs-offset-2 col-xs-8">
+            <label for="confirm">Confirmation mot de passe(*) :</label>
+            <input type="password" class="form-control" id="confirm" required>
+        </div>
+        <div class="form-group col-xs-offset-2 col-xs-8">
+            <label for="message">Message :</label></br>
+            <textarea id="message" resize="both"></textarea>
+        </div>
+        <button type="submit" class="btn-primary col-xs-offset-2 col-xs-3">Envoyer</button>
+        <button type="reset" class="btn-danger col-xs-offset-2 col-xs-3">Reset</button>
+    </form>
+    <script>
+        var recup = document.getElementById('pwd');
+        var recupConfirm = document.getElementById('confirm');
+
+        recupConfirm.addEventListener('blur', function() {
+            if (recup.value == recupConfirm.value) {
+                recup.style.backgroundColor = 'green';
+                recupConfirm.style.backgroundColor = 'green';
+            } else {
+                recup.style.backgroundColor = 'red';
+                recupConfirm.style.backgroundColor = 'red';
+            }
+        });
+
+        recup.addEventListener('keypress', function() {
+            var recupMdp = document.getElementById('pwd').value;
+            console.log(recup);
+            console.log(recupMdp);
+            if (recupMdp.length < 4) {
+                recup.style.backgroundColor = '#f10d0d';
+            } else if (recupMdp.length < 7) {
+                recup.style.backgroundColor = 'orange';
+            } else {
+                recup.style.backgroundColor = '#09B24F';
+            }
+        });
+    </script>
+</body>
+
+</html>
