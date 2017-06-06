@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "langresPing";
+$dbname = "langresPing"
 
 //creation connection
 $bdd = mysqli_connect($servername, $username, $password, $dbname);
