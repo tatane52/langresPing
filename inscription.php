@@ -9,17 +9,12 @@
 </head>
 
 <body>
-    <header>
-        <div class="row">
-            <div class="col-xs-2">
-                <a href="langres.php"><button type="button" class="btn btn-danger">Accueil</button></a>
-            </div>
-            <div class="col-xs-8 text-center">
-                <img src="logofinal.png">
-            </div>
-        </div>
-    </header>
-    <form>
+    <!--inclusion d'entête php-->
+    <?php include('enTeteAnnexe.php'); ?>
+    <!--fin inclusion-->
+
+    <form method="post" action="resultInscription.php">
+
         <div class="form-group col-xs-offset-2 col-xs-8">
             <label for="name">Nom(*) :</label>
             <input type="text" class="form-control" id="name" maxlength="25" required>
@@ -29,58 +24,65 @@
             <input type="text" class="form-control" id="firstname" maxlength="25" required>
         </div>
         <div class="form-group col-xs-offset-2 col-xs-8">
-            <label for="firstname">Pseudo(*) :</label>
-            <input type="text" class="form-control" id="firstname" maxlength="20" required>
-        </div>
-        <div class="form-group col-xs-offset-2 col-xs-8">
-            <label for="phone">N° tel :</label>
-            <input type="tel" class="form-control" id="phone" pattern="^0[1-9][0-9]{8}$">
-        </div>
-        <div class="form-group col-xs-offset-2 col-xs-8">
-            <label for="email">Email(*) :</label>
-            <input type="email" class="form-control" id="email" pattern="^[a-z0-9.-_]+@[a-z0-9.-_]{2,}\.[a-z]{2,4}$" required>
-        </div>
-        <div class="form-group col-xs-offset-2 col-xs-8">
             <label for="pwd">Mot de passe(*) :</label>
             <input type="password" class="form-control" id="pwd" required>
+            <div id="taille"></div>
         </div>
         <div class="form-group col-xs-offset-2 col-xs-8">
             <label for="confirm">Confirmation mot de passe(*) :</label>
             <input type="password" class="form-control" id="confirm" required>
         </div>
         <div class="form-group col-xs-offset-2 col-xs-8">
-            <label for="message">Message :</label></br>
-            <textarea id="message" resize="both"></textarea>
+            <label for="pseudo">Pseudo(*) :</label>
+            <input type="text" class="form-control" id="pseudo" maxlength="20" required>
         </div>
+        <!--<div class="form-group col-xs-offset-2 col-xs-8">
+            <label for="phone">N° tel :</label>
+            <input type="tel" class="form-control" id="phone" placeholder="0505050505" pattern="^0[1-9][0-9]{8}$">
+        </div>-->
+        <div class="form-group col-xs-offset-2 col-xs-8">
+            <label for="email">Email(*) :</label>
+            <input type="email" class="form-control" id="email" pattern="^[a-z0-9.-_]+@[a-z0-9.-_]{2,}\.[a-z]{2,4}$" required>
+        </div>
+        
+        <!--<div class="form-group col-xs-offset-2 col-xs-8">
+            <label for="message">Message :</label></br>
+            <textarea id="message" placeholder="agrandissez le cadre avec le coin bas/droite" resize="both"></textarea>
+        </div>-->
         <button type="submit" class="btn-primary col-xs-offset-2 col-xs-3">Envoyer</button>
         <button type="reset" class="btn-danger col-xs-offset-2 col-xs-3">Reset</button>
     </form>
+
+    <?php
+    
+    ?>
     <script>
         var recup = document.getElementById('pwd');
         var recupConfirm = document.getElementById('confirm');
+        var recupTaille = document.getElementById('taille');
 
         recupConfirm.addEventListener('blur', function() {
             if (recup.value == recupConfirm.value) {
-                recup.style.backgroundColor = 'green';
-                recupConfirm.style.backgroundColor = 'green';
+                recup.style.backgroundColor = '#3fb13f';
+                recupConfirm.style.backgroundColor = '#3fb13f';
             } else {
                 recup.style.backgroundColor = 'red';
                 recupConfirm.style.backgroundColor = 'red';
             }
         });
 
-        recup.addEventListener('keypress', function() {
+        /*recup.addEventListener('keypress', function() {
             var recupMdp = document.getElementById('pwd').value;
-            console.log(recup);
-            console.log(recupMdp);
-            if (recupMdp.length < 4) {
-                recup.style.backgroundColor = '#f10d0d';
-            } else if (recupMdp.length < 7) {
-                recup.style.backgroundColor = 'orange';
+           
+            if (recupMdp.length < 8) {
+                recupTaille.innerHTML = 'trop petit';
+                recupTaille.style.color = "red";
+            
             } else {
-                recup.style.backgroundColor = '#09B24F';
+                recupTaille.innerHTML = 'ok';
+                recupTaille.style.color = "#3fb13f";
             }
-        });
+        });*/
     </script>
 </body>
 

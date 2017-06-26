@@ -1,17 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "langresPing";
-
-//creation connection
-$bdd = mysqli_connect($servername, $username, $password, $dbname);
-if ($bdd){
-    echo "ok";
-}
-else{
-    echo "not ok";
-}
+require_once('connectionBdd.php');
 ?>
 <!doctype html>
 <html lang="fr">
@@ -55,8 +43,8 @@ else{
                     <li class="col-xs-6 col-sm-2"><a href="#calendrier">Calendrier</a></li>
                     <li class="col-xs-6 col-sm-2"><a href="#contact">Contact</a></li>
                     <li class="col-xs-6 col-sm-2"><a href="http://www.fftt.com/site/"><span class="f">F</span><span class="ft">FT</span><span class="t">T</span></a></li>
-                    <li class="col-xs-6 col-sm-6 "><a href="inscription.html"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
-                    <li class="col-xs-6 col-sm-6 "><a href="connexion.html"><span class="colorHoverBlue"><span class="glyphicon glyphicon-log-in"></span> Connection</span></a></li>
+                    <li class="col-xs-6 col-sm-6 "><a href="inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
+                    <li class="col-xs-6 col-sm-6 "><a href="connexion.php"><span class="colorHoverBlue"><span class="glyphicon glyphicon-log-in"></span> Connection</span></a></li>
                 </ul>
             </div>
         </div>
