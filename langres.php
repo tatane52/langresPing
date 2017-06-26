@@ -43,7 +43,7 @@ else{
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img alt="Brand" src="logofinal.png">
+                   <img alt="Brand" id="monLogo" src="logofinal.png"> 
                 </a>
                 <h1>BBLangres</h1>
             </div>
@@ -196,9 +196,9 @@ else{
                 <div class="row">
                     <div class="col-xs-12 text-center">
                         <img src="raquettefinal.png">
-                        <p class="histo-para">- 24 aout 1953 : Le club de Langres voit le jour, il est fondé par Pierre GARNIER, Jean-Marie DANJOU et Pascal VALENTIN</br>
-                            - Il a eu pour président Jonathan DERIOT</br>
-                            - Il a occupé le gymnase Roger THEVENOT
+                        <p class="histo-para">- Le club de Langres a vu le jour le 23 juillet 1974</br>
+                        </br>
+                        - Il est fondé par Pierre GARNIER, Jean-Marie DANJOU et Pascal VALENTIN</br>
                         </p>
 
                         <img src="gymnase1.jpg" class="img-circle img-gymnase1" alt="">
@@ -301,7 +301,7 @@ else{
                 </div>
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <iframe width="300" height="auto" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAeAVQ9_Jj6VJNwU8Ui9hn1HL0nvjtY48k
+                        <iframe width="auto" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAeAVQ9_Jj6VJNwU8Ui9hn1HL0nvjtY48k
                         &q=880 avenue de l'europe, Langres'" allowfullscreen>
                         </iframe>
                     </div>
@@ -331,7 +331,9 @@ else{
             </div>
         </div>
     </footer>
-
+<script src="langres.js">
+    
+</script>
 </body>
 
 </html>

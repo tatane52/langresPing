@@ -228,7 +228,7 @@ footer {
     color: white;
     font-size: 10px;
     position: absolute;
-    top: 60px;
+    top: 85px;
     margin-left: 9%;
 }
 
@@ -252,6 +252,14 @@ footer {
     display: block;
     position: absolute;
     margin-left: 0px !important;
+}
+
+#monLogo {
+    transition: transform 2s;
+}
+
+#monLogo:hover {
+    transform: rotate(360deg);
 }
 
 @media (max-width: 575px) {
@@ -307,6 +315,7 @@ footer {
     .histo-para {
         width: 29%;
         font-size: 15px;
+        top: 113px;
     }
     #historique img {
         margin-left: -50%;
@@ -337,6 +346,7 @@ footer {
     .histo-para {
         width: 30%;
         margin-top: 25px;
+        top: 94px;
     }
     .placement {
         margin-top: 75px;
@@ -414,6 +424,7 @@ footer {
     .histo-para {
         width: 30%;
         margin-top: 80px;
+        top: 80px;
     }
 }
 
