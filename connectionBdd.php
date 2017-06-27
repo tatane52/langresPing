@@ -1,11 +1,12 @@
 <?php
 $servername = "localhost";
+$dbname = "langresPing";
 $username = "root";
 $password = "root";
-$dbname = "langresPing";
+
 
 //creation connection
-$bdd = mysqli_connect($servername, $username, $password, $dbname);
+$bdd = new PDO('mysql:host='.$servername.';dbname='.$dbname.';charset=utf8', $username, $password);
 /*if ($bdd){
     echo "ok";
 }

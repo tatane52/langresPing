@@ -55,8 +55,8 @@ require_once('connectionBdd.php');
             <h2 class="col-xs-12 placement text-center">
             <?php 
             $requete = "SELECT titre FROM site ORDER BY id_site DESC LIMIT 1";
-            $result = mysqli_query($bdd, $requete);         
-            while($donnees = mysqli_fetch_assoc($result)){
+            $result = $bdd->query($requete);                    
+            while($donnees = $result->fetch()){
                 echo $donnees["titre"];
             }
             ?>
@@ -76,18 +76,18 @@ require_once('connectionBdd.php');
                             <h3 class="colorRed">
                             <?php
                             $requete = "SELECT titre FROM article ORDER BY id_article DESC LIMIT 1";
-                            $result = mysqli_query($bdd, $requete);         
-                            while($donnees = mysqli_fetch_assoc($result)){
+                            $result = $bdd->query($requete);         
+                            while($donnees = $result->fetch()){
                                 echo $donnees["titre"];
                             }
                             ?>
                             </h3>
                             <p>
                             <?php
-                            $requete2 = "SELECT contenu FROM article ORDER BY id_article DESC LIMIT 1";
-                            $result2 = mysqli_query($bdd, $requete2);         
-                            while($donnees2 = mysqli_fetch_assoc($result2)){
-                                echo $donnees2["contenu"];
+                            $requete = "SELECT contenu FROM article ORDER BY id_article DESC LIMIT 1";
+                            $result = $bdd->query($requete);         
+                            while($donnees = $result->fetch()){
+                                echo $donnees["contenu"];
                             }
                             ?>
                            </p>
@@ -104,8 +104,8 @@ require_once('connectionBdd.php');
                             <h3 class="colorBlue">
                             <?php
                             $requete = "SELECT titre FROM article ORDER BY id_article ASC LIMIT 1";
-                            $result = mysqli_query($bdd, $requete);         
-                            while($donnees = mysqli_fetch_assoc($result)){
+                            $result = $bdd->query($requete);         
+                            while($donnees = $result->fetch()){
                                 echo $donnees["titre"];
                             }
                             ?>
@@ -113,8 +113,8 @@ require_once('connectionBdd.php');
                             <p>
                             <?php
                             $requete = "SELECT contenu FROM article ORDER BY id_article ASC LIMIT 1";
-                            $result = mysqli_query($bdd, $requete);         
-                            while($donnees = mysqli_fetch_assoc($result)){
+                            $result = $bdd->query($requete);         
+                            while($donnees = $result->fetch()){
                                 echo $donnees["contenu"];
                             }
                             ?>
