@@ -16,6 +16,10 @@ require_once('connectionBdd.php');
     <?php include('enTeteAnnexe.php'); ?>
     <!--fin inclusion-->
 
+    <div class="col-xs-offset-2 col-xs-8 text-center">
+        <p>(*) : données à remplir obligatoirement</p>
+    </div>
+
     <form method="post" action="inscriptionResult.php">
 
         <div class="form-group col-xs-offset-2 col-xs-8">
