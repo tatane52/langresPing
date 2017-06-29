@@ -1,7 +1,6 @@
 body {
     background-image: url(ping.jpg);
-    background-size: contain;
-    background-repeat: repeat;
+    background-size: cover;
     color: black;
 }
 
