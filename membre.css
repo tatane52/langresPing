@@ -6,6 +6,10 @@ textarea {
     margin-top: 5px;
 }
 
+button {
+    margin-bottom: 5px;
+}
+
 .btn-danger {
     background-color: #f10d0d;
     margin: 10px 0px 0px 10px;
@@ -30,7 +34,15 @@ textarea {
     /*border-collapse: collapse;*/
 }
 
+.talk {
+    height: 350px;
+    overflow: auto;
+}
+
 @media (max-width: 575px) {
+    h2 {
+        font-size: 18px;
+    }
     textarea {
         width: 200px;
         height: 80px;

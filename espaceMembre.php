@@ -18,13 +18,7 @@
             <h2>Tchat du BB Langres</h2>
         </div>
         <div class="row talk col-xs-offset-2 col-xs-8">
-            <p>ksfiezfpozef,oez,foez,foez,foez,fez,fezf,ezfezi</p>
-            <p>ksfiezfpozef,oez,foez,foez,foez,fez,fezf,ezfezi</p>
-            <p>ksfiezfpozef,oez,foez,foez,foez,fez,fezf,ezfezi</p>
-            <p>ksfiezfpozef,oez,foez,foez,foez,fez,fezf,ezfezi</p>
-            <p>ksfiezfpozef,oez,foez,foez,foez,fez,fezf,ezfezi</p>
-            <p>ksfiezfpozef,oez,foez,foez,foez,fez,fezf,ezfezi</p>
-            <p>ksfiezfpozef,oez,foez,foez,foez,fez,fezf,ezfezi</p>
+            
         </div>
         <div class="row send col-xs-offset-2 col-xs-8 text-center">
             <form method="post" action="tchat.php">
