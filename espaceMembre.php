@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html>
 
@@ -9,6 +12,8 @@
 </head>
 
 <body>
-    <?php include('enTeteAnnexe.php'); ?>  
+    <?php include('enTeteAnnexe.php');  
+    echo "bienvenue dans l'espace membre " .$_SESSION['pseudo'];
+    ?>
 </body>
 </html>
