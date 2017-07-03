@@ -56,9 +56,8 @@ require_once('connectionBdd.php');
             <?php 
             $requete = "SELECT titre FROM site ORDER BY id_site DESC LIMIT 1";
             $result = $bdd->query($requete);                    
-            while($donnees = $result->fetch()){
+                $donnees = $result->fetch();
                 echo $donnees["titre"];
-            }
             ?>
             </h2>
         </div>
@@ -77,18 +76,16 @@ require_once('connectionBdd.php');
                             <?php
                             $requete = "SELECT titre FROM article ORDER BY id_article DESC LIMIT 1";
                             $result = $bdd->query($requete);         
-                            while($donnees = $result->fetch()){
-                                echo $donnees["titre"];
-                            }
+                            $donnees = $result->fetch();
+                            echo $donnees["titre"];
                             ?>
                             </h3>
                             <p>
                             <?php
                             $requete = "SELECT contenu FROM article ORDER BY id_article DESC LIMIT 1";
                             $result = $bdd->query($requete);         
-                            while($donnees = $result->fetch()){
-                                echo $donnees["contenu"];
-                            }
+                            $donnees = $result->fetch();
+                            echo $donnees["contenu"];
                             ?>
                            </p>
 
@@ -105,18 +102,16 @@ require_once('connectionBdd.php');
                             <?php
                             $requete = "SELECT titre FROM article ORDER BY id_article ASC LIMIT 1";
                             $result = $bdd->query($requete);         
-                            while($donnees = $result->fetch()){
-                                echo $donnees["titre"];
-                            }
+                            $donnees = $result->fetch();
+                            echo $donnees["titre"];
                             ?>
                             </h3>
                             <p>
                             <?php
                             $requete = "SELECT contenu FROM article ORDER BY id_article ASC LIMIT 1";
                             $result = $bdd->query($requete);         
-                            while($donnees = $result->fetch()){
-                                echo $donnees["contenu"];
-                            }
+                            $donnees = $result->fetch();
+                            echo $donnees["contenu"];
                             ?>
                             </p>
 
