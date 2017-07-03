@@ -1,3 +1,15 @@
+main {
+    margin-top: 30px;
+}
+
+textarea {
+    margin-top: 5px;
+}
+
+button {
+    margin-bottom: 5px;
+}
+
 .btn-danger {
     background-color: #f10d0d;
     margin: 10px 0px 0px 10px;
@@ -13,4 +25,39 @@
 
 .btn-danger:focus {
     background-color: #f10d0d !important;
+}
+
+.title,
+.talk,
+.send {
+    border: 2px solid black;
+    /*border-collapse: collapse;*/
+}
+
+.talk {
+    height: 350px;
+    overflow: auto;
+}
+
+@media (max-width: 575px) {
+    h2 {
+        font-size: 18px;
+    }
+    textarea {
+        width: 200px;
+        height: 80px;
+    }
+}
+
+@media (min-width: 576px) {
+    textarea {
+        width: 330px;
+        height: 80px;
+    }
+}
+
+@media (min-width: 768px) {
+    textarea {
+        width: 450px;
+    }
 }
