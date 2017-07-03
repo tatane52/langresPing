@@ -1,4 +1,5 @@
  <?php 
+session_start();
 require_once('connectionBdd.php');
 ?>
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ require_once('connectionBdd.php');
         <p>(*) : données à remplir obligatoirement</p>
     </div>
 
-    <form method="post" action="inscriptionResult.php">
+    <form method="post" action="resultInscription.php">
 
         <div class="form-group col-xs-offset-2 col-xs-8">
             <label for="name">Nom(*) :</label>
@@ -38,11 +39,12 @@ require_once('connectionBdd.php');
         <div class="form-group col-xs-offset-2 col-xs-8">
             <label for="confirm">Confirmation mot de passe(*) :</label>
             <input type="password" name="confirmMdp" class="form-control" id="confirm" required>
+            <div id="analyseMdp"></div>
         </div>
         <div class="form-group col-xs-offset-2 col-xs-8">
             <label for="pseudo">Pseudo(*) :</label>
             <input type="text" name="pseudo" class="form-control" id="pseudo" maxlength="20" required>
-            <div id="analyse"></div>
+            <div id="analysePseudo"></div>
         </div>
         
         <!--<div class="form-group col-xs-offset-2 col-xs-8">
@@ -59,12 +61,18 @@ require_once('connectionBdd.php');
             <label for="message">Message :</label></br>
             <textarea id="message" placeholder="agrandissez le cadre avec le coin bas/droite" resize="both"></textarea>
         </div>-->
-        <button type="submit" class="btn-primary col-xs-offset-2 col-xs-3">Envoyer</button>
+        <button type="submit" name="send" id="submit" class="btn-primary col-xs-offset-2 col-xs-3">Envoyer</button>
         <button type="reset" class="btn-danger col-xs-offset-2 col-xs-3">Reset</button>
     </form>
 
     
     <script>
+
+
+
+
+
+        //check password
         var recup = document.getElementById('pwd');
         var recupConfirm = document.getElementById('confirm');
         var recupTaille = document.getElementById('taille');
@@ -83,6 +91,18 @@ require_once('connectionBdd.php');
                 recupConfirm.style.backgroundColor = 'red';
             }
         });
+
+        //check password
+        var recupBtnSubmit = document.getElementById('submit');
+        var recupDivMdp = document.getElementById('analyseMdp');
+
+        recupBtnSubmit.addEventListener('click', function(e) {
+            if(recup.value !== recupConfirm.value){
+                e.preventDefault();
+                recupDivMdp.innerHTML = "les mots de passes sont différents"
+            }
+        });
+
         
         //requete AJAX pour pseudo
         function getXMLHttpRequest() {
@@ -107,7 +127,7 @@ require_once('connectionBdd.php');
             }
 
             var recupInputPseudo = document.getElementById('pseudo');
-            var recupDivDispo = document.getElementById('analyse');
+            var recupDivDispo = document.getElementById('analysePseudo');
             
             var xhr = getXMLHttpRequest();
 
