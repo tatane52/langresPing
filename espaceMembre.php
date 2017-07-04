@@ -46,6 +46,8 @@ session_start();
             <form method="post" action="tchat.php">
                 <textarea name="message"></textarea></br>
                 <button type="submit" name="send">Envoyer</button>
+                <button type="button" name="refresh">Rafraichir</button>
+
             </form>
             
         </div>
