@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('connectionBdd.php');
 ?>
 <!doctype html>
@@ -38,10 +39,10 @@ require_once('connectionBdd.php');
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right col-sm-10">
                     <li class="col-xs-6 col-sm-2"><a href="#">BBLangres</a></li>
-                    <li class="col-xs-6 col-sm-2"><a href="#historique">Historique</a></li>
-                    <li class="col-xs-6 col-sm-2"><a href="#effectif">Effectif</a></li>
-                    <li class="col-xs-6 col-sm-2"><a href="#calendrier">Calendrier</a></li>
-                    <li class="col-xs-6 col-sm-2"><a href="#contact">Contact</a></li>
+                    <li id="lienHisto" class="col-xs-6 col-sm-2"><a href="#historique">Historique</a></li>
+                    <li id="lienEffect" class="col-xs-6 col-sm-2"><a href="#effectif">Effectif</a></li>
+                    <li id="lienCalend" class="col-xs-6 col-sm-2"><a href="#calendrier">Calendrier</a></li>
+                    <li id="lienCont" class="col-xs-6 col-sm-2"><a href="#contact">Contact</a></li>
                     <li class="col-xs-6 col-sm-2"><a href="http://www.fftt.com/site/"><span class="f">F</span><span class="ft">FT</span><span class="t">T</span></a></li>
                     <li class="col-xs-6 col-sm-6 "><a href="inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
                     <li class="col-xs-6 col-sm-6 "><a href="connexion.php"><span class="colorHoverBlue"><span class="glyphicon glyphicon-log-in"></span> Connection</span></a></li>
@@ -60,7 +61,7 @@ require_once('connectionBdd.php');
                 echo $donnees["titre"];
             ?>
             </h2>
-        </div>
+        </div>       
         <img src="langresBanniere.jpg" id="banniere" alt="rempard de la ville" title="rempard de la ville" />
     </header>
 
@@ -314,7 +315,75 @@ require_once('connectionBdd.php');
             </div>
         </div>
     </footer>
-<script src="langres.js">
+<script>
+
+            var recupSectionHisto = document.getElementById('historique');
+            var recupSectionEffect = document.getElementById('effectif');
+            var recupSectionCalend = document.getElementById('calendrier');
+            var recupSectionCont = document.getElementById('contact');
+            var recupLienHisto = document.getElementById('lienHisto');
+            var recupLienEffect = document.getElementById('lienEffect');
+            var recupLienCalend = document.getElementById('lienCalend');
+            var recupLienCont = document.getElementById('lienCont');
+
+            recupLienHisto.addEventListener('click', function(e){
+                var larg = document.body.clientWidth;
+                if(larg > 767){                
+                    var top = recupSectionHisto.offsetTop; 
+                    e.preventDefault(); 
+                    window.scrollTo(0, top-130);                   
+                }
+                else{
+                    var top = recupSectionHisto.offsetTop;  
+                    e.preventDefault();
+                    window.scrollTo(0, top-80);
+                }
+            });
+
+            recupLienEffect.addEventListener('click', function(e){
+                var larg = document.body.clientWidth;
+                if(larg > 767){                
+                    var top = recupSectionEffect.offsetTop; 
+                    e.preventDefault(); 
+                    window.scrollTo(0, top-130);                   
+                }
+                else{
+                    var top = recupSectionEffect.offsetTop;  
+                    e.preventDefault();
+                    window.scrollTo(0, top-80);
+                }
+            });
+
+            recupLienCalend.addEventListener('click', function(e){
+                var larg = document.body.clientWidth;
+                if(larg > 767){                
+                    var top = recupSectionCalend.offsetTop; 
+                    e.preventDefault(); 
+                    window.scrollTo(0, top-130);                   
+                }
+                else{
+                    var top = recupSectionCalend.offsetTop;  
+                    e.preventDefault();
+                    window.scrollTo(0, top-80);
+                }
+            });
+
+            recupLienCont.addEventListener('click', function(e){
+                var larg = document.body.clientWidth;
+                if(larg > 767){                
+                    var top = recupSectionCont.offsetTop; 
+                    e.preventDefault(); 
+                    window.scrollTo(0, top-130);                   
+                }
+                else{
+                    var top = recupSectionCont.offsetTop;  
+                    e.preventDefault();
+                    window.scrollTo(0, top-80);
+                }
+            });
+
+
+        
     
 </script>
 </body>

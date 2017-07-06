@@ -3,30 +3,33 @@ require_once('connectionBdd.php');
 
 if(isset($_POST['send'])){
     $nom = htmlentities($_POST['nom']);
-    echo $nom. "</br>";
+    //echo $nom. "</br>";
 
     $prenom = htmlentities($_POST['prenom']);
-    echo $prenom. "</br>";
+    //echo $prenom. "</br>";
 
     $mdp = htmlentities($_POST['mdp']);
-    echo $mdp. "</br>";
+    //echo $mdp. "</br>";
     $mdpHash = password_hash($mdp, PASSWORD_DEFAULT);
 
-    $mdpConfirm = htmlentities($_POST['confirmMdp']);
-    echo $mdpConfirm. "</br>";
+    //$mdpConfirm = htmlentities($_POST['confirmMdp']);
+    //echo $mdpConfirm. "</br>";
 
     $pseudo = htmlentities($_POST['pseudo']);
-    echo $pseudo. "</br>";
+    //echo $pseudo. "</br>";
 
     $mail = htmlentities($_POST['mail']);
-    echo $mail. "</br>";
+    //echo $mail. "</br>";
 
     $date = date("Y-m-d");
 
+   
+
     $requete = "INSERT INTO membre (id_membre, nom, prenom, pseudo, mail, mdp, date_inscription)
             VALUES (null, '$nom', '$prenom', '$pseudo', '$mail', '$mdpHash', '$date')";
-    echo $requete;
+    //echo $requete;
     $bdd->exec($requete);
+    header('location: langres.php');
 }
 
 ?>

@@ -11,8 +11,8 @@ session_start();
     <link rel="stylesheet" href="membre.css">
 </head>
 
-<body>
-
+<body id="corps">
+   
     <?php include('enTeteAnnexe.php');
     echo "<p class='text-center'>bienvenue dans l'espace membre " .$_SESSION['pseudo']. "!!!</p>";
     ?>
@@ -40,7 +40,7 @@ session_start();
                         .$donnees['message']."</p>";
                     }
                 }
-            ?>             
+            ?>            
         </div>
         <div class="row send col-xs-offset-2 col-xs-8 text-center">
             <form method="post" action="tchat.php">
@@ -53,5 +53,6 @@ session_start();
         </div>
     </div>
     </main>
+    
 </body>
 </html>
