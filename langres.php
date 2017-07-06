@@ -101,18 +101,20 @@ require_once('connectionBdd.php');
                         <div class="caption">
                             <h3 class="colorBlue">
                             <?php
-                            $requete = "SELECT titre FROM article ORDER BY id_article ASC LIMIT 1";
-                            $result = $bdd->query($requete);         
-                            $donnees = $result->fetch();
-                            echo $donnees["titre"];
+                            $requete = "SELECT titre FROM article ORDER BY id_article DESC LIMIT 2";
+                            $result = $bdd->query($requete);       
+                            while($donnees = $result->fetch()){ 
+                                echo $donnees["titre"];
+                            };                         
                             ?>
                             </h3>
                             <p class="text-center">
                             <?php
-                            $requete = "SELECT contenu FROM article ORDER BY id_article ASC LIMIT 1";
+                            $requete = "SELECT contenu FROM article ORDER BY id_article DESC LIMIT 2";
                             $result = $bdd->query($requete);         
-                            $donnees = $result->fetch();
+                            while($donnees = $result->fetch()){
                             echo $donnees["contenu"];
+                            };
                             ?>
                             </p>
 
