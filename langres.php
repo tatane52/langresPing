@@ -81,7 +81,7 @@ require_once('connectionBdd.php');
                             echo $donnees["titre"];
                             ?>
                             </h3>
-                            <p>
+                            <p class="text-center">
                             <?php
                             $requete = "SELECT contenu FROM article ORDER BY id_article DESC LIMIT 1";
                             $result = $bdd->query($requete);         
@@ -107,7 +107,7 @@ require_once('connectionBdd.php');
                             echo $donnees["titre"];
                             ?>
                             </h3>
-                            <p>
+                            <p class="text-center">
                             <?php
                             $requete = "SELECT contenu FROM article ORDER BY id_article ASC LIMIT 1";
                             $result = $bdd->query($requete);         

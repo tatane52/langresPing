@@ -76,14 +76,6 @@ header h2 {
     color: black;
 }
 
-.article1 p {
-    border: solid 2px #f10d0d;
-}
-
-.article2 p {
-    border: solid 2px #3e3eef;
-}
-
 #presentation .thumbnail {
     border: 3px solid #f10d0d;
 }
