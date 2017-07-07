@@ -90,6 +90,7 @@ header h2 {
 
 #presentation p {
     padding: 10px;
+    word-break: break-word;
     font-size: 12px;
 }
 

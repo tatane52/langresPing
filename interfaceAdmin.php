@@ -25,7 +25,7 @@ require_once('connectionBdd.php');
                     <input type="text" name="mainTitle" class="form-control" id="mainTitle">
                 </div>
                 <div>
-                    <button type="submit" name="sendTitle" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
+                    <button type="submit" name="sendTitre" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
                 </div>            
          </fieldset>
     </form>
@@ -100,7 +100,7 @@ require_once('connectionBdd.php');
          </fieldset>
     </form>
 
-    <form action="modifGymnase.php" method="post">
+    <form action="modifGymnase.php" method="post" enctype="multipart/form-data">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter gymnase</legend>    
                 <div class="form-group">
@@ -119,8 +119,37 @@ require_once('connectionBdd.php');
                     <label for="villeGymnase">Ville</label>
                     <input type="text" name="villeGymnase" class="form-control" id="villeGymnase">
                 </div>
+                <div class="form-group">
+                    <label for="photoGymnase">Photo (par défaut logo du club)</label>
+                    <input type="file" name="photoGymnase" class="form-control" id="photoGymnase">
+                </div>
                 <div>
                     <button type="submit" name="sendGymnase" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
+                </div>            
+         </fieldset>
+    </form>
+
+    <form action="modifJoueur.php" method="post" enctype="multipart/form-data">
+        <fieldset class="col-xs-offset-1 col-xs-10">
+            <legend class="text-center">Ajouter joueur</legend>    
+                <div class="form-group">
+                    <label for="nomJoueur">Nom</label>
+                    <input type="text" name="nomJoueur" class="form-control" id="nomJoueur">
+                </div>
+                <div class="form-group">
+                    <label for="prenomJoueur">Prénom</label>
+                    <input type="text" name="prenomJoueur" class="form-control" id="prenomJoueur">
+                </div>
+                <div class="form-group">
+                    <label for="pointJoueur">Points</label>
+                    <input type="text" name="pointJoueur" class="form-control" id="pointJoueur">
+                </div>
+                <div class="form-group">
+                    <label for="photoJoueur">Photo (par défaut logo du club)</label>
+                    <input type="file" name="photoJoueur" class="form-control" id="photoJoueur">
+                </div>
+                <div>
+                    <button type="submit" name="sendJoueur" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
                 </div>            
          </fieldset>
     </form>

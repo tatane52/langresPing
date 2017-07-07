@@ -1,7 +1,9 @@
 <?php
-require_once('connectionBdd.php');
+
 
 if(isset($_POST['send'])){
+
+    require_once('connectionBdd.php');
     $nom = htmlentities($_POST['nom']);
     //echo $nom. "</br>";
 
