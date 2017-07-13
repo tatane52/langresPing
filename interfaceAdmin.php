@@ -1,6 +1,3 @@
-<?php 
-require_once('connectionBdd.php');
-?>
 <!DOCTYPE html>
 <html>
 
@@ -22,25 +19,24 @@ require_once('connectionBdd.php');
             <legend class="text-center">Ajouter titre principal</legend>    
                 <div class="form-group">
                     <label for="mainTitle">Titre</label>
-                    <input type="text" name="mainTitle" class="form-control" id="mainTitle">
+                    <input type="text" name="mainTitle" class="form-control" id="mainTitle" required>
                 </div>
                 <div>
                     <button type="submit" name="sendTitre" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
                 </div>            
          </fieldset>
     </form>
-    
 
     <form action="modifArticle.php" method="post" enctype="multipart/form-data">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter article</legend>    
                 <div class="form-group">
                     <label for="title">Titre</label>
-                    <input type="text" name="title" class="form-control" id="title" maxlength="50">
+                    <input type="text" name="title" class="form-control" id="title" maxlength="50" required>
                 </div>
                 <div class="form-group">
                     <label for="contenu">Contenu</label>
-                    <input type="text" name="contenu" class="form-control" id="contenu">
+                    <input type="text" name="contenu" class="form-control" id="contenu" required>
                 </div>
                 <div class="form-group">
                     <label for="photoArticle">Photo (par défaut logo du club)</label>

@@ -71,7 +71,15 @@ require_once('connectionBdd.php');
                 <div class="col-xs-12 text-left col-sm-6">
                     <!--<div class="col-xs-10 col-xs-offset-1 text-left col-sm-4 col-md-4">-->
                     <div class="thumbnail">
-                        <img src="logofinal.png" alt="...">
+                        
+                        <?php
+                        $requete = "SELECT photo FROM article ORDER BY id_article DESC LIMIT 1";
+                        $result = $bdd->query($requete);
+                        $donnees = $result->fetch();
+                        ?>
+                        
+                        <img src="<?php echo $donnees['photo'];?>" alt="..."/>  
+                    
                         <div class="caption">
                             <h3 class="colorRed">
                             <?php
@@ -97,24 +105,30 @@ require_once('connectionBdd.php');
                 <div class="col-xs-12 text-right col-sm-6">
                     <!--<div class="col-xs-10 col-xs-offset-1 text-right col-sm-4 col-md-4">-->
                     <div class="thumbnail">
-                        <img src="logofinal.png" alt="...">
+
+                        <?php
+                        $requete = "SELECT photo FROM article ORDER BY id_article DESC LIMIT 1,1";
+                        $result = $bdd->query($requete);
+                        $donnees = $result->fetch();
+                        ?>
+                        
+                        <img src="<?php echo $donnees['photo'];?>" alt="..."/>
+
                         <div class="caption">
                             <h3 class="colorBlue">
                             <?php
                             $requete = "SELECT titre FROM article ORDER BY id_article DESC LIMIT 1,1";
                             $result = $bdd->query($requete);       
-                            while($donnees = $result->fetch()){ 
-                                echo $donnees["titre"];
-                            };                         
+                            $donnees = $result->fetch(); 
+                            echo $donnees["titre"];                        
                             ?>
                             </h3>
                             <p class="text-center">
                             <?php
                             $requete = "SELECT contenu FROM article ORDER BY id_article DESC LIMIT 1,1";
                             $result = $bdd->query($requete);         
-                            while($donnees = $result->fetch()){
+                            $donnees = $result->fetch();
                             echo $donnees["contenu"];
-                            };
                             ?>
                             </p>
 
