@@ -14,7 +14,7 @@ if(isset($_POST['sendBureau'])){
     $accentsMaj = array('E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U');
     $nomSansAccent = str_replace($accents, $accentsMaj, $nom);  
     $nomMaj = strtoupper($nomSansAccent);
-    $prenom = htmlentities($_POST['prenomBureau']);
+    $prenom = htmlspecialchars($_POST['prenomBureau']);
     $tel = $_POST['telBureau'];
     $mail = $_POST['mailBureau'];
     
@@ -28,15 +28,15 @@ if(isset($_POST['sendBureau'])){
         $poste = "SECRETAIRE";
     }
 
-    $nameImage = $_FILES['photoArticle']['name'];
-    $imageTemp = $_FILES['photoArticle']['tmp_name'];
+    $nameImage = $_FILES['photoBureau']['name'];
+    $imageTemp = $_FILES['photoBureau']['tmp_name'];
 
     if($nameImage == ''){
         $photo = 'logofinal.png';
         $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenom', '$poste', '$photo', '$tel', '$mail')";
         //echo $requete;
         $bdd->exec($requete);
-        header('location: langres.php');
+        header('location: interfaceAdmin.php');
         exit();
     }
     else{
@@ -84,7 +84,7 @@ if(isset($_POST['sendBureau'])){
                 $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenom', '$poste', '$photo', '$tel', '$mail')";
                 //echo $requete;
                 $bdd->exec($requete);
-                header('location: langres.php');
+                header('location: interfaceAdmin.php');
                 exit();
             }
 	        else{

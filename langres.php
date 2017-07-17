@@ -240,28 +240,85 @@ require_once('connectionBdd.php');
                     <div class="col-xs-12">
                         <div class="col-xs-4">
                             <div class="thumbnail">
-                                <img src="tresorier.jpg" alt="...">
+                                <?php
+                                    $requete = "SELECT photo FROM bureau WHERE poste='TRESORIER' ORDER BY id_bureau DESC";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                ?>
+                                <img src="<?php echo $donnees['photo'];?>" alt="...">
                                 <div class="caption">
                                     <p class="text-center">TRESORIER</p>
-                                    <p class="text-center">Michel</br> POISAT</p>
+                                    <p class="text-center">
+                                    <?php
+                                    $requete = "SELECT prenom FROM bureau WHERE poste='TRESORIER' ORDER BY id_bureau DESC";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                    echo $donnees['prenom'];
+                                    ?>
+                                    </br>
+                                    <?php
+                                    $requete = "SELECT nom FROM bureau WHERE poste='TRESORIER' ORDER BY id_bureau DESC";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                    echo $donnees['nom'];
+                                    ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xs-4">
                             <div class="thumbnail">
-                                <img src="president.jpg" alt="...">
+                                <?php
+                                    $requete = "SELECT photo FROM bureau WHERE poste='PRESIDENT' ORDER BY id_bureau DESC";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                ?>
+                                <img src="<?php echo $donnees['photo'];?>" alt="...">
                                 <div class="caption">
                                     <p class="text-center">PRESIDENT</p>
-                                    <p class="text-center">Stephane</br> CHEVALIER</p>
+                                    <p class="text-center">
+                                    <?php
+                                    $requete = "SELECT prenom FROM bureau WHERE poste='PRESIDENT' ORDER BY id_bureau DESC";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                    echo $donnees['prenom'];
+                                    ?>
+                                    </br>
+                                    <?php
+                                    $requete = "SELECT nom FROM bureau WHERE poste='PRESIDENT' ORDER BY id_bureau DESC";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                    echo $donnees['nom'];
+                                    ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xs-4">
                             <div class="thumbnail">
-                                <img src="secretaire.jpg" alt="...">
+                                <?php
+                                    $requete = "SELECT photo FROM bureau WHERE poste='SECRETAIRE' ORDER BY id_bureau DESC";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                ?>
+                                <img src="<?php echo $donnees['photo'];?>" alt="...">
                                 <div class="caption">
                                     <p class="text-center">SECRETAIRE</p>
-                                    <p class="text-center">Jean-Marie</br> DANJOU</p>
+                                    <p class="text-center">
+                                    <?php
+                                    $requete = "SELECT prenom FROM bureau WHERE poste='SECRETAIRE' ORDER BY id_bureau DESC";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                    echo $donnees['prenom'];
+                                    ?>
+                                    </br>
+                                    <?php
+                                    $requete = "SELECT nom FROM bureau WHERE poste='SECRETAIRE' ORDER BY id_bureau DESC";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                    echo $donnees['nom'];
+                                    ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -308,9 +365,48 @@ require_once('connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-2 col-xs-8 text-center">
-                        <p>Président : 06 06 06 06 06 ou <a href="mailto:tatane52@me.com">toto@me.com</a></p>
-                        <p>Trésorier : 06 06 06 06 06 ou <a href="mailto:tatane52@me.com">toto@me.com</a></p>
-                        <p>Secrétaire : 06 06 06 06 06 ou <a href="mailto:tatane52@me.com">toto@me.com</a></p>
+                        <p>Président :
+                        <?php 
+                        $requete = "SELECT tel FROM bureau WHERE poste='PRESIDENT' ORDER BY id_bureau DESC";
+                        $result = $bdd->query($requete);
+                        $donnees = $result->fetch();
+                        echo $donnees['tel'];
+                        ?>
+                        ou 
+                        <?php 
+                        $requete = "SELECT mail FROM bureau WHERE poste='PRESIDENT' ORDER BY id_bureau DESC";
+                        $result = $bdd->query($requete);
+                        $donnees = $result->fetch();
+                        ?>
+                        <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
+                        <p>Trésorier :
+                        <?php 
+                        $requete = "SELECT tel FROM bureau WHERE poste='TRESORIER' ORDER BY id_bureau DESC";
+                        $result = $bdd->query($requete);
+                        $donnees = $result->fetch();
+                        echo $donnees['tel'];
+                        ?> 
+                        ou 
+                        <?php 
+                        $requete = "SELECT mail FROM bureau WHERE poste='TRESORIER' ORDER BY id_bureau DESC";
+                        $result = $bdd->query($requete);
+                        $donnees = $result->fetch();
+                        ?>
+                        <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
+                        <p>Secrétaire : 
+                        <?php 
+                        $requete = "SELECT tel FROM bureau WHERE poste='SECRETAIRE' ORDER BY id_bureau DESC";
+                        $result = $bdd->query($requete);
+                        $donnees = $result->fetch();
+                        echo $donnees['tel'];
+                        ?> 
+                        ou 
+                        <?php 
+                        $requete = "SELECT mail FROM bureau WHERE poste='SECRETAIRE' ORDER BY id_bureau DESC";
+                        $result = $bdd->query($requete);
+                        $donnees = $result->fetch();
+                        ?>
+                        <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
                         <p>Adresse gymnase : gymnase Roger THEVENOT, 880 avenue de l'europe, 52200 LANGRES</p>
                     </div>
                 </div>

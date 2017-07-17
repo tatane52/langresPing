@@ -13,7 +13,6 @@
     <?php include('enTeteAnnexe.php'); ?>
     <!--fin inclusion-->
 
-   
     <form action="modifTitre.php" method="post">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter titre principal</legend>    
@@ -74,7 +73,7 @@
                 </div>
                 <div class="form-group">
                     <label>Poste</label></br>
-                    <input type="radio" name="poste" value="president"> Président
+                    <input type="radio" name="poste" value="president" checked> Président
                     <input type="radio" name="poste" value="tresorier"> Trésorier
                     <input type="radio" name="poste" value="secretaire"> Secrétaire
                 </div>
@@ -87,8 +86,8 @@
                     <input type="mail" name="mailBureau" class="form-control" id="mailBureau" maxlength="50" pattern="^[a-z0-9.-_]+@[a-z0-9.-_]{2,}\.[a-z]{2,4}$" required>
                 </div>
                 <div class="form-group">
-                    <label for="photoArticle">Photo (par défaut logo du club)</label>
-                    <input type="file" name="photoArticle" class="form-control" id="photoArticle">
+                    <label for="photoBureau">Photo (par défaut logo du club)</label>
+                    <input type="file" name="photoBureau" class="form-control" id="photoBureau">
                 </div>
                 <div>
                     <button type="submit" name="sendBureau" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
@@ -135,10 +134,6 @@
                 <div class="form-group">
                     <label for="prenomJoueur">Prénom</label>
                     <input type="text" name="prenomJoueur" class="form-control" id="prenomJoueur">
-                </div>
-                <div class="form-group">
-                    <label for="pointJoueur">Points</label>
-                    <input type="text" name="pointJoueur" class="form-control" id="pointJoueur">
                 </div>
                 <div class="form-group">
                     <label for="photoJoueur">Photo (par défaut logo du club)</label>

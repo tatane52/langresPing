@@ -15,7 +15,7 @@ if(isset($_POST['sendPhoto'])){
         $photo = 'logofinal.png';
         $requete = "INSERT INTO photo VALUES (null, '$photo')";
         $bdd->exec($requete);
-        header('location: langres.php');
+        header('location: interfaceAdmin.php');
         exit();
     }
     else{
@@ -62,7 +62,7 @@ if(isset($_POST['sendPhoto'])){
             
                 $requete = "INSERT INTO photo VALUES (null, '$photo')";
                 $bdd->exec($requete);
-                header('location: langres.php');
+                header('location: interfaceAdmin.php');
                 exit();
             }
 	        else{

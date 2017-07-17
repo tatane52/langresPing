@@ -26,7 +26,7 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
         $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenu', '$photo')";
         //echo $requete;
         $bdd->exec($requete);
-        header('location: langres.php');
+        header('location: interfaceAdmin.php');
         exit();
     }
     else{
@@ -73,7 +73,7 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
             
                 $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenu', '$photo')";
                 $bdd->exec($requete);
-                header('location: langres.php');
+                header('location: interfaceAdmin.php');
                 exit();
             }
 	        else{

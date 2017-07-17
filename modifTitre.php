@@ -9,7 +9,7 @@ if(isset($_POST['sendTitre']) && !empty($_POST['mainTitle'])){
     $titreMajuscule = strtoupper($titreSansCaracSpeciaux);
     $requete = "INSERT INTO site VALUES (null, '$titreMajuscule')";
     $bdd->exec($requete);
-    header('location: langres.php');
+    header('location: interfaceAdmin.php');
     exit();
 }
 else{
