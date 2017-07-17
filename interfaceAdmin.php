@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
     <title>interface administrateur</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="admin.css" />
@@ -50,10 +50,10 @@
 
     <form action="modifPhoto.php" method="post" enctype="multipart/form-data">
         <fieldset class="col-xs-offset-1 col-xs-10">
-            <legend class="text-center">Ajouter photo</legend>    
+            <legend class="text-center">Ajouter photo caroussel</legend>    
                 <div class="form-group">
-                    <label for="photo">Photo</label>
-                    <input type="file" name="photo" class="form-control" id="photo">
+                    <label for="photoCaroussel">Photo (par défaut logo du club)</label>
+                    <input type="file" name="photoCaroussel" class="form-control" id="photoCaroussel">
                 </div>
                 <div>
                     <button type="submit" name="sendPhoto" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
@@ -66,32 +66,32 @@
             <legend class="text-center">Ajouter bureau</legend>    
                 <div class="form-group">
                     <label for="nomBureau">Nom</label>
-                    <input type="text" name="nomBureau" class="form-control" id="nomBureau" maxlength="20">
+                    <input type="text" name="nomBureau" class="form-control" id="nomBureau" maxlength="20" required>
                 </div>
                 <div class="form-group">
                     <label for="prenomBureau">Prénom</label>
-                    <input type="text" name="prenomBureau" class="form-control" id="prenomBureau" maxlength="20">
+                    <input type="text" name="prenomBureau" class="form-control" id="prenomBureau" maxlength="20" required>
                 </div>
                 <div class="form-group">
                     <label>Poste</label></br>
-                    <input type= "radio" name="poste" value="president"> Président
-                    <input type= "radio" name="poste" value="tresorier"> Trésorier
-                    <input type= "radio" name="poste" value="secretaire"> Secrétaire
+                    <input type="radio" name="poste" value="president"> Président
+                    <input type="radio" name="poste" value="tresorier"> Trésorier
+                    <input type="radio" name="poste" value="secretaire"> Secrétaire
                 </div>
                 <div class="form-group">
                     <label for="telBureau">Téléphone</label>
-                    <input type="phone" name="telBureau" class="form-control" id="telBureau">
+                    <input type="phone" name="telBureau" class="form-control" id="telBureau" pattern="^0[1-9][0-9]{8}$" required>
                 </div>
                 <div class="form-group">
                     <label for="mailBureau">Email</label>
-                    <input type="mail" name="mailBureau" class="form-control" id="mailBureau" maxlength="50">
+                    <input type="mail" name="mailBureau" class="form-control" id="mailBureau" maxlength="50" pattern="^[a-z0-9.-_]+@[a-z0-9.-_]{2,}\.[a-z]{2,4}$" required>
                 </div>
                 <div class="form-group">
                     <label for="photoArticle">Photo (par défaut logo du club)</label>
                     <input type="file" name="photoArticle" class="form-control" id="photoArticle">
                 </div>
                 <div>
-                    <button type="submit" name="sendArticle" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
+                    <button type="submit" name="sendBureau" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
                 </div>            
          </fieldset>
     </form>

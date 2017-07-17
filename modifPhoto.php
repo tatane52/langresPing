@@ -6,34 +6,23 @@ function replaceRandom($nameImage){
             return $chiffreDebut.$nameImage;
         }
 
-if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['contenu'])){
+if(isset($_POST['sendPhoto'])){
     require_once('connectionBdd.php');
-
-    $titre = htmlspecialchars($_POST['title']);
-    $caracteresSpeciaux = ['é', 'è', 'ê', 'ë', 'ï', 'î', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ô', 'ö', 'ç'];
-    $caracteresSpeciauxMaj = ['E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U', 'U', 'O', 'O', 'C'];
-    //attention str_replace ne fonctionne pas avec htmlentities
-    $titreSansCaracSpeciaux = str_replace($caracteresSpeciaux, $caracteresSpeciauxMaj, $titre);
-    $titreMajuscule = strtoupper($titreSansCaracSpeciaux);
-
-    $contenu = htmlspecialchars($_POST['contenu']);
-
-    $nameImage = $_FILES['photoArticle']['name'];
-    $imageTemp = $_FILES['photoArticle']['tmp_name'];
+    $nameImage = $_FILES['photoCaroussel']['name'];
+    $imageTemp = $_FILES['photoCaroussel']['tmp_name'];
 
     if($nameImage == ''){
         $photo = 'logofinal.png';
-        $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenu', '$photo')";
-        //echo $requete;
+        $requete = "INSERT INTO photo VALUES (null, '$photo')";
         $bdd->exec($requete);
         header('location: langres.php');
         exit();
     }
     else{
         //CONTROLE FICHIER//
-	    if($_FILES['photoArticle']['error'] != 0){
+	    if($_FILES['photoCaroussel']['error'] != 0){
 		    //CONTROLE ERREUR
-		    switch($_FILES['photoArticle']['error']){
+		    switch($_FILES['photoCaroussel']['error']){
 		        case 1 :
 			        echo 'Le fichier est trop lourd';
 			        break;
@@ -71,7 +60,7 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
                 move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenu', '$photo')";
+                $requete = "INSERT INTO photo VALUES (null, '$photo')";
                 $bdd->exec($requete);
                 header('location: langres.php');
                 exit();
@@ -81,10 +70,10 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
 	        }
         }	       
     }
+
 }
 else{
     header('location: interfaceAdmin.php');
     exit();
 }
-
 ?>

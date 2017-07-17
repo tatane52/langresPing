@@ -6,24 +6,34 @@ function replaceRandom($nameImage){
             return $chiffreDebut.$nameImage;
         }
 
-if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['contenu'])){
+if(isset($_POST['sendBureau'])){
     require_once('connectionBdd.php');
-
-    $titre = htmlspecialchars($_POST['title']);
-    $caracteresSpeciaux = ['é', 'è', 'ê', 'ë', 'ï', 'î', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ô', 'ö', 'ç'];
-    $caracteresSpeciauxMaj = ['E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U', 'U', 'O', 'O', 'C'];
-    //attention str_replace ne fonctionne pas avec htmlentities
-    $titreSansCaracSpeciaux = str_replace($caracteresSpeciaux, $caracteresSpeciauxMaj, $titre);
-    $titreMajuscule = strtoupper($titreSansCaracSpeciaux);
-
-    $contenu = htmlspecialchars($_POST['contenu']);
+    //htmlentities ne marche pas avec str_replace
+    $nom = htmlspecialchars($_POST['nomBureau']);  
+    $accents = array('é', 'è', 'ê', 'ë', 'ï', 'î', 'à', 'â', 'ä', 'û', 'ü');
+    $accentsMaj = array('E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U');
+    $nomSansAccent = str_replace($accents, $accentsMaj, $nom);  
+    $nomMaj = strtoupper($nomSansAccent);
+    $prenom = htmlentities($_POST['prenomBureau']);
+    $tel = $_POST['telBureau'];
+    $mail = $_POST['mailBureau'];
+    
+    if($_POST['poste'] == "president"){
+        $poste = "PRESIDENT";
+    }
+    else if($_POST['poste'] == "tresorier"){
+        $poste = "TRESORIER";
+    }
+    else{
+        $poste = "SECRETAIRE";
+    }
 
     $nameImage = $_FILES['photoArticle']['name'];
     $imageTemp = $_FILES['photoArticle']['tmp_name'];
 
     if($nameImage == ''){
         $photo = 'logofinal.png';
-        $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenu', '$photo')";
+        $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenom', '$poste', '$photo', '$tel', '$mail')";
         //echo $requete;
         $bdd->exec($requete);
         header('location: langres.php');
@@ -31,9 +41,9 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
     }
     else{
         //CONTROLE FICHIER//
-	    if($_FILES['photoArticle']['error'] != 0){
+	    if($_FILES['photoBureau']['error'] != 0){
 		    //CONTROLE ERREUR
-		    switch($_FILES['photoArticle']['error']){
+		    switch($_FILES['photoBureau']['error']){
 		        case 1 :
 			        echo 'Le fichier est trop lourd';
 			        break;
@@ -71,7 +81,8 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
                 move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenu', '$photo')";
+                $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenom', '$poste', '$photo', '$tel', '$mail')";
+                //echo $requete;
                 $bdd->exec($requete);
                 header('location: langres.php');
                 exit();
@@ -86,5 +97,4 @@ else{
     header('location: interfaceAdmin.php');
     exit();
 }
-
 ?>

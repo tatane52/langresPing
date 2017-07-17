@@ -145,7 +145,7 @@ require_once('connectionBdd.php');
 
                 <div class="row">
                     <div class="col-xs-offset-1 col-xs-10">
-                        <div id="carousel-ping" class="carousel slide" data-ride="carousel" data-interval="9999999999999999">
+                        <div id="carousel-ping" class="carousel slide" data-ride="carousel" data-interval="3000">
                             <!--slide-->
 
                             <ol class="carousel-indicators">
@@ -155,13 +155,28 @@ require_once('connectionBdd.php');
                             </ol>
                             <div class="carousel-inner" role="listbox">
                                 <div class="item active">
-                                    <img src="foto1.jpg" alt="Chania">
+                                    <?php
+                                    $requete = "SELECT cheminPhoto FROM photo ORDER BY id_photo DESC LIMIT 1";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                    ?>
+                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt="Chania">
                                 </div>
                                 <div class="item">
-                                    <img src="foto2.jpg" alt="Chania">
+                                    <?php
+                                    $requete = "SELECT cheminPhoto FROM photo ORDER BY id_photo DESC LIMIT 1,1";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                    ?>
+                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt="Chania">
                                 </div>
                                 <div class="item">
-                                    <img src="foto3.jpg" alt="Flower">
+                                    <?php
+                                    $requete = "SELECT cheminPhoto FROM photo ORDER BY id_photo DESC LIMIT 2,1";
+                                    $result = $bdd->query($requete);
+                                    $donnees = $result->fetch();
+                                    ?>
+                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt="Flower">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-ping" role="button" data-slide="prev">

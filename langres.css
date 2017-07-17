@@ -227,6 +227,8 @@ footer {
 
 #carousel-ping img {
     margin: auto;
+    width: 300px;
+    height: 200px;
 }
 
 .left,
