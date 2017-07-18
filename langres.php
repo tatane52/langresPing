@@ -32,7 +32,7 @@ require_once('connectionBdd.php');
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                   <img alt="Brand" id="monLogo" src="logofinal.png"> 
+                   <img alt="Brand" id="monLogo" src="logofinal.png"/> 
                 </a>
                 <h1>BBLangres</h1>
             </div>
@@ -160,7 +160,7 @@ require_once('connectionBdd.php');
                                     $result = $bdd->query($requete);
                                     $donnees = $result->fetch();
                                     ?>
-                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt="Chania">
+                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt=""/>
                                 </div>
                                 <div class="item">
                                     <?php
@@ -168,7 +168,7 @@ require_once('connectionBdd.php');
                                     $result = $bdd->query($requete);
                                     $donnees = $result->fetch();
                                     ?>
-                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt="Chania">
+                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt=""/>
                                 </div>
                                 <div class="item">
                                     <?php
@@ -176,7 +176,7 @@ require_once('connectionBdd.php');
                                     $result = $bdd->query($requete);
                                     $donnees = $result->fetch();
                                     ?>
-                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt="Flower">
+                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt=""/>
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-ping" role="button" data-slide="prev">
@@ -210,15 +210,15 @@ require_once('connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <img src="raquettefinal.png">
+                        <img src="raquettefinal.png" alt=""/>
                         <p class="histo-para">- Le club de Langres a vu le jour le 23 juillet 1974</br>
                         </br>
                         - Il est fondé par Pierre GARNIER, Jean-Marie DANJOU et Pascal VALENTIN</br>
                         </p>
 
-                        <img src="gymnase1.jpg" class="img-circle img-gymnase1" alt="">
-                        <img src="gymnase2.jpg" class="img-circle img-gymnase2" alt="">
-                        <img src="gymnase3.jpg" class="img-circle img-gymnase3" alt="">
+                        <img src="gymnase1.jpg" class="img-circle img-gymnase1" alt=""/>
+                        <img src="gymnase2.jpg" class="img-circle img-gymnase2" alt=""/>
+                        <img src="gymnase3.jpg" class="img-circle img-gymnase3" alt=""/>
                     </div>
                 </div>
             </div>
@@ -245,7 +245,7 @@ require_once('connectionBdd.php');
                                     $result = $bdd->query($requete);
                                     $donnees = $result->fetch();
                                 ?>
-                                <img src="<?php echo $donnees['photo'];?>" alt="...">
+                                <img src="<?php echo $donnees['photo'];?>" alt="..."/>
                                 <div class="caption">
                                     <p class="text-center">TRESORIER</p>
                                     <p class="text-center">
@@ -273,7 +273,7 @@ require_once('connectionBdd.php');
                                     $result = $bdd->query($requete);
                                     $donnees = $result->fetch();
                                 ?>
-                                <img src="<?php echo $donnees['photo'];?>" alt="...">
+                                <img src="<?php echo $donnees['photo'];?>" alt="..."/>
                                 <div class="caption">
                                     <p class="text-center">PRESIDENT</p>
                                     <p class="text-center">
@@ -301,7 +301,7 @@ require_once('connectionBdd.php');
                                     $result = $bdd->query($requete);
                                     $donnees = $result->fetch();
                                 ?>
-                                <img src="<?php echo $donnees['photo'];?>" alt="...">
+                                <img src="<?php echo $donnees['photo'];?>" alt="..."/>
                                 <div class="caption">
                                     <p class="text-center">SECRETAIRE</p>
                                     <p class="text-center">
@@ -331,7 +331,7 @@ require_once('connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-1 col-xs-10 thumbnail">
-                        <img src="joueurs.jpg">
+                        <img src="joueurs.jpg" alt=""/>
                     </div>
                 </div>
                 <div class="row">
@@ -350,7 +350,7 @@ require_once('connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-1 col-xs-10 text-center">
-                        <p><img src="calendrier2017.jpg"></p>
+                        <p><img src="calendrier2017.jpg" alt=""/></p>
                     </div>
                 </div>
             </div>
@@ -438,7 +438,7 @@ require_once('connectionBdd.php');
             </div>
 
             <div class="col-xs-6 text-right">
-                <p><img src="minionPing.gif" /></p>
+                <p><img src="minionPing.gif" alt=""/></p>
             </div>
         </div>
     </footer>
