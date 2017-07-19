@@ -194,7 +194,7 @@ require_once('connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 text-center">
-                        <button type="button" class="btn btn-default btn-block">Voir les dernières photos</button>
+                        <a href="photos.php"><button type="button" class="btn btn-default btn-block">Voir les dernières photos</button></a>
                     </div>
                 </div>
             </div>

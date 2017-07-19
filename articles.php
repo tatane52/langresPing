@@ -38,5 +38,6 @@ $result = $bdd->query($requete);
     ?>
   
 </body>
+</html>
 
 
