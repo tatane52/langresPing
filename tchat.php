@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(isset($_POST['send'])){
+if(isset($_POST['send']) && !empty($_POST['message'])){
     require_once('connectionBdd.php');
     $pseudo = $_SESSION['pseudo'];
     $message = htmlentities($_POST['message']);

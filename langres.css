@@ -20,10 +20,6 @@ footer {
     position: relative;
 }
 
-footer a {
-    color: white;
-}
-
 .carousel-indicators {
     margin-left: -30% !important;
 }
@@ -70,6 +66,26 @@ h3 {
 
 .colorBlue {
     color: #3e3eef;
+}
+
+.premierePartie a:hover {
+    color: #f10d0d!important;
+}
+
+.premierePartie a:focus {
+    color: #f10d0d!important;
+}
+
+footer a[href*="inscription"]:hover {
+    color: #3e3eef !important;
+}
+
+.deuxiemePartie a:hover {
+    color: #3e3eef!important;
+}
+
+.deuxiemePartie a:focus {
+    color: #3e3eef!important;
 }
 
 header h2 {

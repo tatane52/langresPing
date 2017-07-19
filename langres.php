@@ -39,10 +39,10 @@ require_once('connectionBdd.php');
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right col-sm-10">
                     <li class="col-xs-6 col-sm-2"><a href="#">BBLangres</a></li>
-                    <li id="lienHisto" class="col-xs-6 col-sm-2"><a href="#historique">Historique</a></li>
-                    <li id="lienEffect" class="col-xs-6 col-sm-2"><a href="#effectif">Effectif</a></li>
-                    <li id="lienCalend" class="col-xs-6 col-sm-2"><a href="#calendrier">Calendrier</a></li>
-                    <li id="lienCont" class="col-xs-6 col-sm-2"><a href="#contact">Contact</a></li>
+                    <li class="col-xs-6 col-sm-2 lienHisto"><a href="#historique">Historique</a></li>
+                    <li class="col-xs-6 col-sm-2 lienEffect"><a href="#effectif">Effectif</a></li>
+                    <li class="col-xs-6 col-sm-2 lienCalend"><a href="#calendrier">Calendrier</a></li>
+                    <li class="col-xs-6 col-sm-2 lienCont"><a href="#contact">Contact</a></li>
                     <li class="col-xs-6 col-sm-2"><a href="http://www.fftt.com/site/"><span class="f">F</span><span class="ft">FT</span><span class="t">T</span></a></li>
                     <li class="col-xs-6 col-sm-6 "><a href="inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
                     <li class="col-xs-6 col-sm-6 "><a href="connexion.php"><span class="colorHoverBlue"><span class="glyphicon glyphicon-log-in"></span> Connection</span></a></li>
@@ -504,24 +504,24 @@ require_once('connectionBdd.php');
     </main>
     <footer class="container-fluid">
         <div class="row">
-            <div class="col-xs-3">
-                <p>Plan du site</p>
+            <div class="col-xs-3 premierePartie">              
                 <p><a class="colorRed" href="#">Acceuil</a></p>
-                <p><a class="colorRed" href="#historique">Historique</a></p>
-                <p><a class="colorRed" href="#effectif">Effectif</a></p>
-                <p><a class="colorRed" href="#calendrier">Calendrier</a></p>
-
+                <p><a class="colorRed" href="articles.php">- Articles</a></p>
+                <p><a class="colorRed" href="photos.php">- Photos</a></p>
+                <p><a class="colorRed lienHisto" href="#historique">Historique</a></p>
+                <p><a class="colorRed lienEffect" href="#effectif">Effectif</a></p>
+                <p><a class="colorRed" href="joueurs.php">- Joueurs</a></p>
             </div>
-            <div class="col-xs-3">
-                <p>Plan du site</p>
-                <p><a class="colorBlue" href="#contact">Contact</a></p>
+            <div class="col-xs-3 deuxiemePartie">         
+                <p><a class="colorBlue lienCalend" href="#calendrier">Calendrier</a></p>
+                <p><a class="colorBlue lienCont" href="#contact">Contact</a></p>
                 <p><a class="colorBlue" href="http://www.fftt.com/site/">FFTT</a></p>
-                <p><a class="colorBlue" href="inscription.html">Inscription</a></p>
-                <p><a class="colorBlue" href="connexion.html">Connection</a></p>
+                <p><a class="colorBlue" href="inscription.php">Inscription</a></p>
+                <p><a class="colorBlue" href="connexion.php">Connection</a></p>
             </div>
 
             <div class="col-xs-6 text-right">
-                <p><img src="minionPing.gif" alt=""/></p>
+                <p><img src="minionPing.gif" alt="image animee minions ping"/></p>
             </div>
         </div>
     </footer>

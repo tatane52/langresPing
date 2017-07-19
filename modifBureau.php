@@ -6,7 +6,7 @@ function replaceRandom($nameImage){
             return $chiffreDebut.$nameImage;
         }
 
-if(isset($_POST['sendBureau'])){
+if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['prenomBureau']) && !empty($_POST['telBureau']) && !empty($_POST['mailBureau'])){
     require_once('connectionBdd.php');
     //htmlentities ne marche pas avec str_replace
     $nom = htmlspecialchars($_POST['nomBureau']);  
