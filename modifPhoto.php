@@ -12,7 +12,7 @@ if(isset($_POST['sendPhoto'])){
     $imageTemp = $_FILES['photoCaroussel']['tmp_name'];
 
     if($nameImage == ''){
-        $photo = 'logofinal.png';
+        $photo = 'logoFinalPhoto.png';
         $requete = "INSERT INTO photo VALUES (null, '$photo')";
         $bdd->exec($requete);
         header('location: interfaceAdmin.php');

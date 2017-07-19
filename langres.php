@@ -138,7 +138,7 @@ require_once('connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 text-center">
-                        <button type="button" class="btn btn-default btn-block">Voir les derniers articles</button>
+                        <a href="articles.php"><button type="button" class="btn btn-default btn-block">Voir les derniers articles</button></a>
                     </div>
                 </div>
 
@@ -353,7 +353,7 @@ require_once('connectionBdd.php');
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="border"></th>
+                                    <th></th>
                                     <th>01 au 10</th>
                                     <th>11 au 21</th>
                                     <th>22 au 31</th>
