@@ -336,7 +336,7 @@ require_once('connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 text-center">
-                        <button type="button" class="btn btn-default btn-block">Découvrir nos joueurs</button>
+                        <a href="joueurs.php" <button type="button" class="btn btn-default btn-block">Découvrir nos joueurs</button></a>
                     </div>
                 </div>
             </div>
