@@ -13,4 +13,7 @@ if(isset($_POST['send']) && !empty($_POST['message'])){
     $bdd->exec($requeteInsert);
     header('location: espaceMembre.php');
 }
+else{
+    echo "il faut écrire un message!!!";
+}
 ?>
