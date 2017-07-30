@@ -12,7 +12,7 @@ $("#sendAjax").click(function(e) {
     if (valeurMessage != "") {
         //console.log(message);
         $.ajax({
-            url: 'refreshTchatMembre.php', // La ressource ciblée
+            url: 'tchatMembre.php', // La ressource ciblée
             type: 'POST', // Le type de la requête HTTP
             data: 'idMessage=' + dernierId + '&messageAjax=' + valeurMessage, //paramètre
             dataType: 'html',
