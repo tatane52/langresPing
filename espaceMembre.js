@@ -12,7 +12,7 @@ $("#sendAjax").click(function(e) {
     if (valeurMessage != "") {
         //console.log(message);
         $.ajax({
-            url: 'tchatMembre.php', // La ressource ciblée
+            url: 'traitementTchat.php', // La ressource ciblée
             type: 'POST', // Le type de la requête HTTP
             data: 'idMessage=' + dernierId + '&messageAjax=' + valeurMessage, //paramètre
             dataType: 'html',
@@ -31,7 +31,7 @@ setInterval(function autoRefresh(e) {
     var dernierId = $(".talk p:first").attr("id");
     //console.log(dernierId);
     $.ajax({
-        url: 'refresh.php', // La ressource ciblée
+        url: 'autoRefresh.php', // La ressource ciblée
         type: 'GET', // Le type de la requête HTTP
         data: 'idMessage=' + dernierId, //paramètre
         dataType: 'html',
