@@ -48,8 +48,7 @@ session_start();
             <div class="row send col-xs-offset-2 col-xs-8 text-center">
                 <form method="post" action="tchat.php">
                     <textarea id="messageAjax" name="message"></textarea></br>
-                    <button id="sendAjax" type="submit" name="send">Envoyer</button> 
-                    <button id="refreshAjax" type="button" name="refresh">Rafraichir</button>       
+                    <button id="sendAjax" type="submit" name="send">Envoyer</button>        
                 </form>
                 
             </div>

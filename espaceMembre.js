@@ -25,5 +25,19 @@ $("#sendAjax").click(function(e) {
     } else {
         alert("pas de message");
     }
-
 });
+
+setInterval(function autoRefresh(e) {
+    var dernierId = $(".talk p:first").attr("id");
+    //console.log(dernierId);
+    $.ajax({
+        url: 'refresh.php', // La ressource ciblée
+        type: 'GET', // Le type de la requête HTTP
+        data: 'idMessage=' + dernierId, //paramètre
+        dataType: 'html',
+        success: function(code_html, statut) { //fonction en cas de succès
+            //console.log(code_html);
+            $(".talk").prepend(code_html);
+        }
+    })
+}, 5000);
