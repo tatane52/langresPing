@@ -51,6 +51,14 @@ require_once('connectionBdd.php');
         </div>
     </nav>
 
+    <?php
+    //message confirmation
+    if ($_SESSION['messageInscription']){
+        echo "<script>alert('" .$_SESSION['messageInscription']. "')</script>";
+        session_destroy();
+    }
+    ?>
+
     <header class="container">
         <div class="row">
             <h2 class="col-xs-12 placement text-center">

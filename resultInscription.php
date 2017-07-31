@@ -23,6 +23,10 @@ if(isset($_POST['send']) && !empty($_POST['nom']) && !empty($_POST['prenom']) &&
             VALUES (null, '$nom', '$prenom', '$pseudo', '$mail', '$mdpHash', '$date')";
     
     $bdd->exec($requete);
+
+    session_start();
+    $_SESSION['messageInscription'] = "Félicitation " .$pseudo.", tu fais parti de nos membres!!!";
+
     header('location: langres.php');
 }
 
