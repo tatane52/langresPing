@@ -11,6 +11,14 @@ header {
     top: 80px;
 }
 
+.margeTopFooter {
+    margin-top: 20px;
+}
+
+.margeBotomPlan {
+    margin-bottom: 8px;
+}
+
 #presentation,
 #historique,
 #effectif,
