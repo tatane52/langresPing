@@ -376,6 +376,11 @@ require_once('connectionBdd.php');
                         <h2>CALENDRIER</h2>
                     </div>
                 </div>
+                 <div class="row">
+                    <div class="col-xs-offset-1 col-xs-10 text-center">
+                        <p id="dateCalendrier"></p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-xs-offset-1 col-xs-10 text-center">
                         <table class="table table-bordered">
