@@ -131,28 +131,32 @@ session_start();
          </fieldset>
     </form>
 
-    <form action="modifGymnase.php" method="post" enctype="multipart/form-data">
+     <?php
+    //message confirmation
+    if ($_SESSION['messageGymnase']){
+        echo "<script>alert('" .$_SESSION['messageGymnase']. "')</script>";
+        session_destroy();
+    }
+    ?>
+
+    <form action="modifGymnase.php" method="post">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter gymnase</legend>    
                 <div class="form-group">
                     <label for="nomGymnase">Nom de la salle</label>
-                    <input type="text" name="nomGymnase" class="form-control" id="nomGymnase">
+                    <input type="text" name="nomGymnase" class="form-control" id="nomGymnase" required>
                 </div>
                 <div class="form-group">
                     <label for="adresseGymnase">Adresse</label>
-                    <input type="text" name="adresseGymnase" class="form-control" id="adresseGymnase">
+                    <input type="text" name="adresseGymnase" class="form-control" id="adresseGymnase" required>
                 </div>
                 <div class="form-group">
                     <label for="codeGymnase">Code postal</label>
-                    <input type="text" name="codeGymnase" class="form-control" id="codeGymnase">
+                    <input type="text" name="codeGymnase" class="form-control" id="codeGymnase" pattern="^[0-9]{5}$" required>
                 </div>
                 <div class="form-group">
                     <label for="villeGymnase">Ville</label>
-                    <input type="text" name="villeGymnase" class="form-control" id="villeGymnase">
-                </div>
-                <div class="form-group">
-                    <label for="photoGymnase">Photo (par défaut logo du club)</label>
-                    <input type="file" name="photoGymnase" class="form-control" id="photoGymnase">
+                    <input type="text" name="villeGymnase" class="form-control" id="villeGymnase" required>
                 </div>
                 <div>
                     <button type="submit" name="sendGymnase" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>

@@ -490,7 +490,14 @@ require_once('connectionBdd.php');
                         $donnees = $result->fetch();
                         ?>
                         <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
-                        <p>Adresse gymnase : gymnase Roger THEVENOT, 880 avenue de l'europe, 52200 LANGRES</p>
+                        <p>Adresse gymnase : 
+                        <?php 
+                        $requete = "SELECT * FROM gymnase ORDER BY id_gymnase DESC LIMIT 1";
+                        $result = $bdd->query($requete);                    
+                        $donnees = $result->fetch();
+                        echo $donnees['nom']. ", " .$donnees['adresse']. ", ".$donnees['code_postal']. " " .$donnees['ville'];
+                        ?>
+                        </p>
                     </div>
                 </div>
                 <div class="row">

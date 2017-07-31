@@ -10,8 +10,8 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
     require_once('connectionBdd.php');
 
     $titre = htmlspecialchars($_POST['title']);
-    $caracteresSpeciaux = ['é', 'è', 'ê', 'ë', 'ï', 'î', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ô', 'ö', 'ç', '\''];
-    $caracteresSpeciauxMaj = ['E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U', 'U', 'O', 'O', 'C', ' '];
+    $caracteresSpeciaux = ['é', 'è', 'ê', 'ë', 'ï', 'î', 'ô', 'ö', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ç', '\''];
+    $caracteresSpeciauxMaj = ['E', 'E', 'E', 'E', 'I', 'I', 'O', 'O', 'A', 'A', 'A', 'U', 'U', 'U', 'C', ' '];
     //attention str_replace ne fonctionne pas avec htmlentities
     $titreSansCaracSpeciaux = str_replace($caracteresSpeciaux, $caracteresSpeciauxMaj, $titre);
     $titreMajuscule = strtoupper($titreSansCaracSpeciaux);

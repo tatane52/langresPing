@@ -10,8 +10,8 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
     require_once('connectionBdd.php');
     //htmlentities ne marche pas avec str_replace
     $nom = htmlspecialchars($_POST['nomBureau']);  
-    $accents = array('é', 'è', 'ê', 'ë', 'ï', 'î', 'à', 'â', 'ä', 'û', 'ü', '\'');
-    $accentsMaj = array('E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U', ' ');
+    $accents = array('é', 'è', 'ê', 'ë', 'ï', 'î', 'ô', 'ö', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ç', '\'');
+    $accentsMaj = array('E', 'E', 'E', 'E', 'I', 'I', 'O', 'O', 'A', 'A', 'A', 'U', 'U', 'U', 'C', ' ');
     $nomSansAccent = str_replace($accents, $accentsMaj, $nom);  
     $nomMaj = strtoupper($nomSansAccent);
     $prenom = htmlspecialchars($_POST['prenomBureau']);
