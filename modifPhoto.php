@@ -13,8 +13,13 @@ if(isset($_POST['sendPhoto'])){
 
     if($nameImage == ''){
         $photo = 'logoFinalPhoto.png';
+
         $requete = "INSERT INTO photo VALUES (null, '$photo')";
         $bdd->exec($requete);
+
+        session_start();
+        $_SESSION['messagePhoto'] = "Ajout photo ok";
+
         header('location: interfaceAdmin.php');
         exit();
     }
@@ -62,6 +67,10 @@ if(isset($_POST['sendPhoto'])){
             
                 $requete = "INSERT INTO photo VALUES (null, '$photo')";
                 $bdd->exec($requete);
+
+                session_start();
+                $_SESSION['messagePhoto'] = "Ajout photo ok";
+
                 header('location: interfaceAdmin.php');
                 exit();
             }

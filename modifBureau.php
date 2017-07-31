@@ -10,8 +10,8 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
     require_once('connectionBdd.php');
     //htmlentities ne marche pas avec str_replace
     $nom = htmlspecialchars($_POST['nomBureau']);  
-    $accents = array('é', 'è', 'ê', 'ë', 'ï', 'î', 'à', 'â', 'ä', 'û', 'ü');
-    $accentsMaj = array('E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U');
+    $accents = array('é', 'è', 'ê', 'ë', 'ï', 'î', 'à', 'â', 'ä', 'û', 'ü', '\'');
+    $accentsMaj = array('E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U', ' ');
     $nomSansAccent = str_replace($accents, $accentsMaj, $nom);  
     $nomMaj = strtoupper($nomSansAccent);
     $prenom = htmlspecialchars($_POST['prenomBureau']);
@@ -37,6 +37,10 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
         $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$poste', '$photo', '$tel', '$mail')";
         //echo $requete;
         $bdd->exec($requete);
+
+        session_start();
+        $_SESSION['messageBureau'] = "Ajout bureau OK";
+
         header('location: interfaceAdmin.php');
         exit();
     }
@@ -85,6 +89,10 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
                 $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$poste', '$photo', '$tel', '$mail')";
                 //echo $requete;
                 $bdd->exec($requete);
+
+                session_start();
+                $_SESSION['messageBureau'] = "Ajout bureau OK";
+
                 header('location: interfaceAdmin.php');
                 exit();
             }

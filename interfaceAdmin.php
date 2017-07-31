@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -13,6 +16,15 @@
     <?php include('enTeteAnnexe.php'); ?>
     <!--fin inclusion-->
 
+    
+    <?php
+    //message confirmation
+    if ($_SESSION['messageTitre']){
+        echo "<script>alert('" .$_SESSION['messageTitre']. "')</script>";
+        session_destroy();
+    }
+    ?>
+
     <form action="modifTitre.php" method="post">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter titre principal</legend>    
@@ -25,6 +37,14 @@
                 </div>            
          </fieldset>
     </form>
+
+    <?php
+    //message confirmation
+    if ($_SESSION['messageArticle']){
+        echo "<script>alert('" .$_SESSION['messageArticle']. "')</script>";
+        session_destroy();
+    }
+    ?>
 
     <form action="modifArticle.php" method="post" enctype="multipart/form-data">
         <fieldset class="col-xs-offset-1 col-xs-10">
@@ -47,6 +67,14 @@
          </fieldset>
     </form>
 
+    <?php
+    //message confirmation
+    if ($_SESSION['messagePhoto']){
+        echo "<script>alert('" .$_SESSION['messagePhoto']. "')</script>";
+        session_destroy();
+    }
+    ?>
+
     <form action="modifPhoto.php" method="post" enctype="multipart/form-data">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter photo caroussel</legend>    
@@ -59,6 +87,14 @@
                 </div>            
          </fieldset>
     </form>
+
+    <?php
+    //message confirmation
+    if ($_SESSION['messageBureau']){
+        echo "<script>alert('" .$_SESSION['messageBureau']. "')</script>";
+        session_destroy();
+    }
+    ?>
 
     <form action="modifBureau.php" method="post" enctype="multipart/form-data">
         <fieldset class="col-xs-offset-1 col-xs-10">
@@ -79,7 +115,7 @@
                 </div>
                 <div class="form-group">
                     <label for="telBureau">Téléphone</label>
-                    <input type="phone" name="telBureau" class="form-control" id="telBureau" pattern="^0[1-9][0-9]{8}$" required>
+                    <input type="phone" name="telBureau" class="form-control" placeholder="ex : 0606060606" id="telBureau" pattern="^0[1-9][0-9]{8}$" required>
                 </div>
                 <div class="form-group">
                     <label for="mailBureau">Email</label>
@@ -129,11 +165,11 @@
             <legend class="text-center">Ajouter joueur</legend>    
                 <div class="form-group">
                     <label for="nomJoueur">Nom</label>
-                    <input type="text" name="nomJoueur" class="form-control" id="nomJoueur">
+                    <input type="text" name="nomJoueur" class="form-control" id="nomJoueur" required>
                 </div>
                 <div class="form-group">
                     <label for="prenomJoueur">Prénom</label>
-                    <input type="text" name="prenomJoueur" class="form-control" id="prenomJoueur">
+                    <input type="text" name="prenomJoueur" class="form-control" id="prenomJoueur" required>
                 </div>
                 <div class="form-group">
                     <label for="photoJoueur">Photo (par défaut logo du club)</label>

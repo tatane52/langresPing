@@ -10,22 +10,26 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
     require_once('connectionBdd.php');
 
     $titre = htmlspecialchars($_POST['title']);
-    $caracteresSpeciaux = ['é', 'è', 'ê', 'ë', 'ï', 'î', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ô', 'ö', 'ç'];
-    $caracteresSpeciauxMaj = ['E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U', 'U', 'O', 'O', 'C'];
+    $caracteresSpeciaux = ['é', 'è', 'ê', 'ë', 'ï', 'î', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ô', 'ö', 'ç', '\''];
+    $caracteresSpeciauxMaj = ['E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U', 'U', 'O', 'O', 'C', ' '];
     //attention str_replace ne fonctionne pas avec htmlentities
     $titreSansCaracSpeciaux = str_replace($caracteresSpeciaux, $caracteresSpeciauxMaj, $titre);
     $titreMajuscule = strtoupper($titreSansCaracSpeciaux);
 
     $contenu = htmlspecialchars($_POST['contenu']);
+    $contenuSansQuote = str_replace('\'', ' ', $contenu);
 
     $nameImage = $_FILES['photoArticle']['name'];
     $imageTemp = $_FILES['photoArticle']['tmp_name'];
 
     if($nameImage == ''){
         $photo = 'logofinal.png';
-        $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenu', '$photo')";
-        //echo $requete;
+        $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$photo')";
         $bdd->exec($requete);
+
+        session_start();
+        $_SESSION['messageArticle'] = "Ajout article OK";
+        
         header('location: interfaceAdmin.php');
         exit();
     }
@@ -71,8 +75,12 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
                 move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenu', '$photo')";
+                $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$photo')";
                 $bdd->exec($requete);
+
+                session_start();
+                $_SESSION['messageArticle'] = "Ajout article OK";
+
                 header('location: interfaceAdmin.php');
                 exit();
             }
