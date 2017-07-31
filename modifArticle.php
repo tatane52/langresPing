@@ -19,12 +19,14 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
     $contenu = htmlspecialchars($_POST['contenu']);
     $contenuSansQuote = str_replace('\'', ' ', $contenu);
 
+    $date = date('Y-m-d');
+
     $nameImage = $_FILES['photoArticle']['name'];
     $imageTemp = $_FILES['photoArticle']['tmp_name'];
 
     if($nameImage == ''){
         $photo = 'logofinal.png';
-        $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$photo')";
+        $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$date', $photo')";
         $bdd->exec($requete);
 
         session_start();
@@ -75,7 +77,7 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
                 move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$photo')";
+                $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$date', '$photo')";
                 $bdd->exec($requete);
 
                 session_start();

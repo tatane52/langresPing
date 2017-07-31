@@ -14,7 +14,7 @@ include('enTeteAnnexe.php');
 
 require_once('connectionBdd.php');
 
-$requete = "SELECT photo,titre,contenu FROM article ORDER BY id_article DESC";
+$requete = "SELECT * FROM article ORDER BY id_article DESC";
 $result = $bdd->query($requete);
     while($donnees = $result->fetch()){
         ?>   
@@ -29,6 +29,13 @@ $result = $bdd->query($requete);
                 <p class="text-center">
                 <?php
                 echo $donnees["contenu"];
+                ?>
+                </p>
+                <p class="text-center">
+                <?php
+                $date = new DateTime($donnees["date_envoi"]);
+                $dateFormat = date_format($date, 'd-m-Y');
+                echo $dateFormat;
                 ?>
                 </p>
             </div>

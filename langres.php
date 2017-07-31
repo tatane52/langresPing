@@ -105,6 +105,16 @@ require_once('connectionBdd.php');
                             echo $donnees["contenu"];
                             ?>
                            </p>
+                           <p class="text-left">
+                            <?php
+                            $requete = "SELECT date_envoi FROM article ORDER BY id_article DESC LIMIT 1";
+                            $result = $bdd->query($requete);         
+                            $donnees = $result->fetch();
+                            $date = new DateTime($donnees["date_envoi"]);
+                            $dateFormat = date_format($date, 'd-m-Y');
+                            echo $dateFormat;
+                            ?>
+                           </p>
 
                         </div>
                     </div>
@@ -139,6 +149,16 @@ require_once('connectionBdd.php');
                             echo $donnees["contenu"];
                             ?>
                             </p>
+                            <p class="text-right">
+                            <?php
+                            $requete = "SELECT date_envoi FROM article ORDER BY id_article DESC LIMIT 1,1";
+                            $result = $bdd->query($requete);         
+                            $donnees = $result->fetch();
+                            $date = new DateTime($donnees["date_envoi"]);
+                            $dateFormat = date_format($date, 'd-m-Y');
+                            echo $dateFormat;
+                            ?>
+                           </p>
 
                         </div>
                     </div>
