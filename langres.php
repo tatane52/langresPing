@@ -21,7 +21,7 @@ require_once('connectionBdd.php');
     <meta name="viewport, width=device-width" />
 </head>
 
-<body>
+<body onload="calendrier()">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -378,7 +378,8 @@ require_once('connectionBdd.php');
                 </div>
                  <div class="row">
                     <div class="col-xs-offset-1 col-xs-10 text-center">
-                        <p id="dateCalendrier"></p>
+                        <p id="dateCalendrier">
+                        </p>
                     </div>
                 </div>
                 <div class="row">
@@ -386,85 +387,16 @@ require_once('connectionBdd.php');
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th></th>
-                                    <th>01 au 10</th>
-                                    <th>11 au 21</th>
-                                    <th>22 au 31</th>
+                                    <th>Lun</th>
+                                    <th>Mar</th>
+                                    <th>Mer</th>
+                                    <th>Jeu</th>
+                                    <th>Ven</th>
+                                    <th>Sam</th>
+                                    <th>Dim</th>
                                 </tr>
                             </thead>
                             <tbody>                
-                                <tr>
-                                    <td>Janvier</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Fevrier</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Mars</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>              
-                                </tr>
-                                <tr>
-                                    <td>Avril</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>                                
-                                </tr>
-                                <tr>
-                                    <td>Mai</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Juin</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Juillet</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Aout</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Septembre</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Octobre</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Novembre</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Decembre</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>

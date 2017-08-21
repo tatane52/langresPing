@@ -26,7 +26,7 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
 
     if($nameImage == ''){
         $photo = 'logofinal.png';
-        $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$date', $photo')";
+        $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$date', '$photo')";
         $bdd->exec($requete);
 
         session_start();
