@@ -17,6 +17,7 @@ if(isset($_POST['send'])){
         session_start();
         $_SESSION['pseudo'] = $pseudo;
         header('location: espaceMembre.php');
+        exit();
     }
     else{
         header('location: connexion.php');

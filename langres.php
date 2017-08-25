@@ -10,10 +10,10 @@ require_once('connectionBdd.php');
     <meta charset="utf-8" />
     <!--bootstrap css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--css-->
+    <!--css général-->
     <link rel="stylesheet" href="langres.css" />
     <!--fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Ranga|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ranga|Roboto" rel="stylesheet">  
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--bootstrap js-->
@@ -21,7 +21,26 @@ require_once('connectionBdd.php');
     <meta name="viewport, width=device-width" />
 </head>
 
-<body onload="calendrier()">
+<body>
+
+<!--fenetre membre js bootstrap-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">N'ayez pas peur c'est gratuit!!!</h4>
+      </div>
+      <div class="modal-body text-center">
+       <img src="balleMembre.png">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>      
+      </div>
+    </div>
+  </div>
+</div>
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -383,7 +402,8 @@ require_once('connectionBdd.php');
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-offset-1 col-xs-10 text-center">
+                   
+                    <!--<div class="col-xs-offset-1 col-xs-10 text-center">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -400,7 +420,7 @@ require_once('connectionBdd.php');
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div>-->
             </div>
         </section>
         <section id="contact">
@@ -497,8 +517,8 @@ require_once('connectionBdd.php');
             </div>
         </div>
     </footer>
-<script src="langres.js"> 
-</script>
+<!--js général-->
+<script src="langres.js"></script>
 </body>
 
 </html>

@@ -25,6 +25,31 @@ session_start();
     }
     ?>
 
+    <form action="modifConvoc.php" method="post">
+        <fieldset class="col-xs-offset-1 col-xs-10">
+            <legend class="text-center">Ajouter convocation</legend>    
+                <div class="form-group">
+                    <label for="mainTitle">Equipe</label>
+                    <input type="text" name="mainTitle" class="form-control" id="equipeConvoc" required>
+                    <label for="mainTitle">Adversaire</label>
+                    <input type="text" name="mainTitle" class="form-control" id="adversaireConvoc" required>
+                    <label for="mainTitle"> Jour</label>
+                    <select>
+                    
+                        
+                    </select>
+                    <label for="mainTitle">Mois</label>
+                    <input type="text" name="mainTitle" class="form-control" id="equipeConvoc" required>
+                    <label for="mainTitle">Equipe</label>
+                    <input type="text" name="mainTitle" class="form-control" id="equipeConvoc" required>
+                
+                </div>
+                <div>
+                    <button type="submit" name="sendTitre" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
+                </div>            
+         </fieldset>
+    </form>
+
     <form action="modifTitre.php" method="post">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter titre principal</legend>    
@@ -185,6 +210,7 @@ session_start();
          </fieldset>
     </form>
 
-
+<script src="interfaceAdmin.js">   
+</script>
 </body>
 </html>
