@@ -7,6 +7,8 @@ session_start();
 <head>
     <meta charset="utf-8"/>
     <title>interface administrateur</title>
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="admin.css" />
 </head>
@@ -29,23 +31,33 @@ session_start();
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter convocation</legend>    
                 <div class="form-group">
-                    <label for="mainTitle">Equipe</label>
-                    <input type="text" name="mainTitle" class="form-control" id="equipeConvoc" required>
-                    <label for="mainTitle">Adversaire</label>
-                    <input type="text" name="mainTitle" class="form-control" id="adversaireConvoc" required>
-                    <label for="mainTitle"> Jour</label>
-                    <select>
-                    
-                        
-                    </select>
-                    <label for="mainTitle">Mois</label>
-                    <input type="text" name="mainTitle" class="form-control" id="equipeConvoc" required>
-                    <label for="mainTitle">Equipe</label>
-                    <input type="text" name="mainTitle" class="form-control" id="equipeConvoc" required>
-                
+                    <label for="equipeConvoc">Equipe</label>
+                    <input type="text" name="equipeConvoc" class="form-control" id="equipeConvoc" required>
                 </div>
+                <div class="form-group">
+                    <label for="adversaireConvoc">Adversaire</label>
+                    <input type="text" name="adversaireConvoc" class="form-control" id="adversaireConvoc" required>
+                </div>
+                <div class="form-group">
+                    <label>Jour</label>
+                    <select id="jour">                      
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mois</label>
+                    <select id="mois">                   
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Joueurs : </label>
+                    <input type="radio" name="joueur" value="trois"> 3 joueurs
+                    <input type="radio" name="joueur" value="quatre"> 4 joueurs
+                    <div id="joueurCache">            
+                    </div>
+                </div>
+
                 <div>
-                    <button type="submit" name="sendTitre" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
+                    <button type="submit" name="sendConvoc" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
                 </div>            
          </fieldset>
     </form>
@@ -212,5 +224,5 @@ session_start();
 
 <script src="interfaceAdmin.js">   
 </script>
-</body>
+</body
 </html>

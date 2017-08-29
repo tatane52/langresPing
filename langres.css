@@ -6,6 +6,10 @@ footer {
     color: white;
 }
 
+#calendar {
+    margin-bottom: 10px;
+}
+
 header {
     position: relative;
     top: 80px;

@@ -18,6 +18,12 @@ require_once('connectionBdd.php');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--bootstrap js-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+    <script src='fullcalendar/lib/moment.min.js'></script>
+    <script src='fullcalendar/fullcalendar.js'></script>
+    <script src='fullcalendar/locale/fr.js'></script>
+    <script src='fullcalendar/functionCalendar.js'></script>>
     <meta name="viewport, width=device-width" />
 </head>
 
@@ -395,32 +401,9 @@ require_once('connectionBdd.php');
                         <h2>CALENDRIER</h2>
                     </div>
                 </div>
-                 <div class="row">
-                    <div class="col-xs-offset-1 col-xs-10 text-center">
-                        <p id="dateCalendrier">
-                        </p>
-                    </div>
-                </div>
                 <div class="row">
-                   
-                    <!--<div class="col-xs-offset-1 col-xs-10 text-center">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Lun</th>
-                                    <th>Mar</th>
-                                    <th>Mer</th>
-                                    <th>Jeu</th>
-                                    <th>Ven</th>
-                                    <th>Sam</th>
-                                    <th>Dim</th>
-                                </tr>
-                            </thead>
-                            <tbody>                
-                            </tbody>
-                        </table>
-                    </div>
-                </div>-->
+                   <div id="calendar"></div>
+
             </div>
         </section>
         <section id="contact">

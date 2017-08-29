@@ -8,7 +8,7 @@ if(isset($_POST['send'])){
     $mdp = $_POST['mdp'];
     
     $requete = "SELECT * FROM membre WHERE pseudo='" .$pseudo. "'";
-
+    
     $result = $bdd->query($requete);
     
     $donnees = $result->fetch();
