@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('model/connectionBdd.php');
+require_once('../model/connectionBdd.php');
 ?>
 <!doctype html>
 <html lang="fr">
@@ -11,7 +11,7 @@ require_once('model/connectionBdd.php');
     <!--bootstrap css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!--css général-->
-    <link rel="stylesheet" href="langres.css" />
+    <link rel="stylesheet" href="../langres.css" />
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Ranga|Roboto" rel="stylesheet">  
     <!--jquery-->
@@ -19,11 +19,11 @@ require_once('model/connectionBdd.php');
     <!--bootstrap js-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--fullcalendar-->
-    <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
-    <script src='fullcalendar/lib/moment.min.js'></script>
-    <script src='fullcalendar/fullcalendar.js'></script>
-    <script src='fullcalendar/locale/fr.js'></script>
-    <script src='fullcalendar/functionCalendar.js'></script>
+    <link rel='stylesheet' href='../fullcalendar/fullcalendar.css' />
+    <script src='../fullcalendar/lib/moment.min.js'></script>
+    <script src='../fullcalendar/fullcalendar.js'></script>
+    <script src='../fullcalendar/locale/fr.js'></script>
+    <script src='../fullcalendar/functionCalendar.js'></script>
 
     <meta name="viewport, width=device-width" />
 </head>
@@ -39,7 +39,7 @@ require_once('model/connectionBdd.php');
         <h4 class="modal-title">N'ayez pas peur c'est gratuit!!!</h4>
       </div>
       <div class="modal-body text-center">
-       <img src="balleMembre.png" alt="devenez membre">
+       <img src="../balleMembre.png" alt="devenez membre">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>      
@@ -70,8 +70,8 @@ require_once('model/connectionBdd.php');
                     <li class="col-xs-6 col-sm-2 lienCalend"><a href="#calendrier">Calendrier</a></li>
                     <li class="col-xs-6 col-sm-2 lienCont"><a href="#contact">Contact</a></li>
                     <li class="col-xs-6 col-sm-2"><a href="http://www.fftt.com/site/"><span class="f">F</span><span class="ft">FT</span><span class="t">T</span></a></li>
-                    <li class="col-xs-6 col-sm-6 "><a href="inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
-                    <li class="col-xs-6 col-sm-6 "><a href="connexion.php"><span class="colorHoverBlue"><span class="glyphicon glyphicon-log-in"></span> Connection</span></a></li>
+                    <li class="col-xs-6 col-sm-6 "><a href="../inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
+                    <li class="col-xs-6 col-sm-6 "><a href="../connexion.php"><span class="colorHoverBlue"><span class="glyphicon glyphicon-log-in"></span> Connection</span></a></li>
                 </ul>
             </div>
         </div>
@@ -91,11 +91,11 @@ require_once('model/connectionBdd.php');
         <div class="row">
             <h2 class="col-xs-12 placement text-center">
             <?php
-            require_once('model/titre/selectionTitre.php');
+            require_once('../model/titre/selectionTitre.php');
             ?>
             </h2>
         </div>       
-        <img src="langresBanniere.jpg" id="banniere" alt="rempard de Langres" title="rempard de Langres" />
+        <img src="../langresBanniere.jpg" id="banniere" alt="rempard de Langres" title="rempard de Langres" />
     </header>
     <!--end header-->
 
@@ -107,7 +107,7 @@ require_once('model/connectionBdd.php');
                     <div class="thumbnail">
                         
                         <?php
-                        require_once('model/articles/selectionPhoto1.php');
+                        require_once('../model/articles/selectionPhoto1.php');
                         ?>
                         
                         <img src="<?php echo $donnees['photo'];?>" alt="photo de tennis de table"/>  
@@ -115,28 +115,28 @@ require_once('model/connectionBdd.php');
                         <div class="caption">
                             <h3 class="colorRed">
                             <?php
-                            require_once('model/articles/selectionTitre1.php');                       
+                            require_once('../model/articles/selectionTitre1.php');                       
                             ?>
                             </h3>
                             <p class="text-center">
                             <?php
-                            require_once('model/articles/selectionContenu1.php');                   
+                            require_once('../model/articles/selectionContenu1.php');                   
                             ?>
                            </p>
                            <p class="text-left">
                             <?php
-                            require_once('model/articles/selectionDate1.php');
+                            require_once('../model/articles/selectionDate1.php');
                             ?>
                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 text-right col-sm-6">
-                    <!--<div class="col-xs-10 col-xs-offset-1 text-right col-sm-4 col-md-4">-->
+                   
                     <div class="thumbnail">
 
                         <?php
-                        require_once('model/articles/selectionPhoto2.php');
+                        require_once('../model/articles/selectionPhoto2.php');
                         ?>
                         
                         <img src="<?php echo $donnees['photo'];?>" alt="photo de ping pong"/>
@@ -144,17 +144,17 @@ require_once('model/connectionBdd.php');
                         <div class="caption">
                             <h3 class="colorBlue">
                             <?php
-                            require_once('model/articles/selectionTitre2.php');                       
+                            require_once('../model/articles/selectionTitre2.php');                       
                             ?>
                             </h3>
                             <p class="text-center">
                             <?php
-                            require_once('model/articles/selectionContenu2.php');
+                            require_once('../model/articles/selectionContenu2.php');
                             ?>
                             </p>
                             <p class="text-right">
                             <?php
-                            require_once('model/articles/selectionDate2.php');
+                            require_once('../model/articles/selectionDate2.php');
                             ?>
                            </p>
 
@@ -164,7 +164,7 @@ require_once('model/connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 text-center">
-                        <a href="articles.php"><button type="button" class="btn btn-default btn-block">Voir les derniers articles</button></a>
+                        <a href="../articles.php"><button type="button" class="btn btn-default btn-block">Voir les derniers articles</button></a>
                     </div>
                 </div>
 
@@ -182,19 +182,19 @@ require_once('model/connectionBdd.php');
                             <div class="carousel-inner" role="listbox">
                                 <div class="item active">
                                     <?php
-                                    require_once('model/photos/selectionCarousel1.php');
+                                    require_once('../model/photos/selectionCarousel1.php');
                                     ?>
                                     <img src="<?php echo $donnees['cheminPhoto'];?>" alt="photo du club"/>
                                 </div>
                                 <div class="item">
                                     <?php
-                                    require_once('model/photos/selectionCarousel2.php');
+                                    require_once('../model/photos/selectionCarousel2.php');
                                     ?>
                                     <img src="<?php echo $donnees['cheminPhoto'];?>" alt="photo de joueurs"/>
                                 </div>
                                 <div class="item">
                                     <?php
-                                    require_once('model/photos/selectionCarousel3.php');
+                                    require_once('../model/photos/selectionCarousel3.php');
                                     ?>
                                     <img src="<?php echo $donnees['cheminPhoto'];?>" alt="photo evenement"/>
                                 </div>
@@ -214,7 +214,7 @@ require_once('model/connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 text-center">
-                        <a href="photos.php"><button type="button" class="btn btn-default btn-block">Voir les dernières photos</button></a>
+                        <a href="../photos.php"><button type="button" class="btn btn-default btn-block">Voir les dernières photos</button></a>
                     </div>
                 </div>
             </div>
@@ -232,15 +232,15 @@ require_once('model/connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <img src="raquettefinal.png" alt="raquette de ping"/>
+                        <img src="../raquettefinal.png" alt="raquette de ping"/>
                         <p class="histo-para">- Le club de Langres a vu le jour en 1992 et est affilié à la FFTT depuis 1996</br>
                         </br>
                         - Il est fondé par Pierre GARNIER, Jean-Marie DANJOU et Pascal VALENTIN</br>
                         </p>
 
-                        <img src="gymnase1.jpg" class="img-circle img-gymnase1" alt="photo du gymnase"/>
-                        <img src="gymnase2.jpg" class="img-circle img-gymnase2" alt="photo du gymnase"/>
-                        <img src="gymnase3.jpg" class="img-circle img-gymnase3" alt="photo du gymnase"/>
+                        <img src="../gymnase1.jpg" class="img-circle img-gymnase1" alt="photo du gymnase"/>
+                        <img src="../gymnase2.jpg" class="img-circle img-gymnase2" alt="photo du gymnase"/>
+                        <img src="../gymnase3.jpg" class="img-circle img-gymnase3" alt="photo du gymnase"/>
                     </div>
                 </div>
             </div>
@@ -265,18 +265,18 @@ require_once('model/connectionBdd.php');
                         <div class="col-xs-4">
                             <div class="thumbnail">
                                 <?php
-                                require_once('model/bureau/selectionPhotoTresorier.php');   
+                                require_once('../model/bureau/selectionPhotoTresorier.php');   
                                 ?>
                                 <img src="<?php echo $donnees['photo'];?>" alt="trésorier"/>
                                 <div class="caption">
                                     <p class="text-center">TRESORIER</p>
                                     <p class="text-center">
                                     <?php
-                                    require_once('model/bureau/selectionPrenomTresorier.php');
+                                    require_once('../model/bureau/selectionPrenomTresorier.php');
                                     ?>
                                     </br>
                                     <?php
-                                    require_once('model/bureau/selectionNomTresorier.php');
+                                    require_once('../model/bureau/selectionNomTresorier.php');
                                     ?>
                                     </p>
                                 </div>
@@ -285,18 +285,18 @@ require_once('model/connectionBdd.php');
                         <div class="col-xs-4">
                             <div class="thumbnail">
                                 <?php
-                                    require_once('model/bureau/selectionPhotoPresident.php');
+                                    require_once('../model/bureau/selectionPhotoPresident.php');
                                 ?>
                                 <img src="<?php echo $donnees['photo'];?>" alt="president"/>
                                 <div class="caption">
                                     <p class="text-center">PRESIDENT</p>
                                     <p class="text-center">
                                     <?php
-                                    require_once('model/bureau/selectionPrenomPresident.php');                                  
+                                    require_once('../model/bureau/selectionPrenomPresident.php');                                  
                                     ?>
                                     </br>
                                     <?php
-                                    require_once('model/bureau/selectionNomPresident.php');
+                                    require_once('../model/bureau/selectionNomPresident.php');
                                     ?>
                                     </p>
                                 </div>
@@ -305,18 +305,18 @@ require_once('model/connectionBdd.php');
                         <div class="col-xs-4">
                             <div class="thumbnail">
                                 <?php
-                                require_once('model/bureau/selectionPhotoSecretaire.php');                                   
+                                require_once('../model/bureau/selectionPhotoSecretaire.php');                                   
                                 ?>
                                 <img src="<?php echo $donnees['photo'];?>" alt="secrétaire"/>
                                 <div class="caption">
                                     <p class="text-center">SECRETAIRE</p>
                                     <p class="text-center">
                                     <?php
-                                    require_once('model/bureau/selectionPrenomSecretaire.php');                               
+                                    require_once('../model/bureau/selectionPrenomSecretaire.php');                               
                                     ?>
                                     </br>
                                     <?php
-                                    require_once('model/bureau/selectionNomSecretaire.php');
+                                    require_once('../model/bureau/selectionNomSecretaire.php');
                                     ?>
                                     </p>
                                 </div>
@@ -331,12 +331,12 @@ require_once('model/connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-1 col-xs-10 thumbnail">
-                        <img src="joueurs.jpg" alt="equipe de joueurs"/>
+                        <img src="../joueurs.jpg" alt="equipe de joueurs"/>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 text-center">
-                        <a href="joueurs.php" <button type="button" class="btn btn-default btn-block">Découvrir nos joueurs</button></a>
+                        <a href="../joueurs.php" <button type="button" class="btn btn-default btn-block">Découvrir nos joueurs</button></a>
                     </div>
                 </div>
             </div>
@@ -371,34 +371,34 @@ require_once('model/connectionBdd.php');
                     <div class="col-xs-offset-2 col-xs-8 text-center">
                         <p>Président :
                         <?php
-                        require_once('model/bureau/selectionTelPresident.php');                        
+                        require_once('../model/bureau/selectionTelPresident.php');                        
                         ?>
                         ou 
                         <?php
-                        require_once('model/bureau/selectionMailPresident.php');                        
+                        require_once('../model/bureau/selectionMailPresident.php');                        
                         ?>
                         <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
                         <p>Trésorier :
                         <?php 
-                        require_once('model/bureau/selectionTelTresorier.php');                      
+                        require_once('../model/bureau/selectionTelTresorier.php');                      
                         ?> 
                         ou 
                         <?php
-                        require_once('model/bureau/selectionMailTresorier.php');                     
+                        require_once('../model/bureau/selectionMailTresorier.php');                     
                         ?>
                         <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
                         <p>Secrétaire : 
                         <?php
-                        require_once('model/bureau/selectionTelSecretaire.php');                       
+                        require_once('../model/bureau/selectionTelSecretaire.php');                       
                         ?> 
                         ou 
                         <?php 
-                        require_once('model/bureau/selectionMailSecretaire.php');                     
+                        require_once('../model/bureau/selectionMailSecretaire.php');                     
                         ?>
                         <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
                         <p>Adresse gymnase : 
                         <?php
-                        require_once('model/gymnase/selectionGymnase.php'); 
+                        require_once('../model/gymnase/selectionGymnase.php'); 
                         ?>
                         </p>
                     </div>
@@ -419,29 +419,29 @@ require_once('model/connectionBdd.php');
         <div class="row margeTopFooter">
             <div class="col-xs-3 premierePartie">              
                 <p><a class="colorRed" href="#">Acceuil</a></p>
-                <p><a class="colorRed" href="articles.php">- Articles</a></p>
-                <p><a class="colorRed" href="photos.php">- Photos</a></p>
+                <p><a class="colorRed" href="../articles.php">- Articles</a></p>
+                <p><a class="colorRed" href="../photos.php">- Photos</a></p>
                 <p><a class="colorRed lienHisto" href="#historique">Historique</a></p>
                 <p><a class="colorRed lienEffect" href="#effectif">Effectif</a></p>
-                <p><a class="colorRed" href="joueurs.php">- Joueurs</a></p>
+                <p><a class="colorRed" href="../joueurs.php">- Joueurs</a></p>
             </div>
             <div class="col-xs-3 deuxiemePartie">         
                 <p><a class="colorBlue lienCalend" href="#calendrier">Calendrier</a></p>
                 <p><a class="colorBlue lienCont" href="#contact">Contact</a></p>
                 <p><a class="colorBlue" href="http://www.fftt.com/site/">FFTT</a></p>
-                <p><a class="colorBlue" href="inscription.php">Inscription</a></p>
-                <p><a class="colorBlue" href="connexion.php">Connection</a></p>
+                <p><a class="colorBlue" href="../inscription.php">Inscription</a></p>
+                <p><a class="colorBlue" href="../connexion.php">Connection</a></p>
             </div>
 
             <div class="col-xs-6 text-right">
-                <p><img src="minionPing.gif" alt="image animee minions ping"/></p>
+                <p><img src="../minionPing.gif" alt="image animee minions ping"/></p>
             </div>
         </div>
     </footer>
     <!--end footer-->
 
 <!--js général-->
-<script src="langres.js"></script>
+<script src="../langres.js"></script>
 </body>
 
 </html>

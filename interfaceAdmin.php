@@ -19,13 +19,7 @@ session_start();
     <!--fin inclusion-->
 
     
-    <?php
-    //message confirmation
-    if ($_SESSION['messageTitre']){
-        echo "<script>alert('" .$_SESSION['messageTitre']. "')</script>";
-        session_destroy();
-    }
-    ?>
+    
 
     <form action="modifConvoc.php" method="post">
         <fieldset class="col-xs-offset-1 col-xs-10">
@@ -37,6 +31,10 @@ session_start();
                 <div class="form-group">
                     <label for="adversaireConvoc">Adversaire</label>
                     <input type="text" name="adversaireConvoc" class="form-control" id="adversaireConvoc" required>
+                </div>
+                <div class="form-group">
+                    <label for="commentaireConvoc">Adversaire</label>
+                    <input type="text" name="commentaireConvoc" class="form-control" id="commentaireConvoc" r>
                 </div>
                 <div class="form-group">
                     <label>Jour</label>
@@ -61,6 +59,14 @@ session_start();
                 </div>            
          </fieldset>
     </form>
+
+    <?php
+    //message confirmation
+    if ($_SESSION['messageTitre']){
+        echo "<script>alert('" .$_SESSION['messageTitre']. "')</script>";
+        session_destroy();
+    }
+    ?>
 
     <form action="modifTitre.php" method="post">
         <fieldset class="col-xs-offset-1 col-xs-10">
@@ -201,6 +207,14 @@ session_start();
          </fieldset>
     </form>
 
+    <?php
+    //message confirmation
+    if ($_SESSION['messageJoueur']){
+        echo "<script>alert('" .$_SESSION['messageJoueur']. "')</script>";
+        session_destroy();
+    }
+    ?>
+    
     <form action="modifJoueur.php" method="post" enctype="multipart/form-data">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter joueur</legend>    

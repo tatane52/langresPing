@@ -68,12 +68,16 @@ if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['
                 //echo $imageTemp. "</br>";
                 $imageChiffre = replaceRandom($nameImage);
                 //echo $imageChiffre;
-                move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
+                move_uploaded_file($imageTemp, "vue/$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
                 $requete = "INSERT INTO joueur VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$photo')";
                 //echo $requete;
                 $bdd->exec($requete);
+
+                session_start();
+                $_SESSION['messageJoueur'] = "Ajout joueur OK";
+
                 header('location: interfaceAdmin.php');
                 exit();
             }

@@ -83,7 +83,7 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
                 //echo $imageTemp. "</br>";
                 $imageChiffre = replaceRandom($nameImage);
                 //echo $imageChiffre;
-                move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
+                move_uploaded_file($imageTemp, "vue/$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
                 $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$poste', '$photo', '$tel', '$mail')";
