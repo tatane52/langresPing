@@ -74,7 +74,7 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
                 //echo $imageTemp. "</br>";
                 $imageChiffre = replaceRandom($nameImage);
                 //echo $imageChiffre;
-                move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
+                move_uploaded_file($imageTemp, "vue/$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
                 $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$date', '$photo')";
