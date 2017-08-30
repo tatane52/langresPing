@@ -104,6 +104,5 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
 }
 else{
     header('location: interfaceAdmin.php');
-    exit();
 }
 ?>

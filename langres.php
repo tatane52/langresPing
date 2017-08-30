@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('connectionBdd.php');
+require_once('model/connectionBdd.php');
 ?>
 <!doctype html>
 <html lang="fr">
@@ -18,12 +18,13 @@ require_once('connectionBdd.php');
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--bootstrap js-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <!--fullcalendar-->
     <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
     <script src='fullcalendar/lib/moment.min.js'></script>
     <script src='fullcalendar/fullcalendar.js'></script>
     <script src='fullcalendar/locale/fr.js'></script>
-    <script src='fullcalendar/functionCalendar.js'></script>>
+    <script src='fullcalendar/functionCalendar.js'></script>
+
     <meta name="viewport, width=device-width" />
 </head>
 
@@ -38,7 +39,7 @@ require_once('connectionBdd.php');
         <h4 class="modal-title">N'ayez pas peur c'est gratuit!!!</h4>
       </div>
       <div class="modal-body text-center">
-       <img src="balleMembre.png">
+       <img src="balleMembre.png" alt="devenez membre">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>      
@@ -46,7 +47,7 @@ require_once('connectionBdd.php');
     </div>
   </div>
 </div>
-
+    <!--navbar-->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -57,7 +58,7 @@ require_once('connectionBdd.php');
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                   <img alt="Brand" id="monLogo" src="logofinal.png"/> 
+                   <img alt="logo du club" id="monLogo" src="logofinal.png"/> 
                 </a>
                 <h1>BBLangres</h1>
             </div>
@@ -75,6 +76,7 @@ require_once('connectionBdd.php');
             </div>
         </div>
     </nav>
+    <!--end navbar-->
 
     <?php
     //message confirmation
@@ -84,25 +86,24 @@ require_once('connectionBdd.php');
     }
     ?>
 
+    <!--header-->
     <header class="container">
         <div class="row">
             <h2 class="col-xs-12 placement text-center">
-            <?php 
-            $requete = "SELECT titre FROM site ORDER BY id_site DESC LIMIT 1";
-            $result = $bdd->query($requete);                    
-                $donnees = $result->fetch();
-                echo $donnees["titre"];
+            <?php
+            require_once('model/selectionTitre.php');
             ?>
             </h2>
         </div>       
-        <img src="langresBanniere.jpg" id="banniere" alt="rempard de la ville" title="rempard de la ville" />
+        <img src="langresBanniere.jpg" id="banniere" alt="rempard de Langres" title="rempard de Langres" />
     </header>
+    <!--end header-->
 
     <main>
+        <!--section presentation-->
         <section id="presentation">
             <div class="container">
                 <div class="col-xs-12 text-left col-sm-6">
-                    <!--<div class="col-xs-10 col-xs-offset-1 text-left col-sm-4 col-md-4">-->
                     <div class="thumbnail">
                         
                         <?php
@@ -253,7 +254,9 @@ require_once('connectionBdd.php');
             </div>
 
         </section>
+        <!--end section presentation-->
 
+        <!--section historique-->
         <section id="historique">
             <div class="container">
                 <div class="row">
@@ -276,7 +279,9 @@ require_once('connectionBdd.php');
                 </div>
             </div>
         </section>
+        <!--end section historique-->
 
+        <!--section effectif-->
         <section id="effectif">
             <div class="container">
                 <div class="row">
@@ -394,6 +399,9 @@ require_once('connectionBdd.php');
                 </div>
             </div>
         </section>
+        <!--end section effectif-->
+
+        <!--section calendrier-->
         <section id="calendrier">
             <div class="container">
                 <div class="row">
@@ -406,6 +414,9 @@ require_once('connectionBdd.php');
 
             </div>
         </section>
+        <!--end section calendrier-->
+
+        <!--section contact-->
         <section id="contact">
             <div class="container">
                 <div class="row">
@@ -476,7 +487,10 @@ require_once('connectionBdd.php');
                     </div>
                 </div>
         </section>
+        <!--end section contact-->
     </main>
+
+    <!--footer-->
     <footer class="container-fluid">
         <div class="row margeTopFooter">
             <div class="col-xs-3 premierePartie">              
@@ -500,6 +514,8 @@ require_once('connectionBdd.php');
             </div>
         </div>
     </footer>
+    <!--end footer-->
+
 <!--js général-->
 <script src="langres.js"></script>
 </body>

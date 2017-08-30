@@ -3,7 +3,7 @@
 
 if(isset($_POST['send']) && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['mdp']) && !empty($_POST['confirmMdp']) && !empty($_POST['pseudo']) && !empty($_POST['mail'])){
 
-    require_once('connectionBdd.php');
+    require_once('model/connectionBdd.php');
     $nom = htmlentities($_POST['nom']);
 
     $prenom = htmlentities($_POST['prenom']);

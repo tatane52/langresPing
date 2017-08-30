@@ -1,6 +1,6 @@
  <?php 
 session_start();
-require_once('connectionBdd.php');
+require_once('model/connectionBdd.php');
 ?>
 <!DOCTYPE html>
 <html>
