@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <title>espace membre</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="membre.css">
+    <link rel="stylesheet" href="../css/membre.css">
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
@@ -69,7 +69,7 @@ session_start();
             </div>
             <div class="row talk col-xs-offset-2 col-xs-8">
                 <?php
-                    require_once('model/connectionBdd.php');
+                    require_once('../model/connectionBdd.php');
                     $requeteSelect = "SELECT * FROM tchat ORDER BY id_tchat DESC LIMIT 10";
                     $result = $bdd->query($requeteSelect);
                     while($donnees = $result->fetch()){
@@ -87,7 +87,7 @@ session_start();
                 ?>            
             </div>
             <div class="row send col-xs-offset-2 col-xs-8 text-center">
-                <form method="post" action="tchat.php">
+                <form method="post" action="../traitementTchat.php">
                     <textarea id="messageAjax" name="message"></textarea></br>
                     <button id="sendAjax" type="submit" name="send">Envoyer</button>        
                 </form>
@@ -104,7 +104,7 @@ session_start();
 
 
     </main>
-<script src="espaceMembre.js"> 
+<script src="../js/espaceMembre.js"> 
 </script>   
 </body>
 </html>

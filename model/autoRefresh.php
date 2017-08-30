@@ -17,4 +17,3 @@ while($donnees = $result->fetch()) {
     }
     
 }   
-?>

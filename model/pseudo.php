@@ -12,4 +12,3 @@ while ($donnee = $result->fetch()) {
     }
 }    
 
-?>

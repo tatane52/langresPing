@@ -7,7 +7,7 @@ function replaceRandom($nameImage){
         }
 
 if(isset($_POST['sendPhoto'])){
-    require_once('model/connectionBdd.php');
+    require_once('connectionBdd.php');
     $nameImage = $_FILES['photoCaroussel']['name'];
     $imageTemp = $_FILES['photoCaroussel']['tmp_name'];
 
@@ -20,7 +20,7 @@ if(isset($_POST['sendPhoto'])){
         session_start();
         $_SESSION['messagePhoto'] = "Ajout photo ok";
 
-        header('location: interfaceAdmin.php');
+        header('location: ../vue/interfaceAdmin.php');
         exit();
     }
     else{
@@ -62,7 +62,7 @@ if(isset($_POST['sendPhoto'])){
                 //echo $imageTemp. "</br>";
                 $imageChiffre = replaceRandom($nameImage);
                 //echo $imageChiffre;
-                move_uploaded_file($imageTemp, "vue/$dossierImage/$imageChiffre");
+                move_uploaded_file($imageTemp, "../vue/$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
                 $requete = "INSERT INTO photo VALUES (null, '$photo')";
@@ -71,7 +71,7 @@ if(isset($_POST['sendPhoto'])){
                 session_start();
                 $_SESSION['messagePhoto'] = "Ajout photo ok";
 
-                header('location: interfaceAdmin.php');
+                header('location: ../vue/interfaceAdmin.php');
                 exit();
             }
 	        else{
@@ -82,7 +82,6 @@ if(isset($_POST['sendPhoto'])){
 
 }
 else{
-    header('location: interfaceAdmin.php');
+    header('location: ../vue/interfaceAdmin.php');
     exit();
 }
-?>

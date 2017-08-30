@@ -4,7 +4,7 @@
     <title>articles</title>
     <meta charset="utf_8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../photos.css">
+    <link rel="stylesheet" type="text/css" href="../css/photos.css">
 </head>
 <body>
 <?php

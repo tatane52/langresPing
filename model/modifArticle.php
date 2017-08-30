@@ -7,7 +7,7 @@ function replaceRandom($nameImage){
         }
 
 if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['contenu'])){
-    require_once('model/connectionBdd.php');
+    require_once('connectionBdd.php');
 
     $titre = htmlspecialchars($_POST['title']);
     $caracteresSpeciaux = ['é', 'è', 'ê', 'ë', 'ï', 'î', 'ô', 'ö', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ç', '\''];
@@ -32,7 +32,7 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
         session_start();
         $_SESSION['messageArticle'] = "Ajout article OK";
         
-        header('location: interfaceAdmin.php');
+        header('location: ../vue/interfaceAdmin.php');
         exit();
     }
     else{
@@ -74,7 +74,7 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
                 //echo $imageTemp. "</br>";
                 $imageChiffre = replaceRandom($nameImage);
                 //echo $imageChiffre;
-                move_uploaded_file($imageTemp, "vue/$dossierImage/$imageChiffre");
+                move_uploaded_file($imageTemp, "../vue/$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
                 $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$date', '$photo')";
@@ -83,7 +83,7 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
                 session_start();
                 $_SESSION['messageArticle'] = "Ajout article OK";
 
-                header('location: interfaceAdmin.php');
+                header('location: ../vue/interfaceAdmin.php');
                 exit();
             }
 	        else{
@@ -93,8 +93,8 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
     }
 }
 else{
-    header('location: interfaceAdmin.php');
+    header('location: ../vue/interfaceAdmin.php');
     exit();
 }
 
-?>
+

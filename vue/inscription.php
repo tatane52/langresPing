@@ -1,6 +1,6 @@
  <?php 
 session_start();
-require_once('model/connectionBdd.php');
+require_once('../model/connectionBdd.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@ require_once('model/connectionBdd.php');
     <meta charset="UTF-8">
     <title>inscription ping</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="inscription.css" />
+    <link rel="stylesheet" href="../css/inscription.css" />
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
@@ -23,7 +23,7 @@ require_once('model/connectionBdd.php');
         <p>(*) : données à remplir obligatoirement</p>
     </div>
 
-    <form method="post" action="resultInscription.php">
+    <form method="post" action="../resultInscription.php">
 
         <div class="form-group col-xs-offset-2 col-xs-8">
             <label for="name">Nom(*) :</label>
@@ -49,26 +49,17 @@ require_once('model/connectionBdd.php');
             <div id="analysePseudo"></div>
         </div>
         
-        <!--<div class="form-group col-xs-offset-2 col-xs-8">
-            <label for="phone">N° tel :</label>
-            <input type="tel" class="form-control" id="phone" placeholder="0505050505" pattern="^0[1-9][0-9]{8}$">
-        </div>-->
         <div class="form-group col-xs-offset-2 col-xs-8">
             <label for="email">Email(*) :</label>
             <input type="email" name="mail" class="form-control" id="email" pattern="^[a-z0-9.-_]+@[a-z0-9.-_]{2,}\.[a-z]{2,4}$" required>
         </div>
 
-        
-        <!--<div class="form-group col-xs-offset-2 col-xs-8">
-            <label for="message">Message :</label></br>
-            <textarea id="message" placeholder="agrandissez le cadre avec le coin bas/droite" resize="both"></textarea>
-        </div>-->
         <button type="submit" name="send" id="submit" class="btn-primary col-xs-offset-2 col-xs-3">Envoyer</button>
         <button type="reset" class="btn-danger col-xs-offset-2 col-xs-3">Reset</button>
     </form>
 
     
-    <script src="inscription.js">
+    <script src="../js/inscription.js">
     </script>
 </body>
 </html>

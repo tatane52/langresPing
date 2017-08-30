@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['sendTitre']) && !empty($_POST['mainTitle'])){
-    require_once('model/connectionBdd.php');
+    require_once('connectionBdd.php');
     $titre = htmlspecialchars($_POST['mainTitle']);
     $caracteresSpeciaux = ['é', 'è', 'ê', 'ë', 'ï', 'î', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ô', 'ö', 'ç', '\''];
     $caracteresSpeciauxMaj = ['E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U', 'U', 'O', 'O', 'C', ' '];
@@ -15,12 +15,12 @@ if(isset($_POST['sendTitre']) && !empty($_POST['mainTitle'])){
     session_start();
     $_SESSION['messageTitre'] = "Changement titre OK";
 
-    header('location: interfaceAdmin.php');
+    header('location: ../vue/interfaceAdmin.php');
     exit();
 }
 else{
-    header('location: interfaceAdmin.php');
+    header('location: ../vue/interfaceAdmin.php');
     exit();
 }
 
-?>
+

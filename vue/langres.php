@@ -11,7 +11,7 @@ require_once('../model/connectionBdd.php');
     <!--bootstrap css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!--css général-->
-    <link rel="stylesheet" href="../langres.css" />
+    <link rel="stylesheet" href="../css/langres.css" />
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Ranga|Roboto" rel="stylesheet">  
     <!--jquery-->
@@ -70,8 +70,8 @@ require_once('../model/connectionBdd.php');
                     <li class="col-xs-6 col-sm-2 lienCalend"><a href="#calendrier">Calendrier</a></li>
                     <li class="col-xs-6 col-sm-2 lienCont"><a href="#contact">Contact</a></li>
                     <li class="col-xs-6 col-sm-2"><a href="http://www.fftt.com/site/"><span class="f">F</span><span class="ft">FT</span><span class="t">T</span></a></li>
-                    <li class="col-xs-6 col-sm-6 "><a href="../inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
-                    <li class="col-xs-6 col-sm-6 "><a href="../connexion.php"><span class="colorHoverBlue"><span class="glyphicon glyphicon-log-in"></span> Connection</span></a></li>
+                    <li class="col-xs-6 col-sm-6 "><a href="inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
+                    <li class="col-xs-6 col-sm-6 "><a href="connexion.php"><span class="colorHoverBlue"><span class="glyphicon glyphicon-log-in"></span> Connection</span></a></li>
                 </ul>
             </div>
         </div>
@@ -441,7 +441,7 @@ require_once('../model/connectionBdd.php');
     <!--end footer-->
 
 <!--js général-->
-<script src="../langres.js"></script>
+<script src="../js/langres.js"></script>
 </body>
 
 </html>

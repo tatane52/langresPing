@@ -10,7 +10,7 @@ session_start();
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
 </head>
 
 <body>
@@ -21,7 +21,7 @@ session_start();
     
     
 
-    <form action="modifConvoc.php" method="post">
+    <form action="../model/modifConvoc.php" method="post">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter convocation</legend>    
                 <div class="form-group">
@@ -68,7 +68,7 @@ session_start();
     }
     ?>
 
-    <form action="modifTitre.php" method="post">
+    <form action="../model/modifTitre.php" method="post">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter titre principal</legend>    
                 <div class="form-group">
@@ -89,7 +89,7 @@ session_start();
     }
     ?>
 
-    <form action="modifArticle.php" method="post" enctype="multipart/form-data">
+    <form action="../model/modifArticle.php" method="post" enctype="multipart/form-data">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter article</legend>    
                 <div class="form-group">
@@ -118,7 +118,7 @@ session_start();
     }
     ?>
 
-    <form action="modifPhoto.php" method="post" enctype="multipart/form-data">
+    <form action="../model/modifPhoto.php" method="post" enctype="multipart/form-data">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter photo caroussel</legend>    
                 <div class="form-group">
@@ -139,7 +139,7 @@ session_start();
     }
     ?>
 
-    <form action="modifBureau.php" method="post" enctype="multipart/form-data">
+    <form action="../model/modifBureau.php" method="post" enctype="multipart/form-data">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter bureau</legend>    
                 <div class="form-group">
@@ -182,7 +182,7 @@ session_start();
     }
     ?>
 
-    <form action="modifGymnase.php" method="post">
+    <form action="../model/modifGymnase.php" method="post">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter gymnase</legend>    
                 <div class="form-group">
@@ -215,7 +215,7 @@ session_start();
     }
     ?>
     
-    <form action="modifJoueur.php" method="post" enctype="multipart/form-data">
+    <form action="../model/modifJoueur.php" method="post" enctype="multipart/form-data">
         <fieldset class="col-xs-offset-1 col-xs-10">
             <legend class="text-center">Ajouter joueur</legend>    
                 <div class="form-group">
@@ -236,7 +236,7 @@ session_start();
          </fieldset>
     </form>
 
-<script src="interfaceAdmin.js">   
+<script src="../js/interfaceAdmin.js">   
 </script>
 </body
 </html>

@@ -6,34 +6,49 @@ function replaceRandom($nameImage){
             return $chiffreDebut.$nameImage;
         }
 
-if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['prenomJoueur'])){
-    require_once('model/connectionBdd.php');
+if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['prenomBureau']) && !empty($_POST['telBureau']) && !empty($_POST['mailBureau'])){
+    require_once('connectionBdd.php');
     //htmlentities ne marche pas avec str_replace
-    $nom = htmlspecialchars($_POST['nomJoueur']);  
+    $nom = htmlspecialchars($_POST['nomBureau']);  
     $accents = array('é', 'è', 'ê', 'ë', 'ï', 'î', 'ô', 'ö', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ç', '\'');
     $accentsMaj = array('E', 'E', 'E', 'E', 'I', 'I', 'O', 'O', 'A', 'A', 'A', 'U', 'U', 'U', 'C', ' ');
     $nomSansAccent = str_replace($accents, $accentsMaj, $nom);  
     $nomMaj = strtoupper($nomSansAccent);
-
-    $prenom = htmlspecialchars($_POST['prenomJoueur']);
+    $prenom = htmlspecialchars($_POST['prenomBureau']);
     $prenomFirstLetterMaj = ucfirst($prenom);
+    $tel = $_POST['telBureau'];
+    $mail = $_POST['mailBureau'];
     
-    $nameImage = $_FILES['photoJoueur']['name'];
-    $imageTemp = $_FILES['photoJoueur']['tmp_name'];
+    if($_POST['poste'] == "president"){
+        $poste = "PRESIDENT";
+    }
+    else if($_POST['poste'] == "tresorier"){
+        $poste = "TRESORIER";
+    }
+    else{
+        $poste = "SECRETAIRE";
+    }
+
+    $nameImage = $_FILES['photoBureau']['name'];
+    $imageTemp = $_FILES['photoBureau']['tmp_name'];
 
     if($nameImage == ''){
         $photo = 'logofinal.png';
-        $requete = "INSERT INTO joueur VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$photo')";
+        $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$poste', '$photo', '$tel', '$mail')";
         //echo $requete;
         $bdd->exec($requete);
-        header('location: interfaceAdmin.php');
+
+        session_start();
+        $_SESSION['messageBureau'] = "Ajout bureau OK";
+
+        header('location: ../vue/interfaceAdmin.php');
         exit();
     }
     else{
         //CONTROLE FICHIER//
-	    if($_FILES['photoJoueur']['error'] != 0){
+	    if($_FILES['photoBureau']['error'] != 0){
 		    //CONTROLE ERREUR
-		    switch($_FILES['photoJoueur']['error']){
+		    switch($_FILES['photoBureau']['error']){
 		        case 1 :
 			        echo 'Le fichier est trop lourd';
 			        break;
@@ -68,17 +83,17 @@ if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['
                 //echo $imageTemp. "</br>";
                 $imageChiffre = replaceRandom($nameImage);
                 //echo $imageChiffre;
-                move_uploaded_file($imageTemp, "vue/$dossierImage/$imageChiffre");
+                move_uploaded_file($imageTemp, "../vue/$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "INSERT INTO joueur VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$photo')";
+                $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$poste', '$photo', '$tel', '$mail')";
                 //echo $requete;
                 $bdd->exec($requete);
 
                 session_start();
-                $_SESSION['messageJoueur'] = "Ajout joueur OK";
+                $_SESSION['messageBureau'] = "Ajout bureau OK";
 
-                header('location: interfaceAdmin.php');
+                header('location: ../vue/interfaceAdmin.php');
                 exit();
             }
 	        else{
@@ -88,7 +103,5 @@ if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['
     }
 }
 else{
-    header('location: interfaceAdmin.php');
-    exit();
+    header('location: ../vue/interfaceAdmin.php');
 }
-?>

@@ -16,11 +16,10 @@ if(isset($_POST['send'])){
     if(password_verify($mdp, $donnees['mdp'])){
         session_start();
         $_SESSION['pseudo'] = $pseudo;
-        header('location: espaceMembre.php');
+        header('location: vue/espaceMembre.php');
         exit();
     }
     else{
-        header('location: connexion.php');
+        header('location: vue/connexion.php');
     }
 };
-?>
