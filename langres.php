@@ -91,7 +91,7 @@ require_once('model/connectionBdd.php');
         <div class="row">
             <h2 class="col-xs-12 placement text-center">
             <?php
-            require_once('model/selectionTitre.php');
+            require_once('model/titre/selectionTitre.php');
             ?>
             </h2>
         </div>       
@@ -182,27 +182,21 @@ require_once('model/connectionBdd.php');
                             <div class="carousel-inner" role="listbox">
                                 <div class="item active">
                                     <?php
-                                    $requete = "SELECT cheminPhoto FROM photo ORDER BY id_photo DESC LIMIT 1";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
+                                    require_once('model/photos/selectionCarousel1.php');
                                     ?>
-                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt=""/>
+                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt="photo du club"/>
                                 </div>
                                 <div class="item">
                                     <?php
-                                    $requete = "SELECT cheminPhoto FROM photo ORDER BY id_photo DESC LIMIT 1,1";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
+                                    require_once('model/photos/selectionCarousel2.php');
                                     ?>
-                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt=""/>
+                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt="photo de joueurs"/>
                                 </div>
                                 <div class="item">
                                     <?php
-                                    $requete = "SELECT cheminPhoto FROM photo ORDER BY id_photo DESC LIMIT 2,1";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
+                                    require_once('model/photos/selectionCarousel3.php');
                                     ?>
-                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt=""/>
+                                    <img src="<?php echo $donnees['cheminPhoto'];?>" alt="photo evenement"/>
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-ping" role="button" data-slide="prev">
@@ -238,15 +232,15 @@ require_once('model/connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <img src="raquettefinal.png" alt=""/>
-                        <p class="histo-para">- Le club de Langres a vu le jour le 23 juillet 1974</br>
+                        <img src="raquettefinal.png" alt="raquette de ping"/>
+                        <p class="histo-para">- Le club de Langres a vu le jour en 1992 et est affilié à la FFTT depuis 1996</br>
                         </br>
                         - Il est fondé par Pierre GARNIER, Jean-Marie DANJOU et Pascal VALENTIN</br>
                         </p>
 
-                        <img src="gymnase1.jpg" class="img-circle img-gymnase1" alt=""/>
-                        <img src="gymnase2.jpg" class="img-circle img-gymnase2" alt=""/>
-                        <img src="gymnase3.jpg" class="img-circle img-gymnase3" alt=""/>
+                        <img src="gymnase1.jpg" class="img-circle img-gymnase1" alt="photo du gymnase"/>
+                        <img src="gymnase2.jpg" class="img-circle img-gymnase2" alt="photo du gymnase"/>
+                        <img src="gymnase3.jpg" class="img-circle img-gymnase3" alt="photo du gymnase"/>
                     </div>
                 </div>
             </div>
@@ -271,26 +265,18 @@ require_once('model/connectionBdd.php');
                         <div class="col-xs-4">
                             <div class="thumbnail">
                                 <?php
-                                    $requete = "SELECT photo FROM bureau WHERE poste='TRESORIER' ORDER BY id_bureau DESC";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
+                                require_once('model/bureau/selectionPhotoTresorier.php');   
                                 ?>
-                                <img src="<?php echo $donnees['photo'];?>" alt="..."/>
+                                <img src="<?php echo $donnees['photo'];?>" alt="trésorier"/>
                                 <div class="caption">
                                     <p class="text-center">TRESORIER</p>
                                     <p class="text-center">
                                     <?php
-                                    $requete = "SELECT prenom FROM bureau WHERE poste='TRESORIER' ORDER BY id_bureau DESC";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
-                                    echo $donnees['prenom'];
+                                    require_once('model/bureau/selectionPrenomTresorier.php');
                                     ?>
                                     </br>
                                     <?php
-                                    $requete = "SELECT nom FROM bureau WHERE poste='TRESORIER' ORDER BY id_bureau DESC";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
-                                    echo $donnees['nom'];
+                                    require_once('model/bureau/selectionNomTresorier.php');
                                     ?>
                                     </p>
                                 </div>
@@ -299,26 +285,18 @@ require_once('model/connectionBdd.php');
                         <div class="col-xs-4">
                             <div class="thumbnail">
                                 <?php
-                                    $requete = "SELECT photo FROM bureau WHERE poste='PRESIDENT' ORDER BY id_bureau DESC";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
+                                    require_once('model/bureau/selectionPhotoPresident.php');
                                 ?>
-                                <img src="<?php echo $donnees['photo'];?>" alt="..."/>
+                                <img src="<?php echo $donnees['photo'];?>" alt="president"/>
                                 <div class="caption">
                                     <p class="text-center">PRESIDENT</p>
                                     <p class="text-center">
                                     <?php
-                                    $requete = "SELECT prenom FROM bureau WHERE poste='PRESIDENT' ORDER BY id_bureau DESC";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
-                                    echo $donnees['prenom'];
+                                    require_once('model/bureau/selectionPrenomPresident.php');                                  
                                     ?>
                                     </br>
                                     <?php
-                                    $requete = "SELECT nom FROM bureau WHERE poste='PRESIDENT' ORDER BY id_bureau DESC";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
-                                    echo $donnees['nom'];
+                                    require_once('model/bureau/selectionNomPresident.php');
                                     ?>
                                     </p>
                                 </div>
@@ -327,26 +305,18 @@ require_once('model/connectionBdd.php');
                         <div class="col-xs-4">
                             <div class="thumbnail">
                                 <?php
-                                    $requete = "SELECT photo FROM bureau WHERE poste='SECRETAIRE' ORDER BY id_bureau DESC";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
+                                require_once('model/bureau/selectionPhotoSecretaire.php');                                   
                                 ?>
-                                <img src="<?php echo $donnees['photo'];?>" alt="..."/>
+                                <img src="<?php echo $donnees['photo'];?>" alt="secrétaire"/>
                                 <div class="caption">
                                     <p class="text-center">SECRETAIRE</p>
                                     <p class="text-center">
                                     <?php
-                                    $requete = "SELECT prenom FROM bureau WHERE poste='SECRETAIRE' ORDER BY id_bureau DESC";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
-                                    echo $donnees['prenom'];
+                                    require_once('model/bureau/selectionPrenomSecretaire.php');                               
                                     ?>
                                     </br>
                                     <?php
-                                    $requete = "SELECT nom FROM bureau WHERE poste='SECRETAIRE' ORDER BY id_bureau DESC";
-                                    $result = $bdd->query($requete);
-                                    $donnees = $result->fetch();
-                                    echo $donnees['nom'];
+                                    require_once('model/bureau/selectionNomSecretaire.php');
                                     ?>
                                     </p>
                                 </div>
@@ -361,7 +331,7 @@ require_once('model/connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-1 col-xs-10 thumbnail">
-                        <img src="joueurs.jpg" alt=""/>
+                        <img src="joueurs.jpg" alt="equipe de joueurs"/>
                     </div>
                 </div>
                 <div class="row">
@@ -400,53 +370,35 @@ require_once('model/connectionBdd.php');
                 <div class="row">
                     <div class="col-xs-offset-2 col-xs-8 text-center">
                         <p>Président :
-                        <?php 
-                        $requete = "SELECT tel FROM bureau WHERE poste='PRESIDENT' ORDER BY id_bureau DESC";
-                        $result = $bdd->query($requete);
-                        $donnees = $result->fetch();
-                        echo $donnees['tel'];
+                        <?php
+                        require_once('model/bureau/selectionTelPresident.php');                        
                         ?>
                         ou 
-                        <?php 
-                        $requete = "SELECT mail FROM bureau WHERE poste='PRESIDENT' ORDER BY id_bureau DESC";
-                        $result = $bdd->query($requete);
-                        $donnees = $result->fetch();
+                        <?php
+                        require_once('model/bureau/selectionMailPresident.php');                        
                         ?>
                         <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
                         <p>Trésorier :
                         <?php 
-                        $requete = "SELECT tel FROM bureau WHERE poste='TRESORIER' ORDER BY id_bureau DESC";
-                        $result = $bdd->query($requete);
-                        $donnees = $result->fetch();
-                        echo $donnees['tel'];
+                        require_once('model/bureau/selectionTelTresorier.php');                      
                         ?> 
                         ou 
-                        <?php 
-                        $requete = "SELECT mail FROM bureau WHERE poste='TRESORIER' ORDER BY id_bureau DESC";
-                        $result = $bdd->query($requete);
-                        $donnees = $result->fetch();
+                        <?php
+                        require_once('model/bureau/selectionMailTresorier.php');                     
                         ?>
                         <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
                         <p>Secrétaire : 
-                        <?php 
-                        $requete = "SELECT tel FROM bureau WHERE poste='SECRETAIRE' ORDER BY id_bureau DESC";
-                        $result = $bdd->query($requete);
-                        $donnees = $result->fetch();
-                        echo $donnees['tel'];
+                        <?php
+                        require_once('model/bureau/selectionTelSecretaire.php');                       
                         ?> 
                         ou 
                         <?php 
-                        $requete = "SELECT mail FROM bureau WHERE poste='SECRETAIRE' ORDER BY id_bureau DESC";
-                        $result = $bdd->query($requete);
-                        $donnees = $result->fetch();
+                        require_once('model/bureau/selectionMailSecretaire.php');                     
                         ?>
                         <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
                         <p>Adresse gymnase : 
-                        <?php 
-                        $requete = "SELECT * FROM gymnase ORDER BY id_gymnase DESC LIMIT 1";
-                        $result = $bdd->query($requete);                    
-                        $donnees = $result->fetch();
-                        echo $donnees['nom']. ", " .$donnees['adresse']. ", ".$donnees['code_postal']. " " .$donnees['ville'];
+                        <?php
+                        require_once('model/gymnase/selectionGymnase.php'); 
                         ?>
                         </p>
                     </div>
