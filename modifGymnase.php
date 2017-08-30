@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['sendGymnase']) && !empty($_POST['nomGymnase']) && !empty($_POST['adresseGymnase']) && !empty($_POST['codeGymnase']) && !empty($_POST['villeGymnase'])){
-    require_once('connectionBdd.php');
+    require_once('model/connectionBdd.php');
 
     $nom = htmlspecialchars($_POST['nomGymnase']);
     $accents = array('é', 'è', 'ê', 'ë', 'ï', 'î', 'ô', 'ö', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ç', '\'');

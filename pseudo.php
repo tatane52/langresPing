@@ -1,5 +1,5 @@
 <?php
-require_once('connectionBdd.php');
+require_once('model/connectionBdd.php');
 
 
 $requete = "SELECT pseudo FROM membre WHERE pseudo='" .$_GET["pseudo"]."'";

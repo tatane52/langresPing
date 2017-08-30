@@ -107,82 +107,54 @@ require_once('model/connectionBdd.php');
                     <div class="thumbnail">
                         
                         <?php
-                        $requete = "SELECT photo FROM article ORDER BY id_article DESC LIMIT 1";
-                        $result = $bdd->query($requete);
-                        $donnees = $result->fetch();
+                        require_once('model/articles/selectionPhoto1.php');
                         ?>
                         
-                        <img src="<?php echo $donnees['photo'];?>" alt="..."/>  
+                        <img src="<?php echo $donnees['photo'];?>" alt="photo de tennis de table"/>  
                     
                         <div class="caption">
                             <h3 class="colorRed">
                             <?php
-                            $requete = "SELECT titre FROM article ORDER BY id_article DESC LIMIT 1";
-                            $result = $bdd->query($requete);         
-                            $donnees = $result->fetch();
-                            echo $donnees["titre"];
+                            require_once('model/articles/selectionTitre1.php');                       
                             ?>
                             </h3>
                             <p class="text-center">
                             <?php
-                            $requete = "SELECT contenu FROM article ORDER BY id_article DESC LIMIT 1";
-                            $result = $bdd->query($requete);         
-                            $donnees = $result->fetch();
-                            echo $donnees["contenu"];
+                            require_once('model/articles/selectionContenu1.php');                   
                             ?>
                            </p>
                            <p class="text-left">
                             <?php
-                            $requete = "SELECT date_envoi FROM article ORDER BY id_article DESC LIMIT 1";
-                            $result = $bdd->query($requete);         
-                            $donnees = $result->fetch();
-                            $date = new DateTime($donnees["date_envoi"]);
-                            $dateFormat = date_format($date, 'd-m-Y');
-                            echo $dateFormat;
+                            require_once('model/articles/selectionDate1.php');
                             ?>
                            </p>
-
                         </div>
                     </div>
-                    <!--</div>-->
                 </div>
                 <div class="col-xs-12 text-right col-sm-6">
                     <!--<div class="col-xs-10 col-xs-offset-1 text-right col-sm-4 col-md-4">-->
                     <div class="thumbnail">
 
                         <?php
-                        $requete = "SELECT photo FROM article ORDER BY id_article DESC LIMIT 1,1";
-                        $result = $bdd->query($requete);
-                        $donnees = $result->fetch();
+                        require_once('model/articles/selectionPhoto2.php');
                         ?>
                         
-                        <img src="<?php echo $donnees['photo'];?>" alt="..."/>
+                        <img src="<?php echo $donnees['photo'];?>" alt="photo de ping pong"/>
 
                         <div class="caption">
                             <h3 class="colorBlue">
                             <?php
-                            $requete = "SELECT titre FROM article ORDER BY id_article DESC LIMIT 1,1";
-                            $result = $bdd->query($requete);       
-                            $donnees = $result->fetch(); 
-                            echo $donnees["titre"];                        
+                            require_once('model/articles/selectionTitre2.php');                       
                             ?>
                             </h3>
                             <p class="text-center">
                             <?php
-                            $requete = "SELECT contenu FROM article ORDER BY id_article DESC LIMIT 1,1";
-                            $result = $bdd->query($requete);         
-                            $donnees = $result->fetch();
-                            echo $donnees["contenu"];
+                            require_once('model/articles/selectionContenu2.php');
                             ?>
                             </p>
                             <p class="text-right">
                             <?php
-                            $requete = "SELECT date_envoi FROM article ORDER BY id_article DESC LIMIT 1,1";
-                            $result = $bdd->query($requete);         
-                            $donnees = $result->fetch();
-                            $date = new DateTime($donnees["date_envoi"]);
-                            $dateFormat = date_format($date, 'd-m-Y');
-                            echo $dateFormat;
+                            require_once('model/articles/selectionDate2.php');
                             ?>
                            </p>
 

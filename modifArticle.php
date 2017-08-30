@@ -7,7 +7,7 @@ function replaceRandom($nameImage){
         }
 
 if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['contenu'])){
-    require_once('connectionBdd.php');
+    require_once('model/connectionBdd.php');
 
     $titre = htmlspecialchars($_POST['title']);
     $caracteresSpeciaux = ['é', 'è', 'ê', 'ë', 'ï', 'î', 'ô', 'ö', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ç', '\''];

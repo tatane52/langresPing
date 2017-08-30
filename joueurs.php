@@ -12,7 +12,7 @@
 include('enTeteAnnexe.php');
 //fin inclusion
 
-require_once('connectionBdd.php');
+require_once('model/connectionBdd.php');
 
 $requete = "SELECT * FROM joueur ORDER BY id_joueur DESC";
 $result = $bdd->query($requete);

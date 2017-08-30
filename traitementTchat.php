@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('connectionBdd.php');
+require_once('model/connectionBdd.php');
 
 $date_envoi = date('Y-m-d H:i:s');
 $message = $_POST["messageAjax"];

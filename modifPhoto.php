@@ -7,7 +7,7 @@ function replaceRandom($nameImage){
         }
 
 if(isset($_POST['sendPhoto'])){
-    require_once('connectionBdd.php');
+    require_once('model/connectionBdd.php');
     $nameImage = $_FILES['photoCaroussel']['name'];
     $imageTemp = $_FILES['photoCaroussel']['tmp_name'];
 

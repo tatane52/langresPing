@@ -2,7 +2,7 @@
 
 if(isset($_POST['send'])){
 
-    require_once('connectionBdd.php');
+    require_once('model/connectionBdd.php');
     
     $pseudo = $_POST['pseudo'];
     $mdp = $_POST['mdp'];

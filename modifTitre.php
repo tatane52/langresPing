@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['sendTitre']) && !empty($_POST['mainTitle'])){
-    require_once('connectionBdd.php');
+    require_once('model/connectionBdd.php');
     $titre = htmlspecialchars($_POST['mainTitle']);
     $caracteresSpeciaux = ['é', 'è', 'ê', 'ë', 'ï', 'î', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ô', 'ö', 'ç', '\''];
     $caracteresSpeciauxMaj = ['E', 'E', 'E', 'E', 'I', 'I', 'A', 'A', 'A', 'U', 'U', 'U', 'O', 'O', 'C', ' '];

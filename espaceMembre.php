@@ -69,7 +69,7 @@ session_start();
             </div>
             <div class="row talk col-xs-offset-2 col-xs-8">
                 <?php
-                    require_once('connectionBdd.php');
+                    require_once('model/connectionBdd.php');
                     $requeteSelect = "SELECT * FROM tchat ORDER BY id_tchat DESC LIMIT 10";
                     $result = $bdd->query($requeteSelect);
                     while($donnees = $result->fetch()){

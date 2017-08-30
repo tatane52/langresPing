@@ -12,7 +12,7 @@
 include('enTeteAnnexe.php');
 //fin inclusion
 
-require_once('connectionBdd.php');
+require_once('model/connectionBdd.php');
 
 $requete = "SELECT cheminPhoto FROM photo ORDER BY id_photo DESC";
 $result = $bdd->query($requete);

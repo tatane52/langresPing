@@ -7,7 +7,7 @@ function replaceRandom($nameImage){
         }
 
 if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['prenomJoueur'])){
-    require_once('connectionBdd.php');
+    require_once('model/connectionBdd.php');
     //htmlentities ne marche pas avec str_replace
     $nom = htmlspecialchars($_POST['nomJoueur']);  
     $accents = array('é', 'è', 'ê', 'ë', 'ï', 'î', 'ô', 'ö', 'à', 'â', 'ä', 'û', 'ü', 'ù', 'ç', '\'');
