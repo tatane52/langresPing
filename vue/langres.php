@@ -72,14 +72,17 @@ require_once('../model/connectionBdd.php');
                     <li class="col-xs-6 col-sm-2 lienCalend"><a href="#calendrier">Calendrier</a></li>
                     <li class="col-xs-6 col-sm-2 lienCont"><a href="#contact">Contact</a></li>
                     <li class="col-xs-6 col-sm-2"><a href="http://www.fftt.com/site/"><span class="f">F</span><span class="ft">FT</span><span class="t">T</span></a></li>
-                    <li class="col-xs-6 col-sm-6 "><a href="../vue/inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
+                    <!--<li class="col-xs-6 col-sm-6 "><a href="../vue/inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>-->
                     
                     <?php
                     //lien connexion ou deconnection
                     if ($_SESSION['pseudo']){
-                        echo "<li class='col-xs-6 col-sm-6 '><a href='../model/deconnexion.php'><span class='colorHoverBlue'><span class='glyphicon glyphicon-log-in'></span> Deconnexion</span></a></li>";
+                        echo "<li class='col-xs-4 col-sm-4 '><a href='../vue/inscription.php'><span class='colorHoverRed'><span class='glyphicon glyphicon-user'></span> Inscription</span></a></li>";
+                        echo "<li class='col-xs-4 col-sm-4 '><a href='../model/deconnexion.php'><span class='colorHoverBlue'><span class='glyphicon glyphicon-log-in'></span> Deconnexion</span></a></li>";
+                        echo "<li class='col-xs-4 col-sm-4 '><a href='../vue/espaceMembre.php'><span class='glyphicon glyphicon-eye-open'></span> Espace membres</span></a></li>";
                     }
                     else {
+                        echo "<li class='col-xs-6 col-sm-6 '><a href='../vue/inscription.php'><span class='colorHoverRed'><span class='glyphicon glyphicon-user'></span> Inscription</span></a></li>";
                         echo "<li class='col-xs-6 col-sm-6 '><a href='../vue/connexion.php'><span class='colorHoverBlue'><span class='glyphicon glyphicon-log-in'></span> Connection</span></a></li>";
                     }
                     ?>
