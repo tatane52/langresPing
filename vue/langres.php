@@ -3,6 +3,7 @@ session_start();
 //connexion bdd
 require_once('../model/connectionBdd.php');
 ?>
+
 <!doctype html>
 <html lang="fr">
 
@@ -72,7 +73,16 @@ require_once('../model/connectionBdd.php');
                     <li class="col-xs-6 col-sm-2 lienCont"><a href="#contact">Contact</a></li>
                     <li class="col-xs-6 col-sm-2"><a href="http://www.fftt.com/site/"><span class="f">F</span><span class="ft">FT</span><span class="t">T</span></a></li>
                     <li class="col-xs-6 col-sm-6 "><a href="../vue/inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
-                    <li class="col-xs-6 col-sm-6 "><a href="../vue/connexion.php"><span class="colorHoverBlue"><span class="glyphicon glyphicon-log-in"></span> Connection</span></a></li>
+                    
+                    <?php
+                    //lien connexion ou deconnection
+                    if ($_SESSION['pseudo']){
+                        echo "<li class='col-xs-6 col-sm-6 '><a href='../model/deconnexion.php'><span class='colorHoverBlue'><span class='glyphicon glyphicon-log-in'></span> Deconnexion</span></a></li>";
+                    }
+                    else {
+                        echo "<li class='col-xs-6 col-sm-6 '><a href='../vue/connexion.php'><span class='colorHoverBlue'><span class='glyphicon glyphicon-log-in'></span> Connection</span></a></li>";
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -94,6 +104,7 @@ require_once('../model/connectionBdd.php');
             <?php
             //requete titre
             require_once('../model/titre/selectionTitre.php');
+            //getTitre();
             ?>
             </h2>
         </div>       
@@ -448,18 +459,18 @@ require_once('../model/connectionBdd.php');
         <div class="row margeTopFooter">
             <div class="col-xs-3 premierePartie">              
                 <p><a class="colorRed" href="#">Acceuil</a></p>
-                <p><a class="colorRed" href="../articles.php">- Articles</a></p>
-                <p><a class="colorRed" href="../photos.php">- Photos</a></p>
+                <p><a class="colorRed" href="../vue/articles.php">- Articles</a></p>
+                <p><a class="colorRed" href="../vue/photos.php">- Photos</a></p>
                 <p><a class="colorRed lienHisto" href="#historique">Historique</a></p>
                 <p><a class="colorRed lienEffect" href="#effectif">Effectif</a></p>
-                <p><a class="colorRed" href="../joueurs.php">- Joueurs</a></p>
+                <p><a class="colorRed" href="../vue/joueurs.php">- Joueurs</a></p>
             </div>
             <div class="col-xs-3 deuxiemePartie">         
                 <p><a class="colorBlue lienCalend" href="#calendrier">Calendrier</a></p>
                 <p><a class="colorBlue lienCont" href="#contact">Contact</a></p>
                 <p><a class="colorBlue" href="http://www.fftt.com/site/">FFTT</a></p>
-                <p><a class="colorBlue" href="../inscription.php">Inscription</a></p>
-                <p><a class="colorBlue" href="../connexion.php">Connection</a></p>
+                <p><a class="colorBlue" href="../vue/inscription.php">Inscription</a></p>
+                <p><a class="colorBlue" href="../vue/connexion.php">Connection</a></p>
             </div>
 
             <div class="col-xs-6 text-right">
