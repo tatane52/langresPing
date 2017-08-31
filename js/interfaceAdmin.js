@@ -15,18 +15,23 @@ $(document).ready(function() {
         recupMois.html(option);
     }
 
-    function choixNbJoueur() {
-        var recupCache = $("#joueurCache");
-        if ($("input[value='trois']:checked").val() || "") {
-            recupCache.html("<input type='text'>")
 
+
+    var recupCache = $("#joueurCache");
+    $("input[name='joueur']").change(function() {
+        if ($("input[value='trois']:checked").val() == 'trois') {
+            console.log($("input[value='trois']:checked").val());
+            recupCache.html("<label>Nom : </label><input type='text'><label>Prenom : </label><input type='text'></br><label>Nom : </label><input type='text'><label>Prenom : </label><input type='text'></br><label>Nom : </label><input type='text'><label>Prenom : </label><input type='text'>");
+        } else {
+            console.log("else");
+            recupCache.html("<label>Nom : </label><input type='text'><label>Prenom : </label><input type='text'></br><label>Nom : </label><input type='text'><label>Prenom : </label><input type='text'></br><label>Nom : </label><input type='text'><label>Prenom : </label><input type='text'></br><label>Nom : </label><input type='text'><label>Prenom : </label><input type='text'>")
         }
-    }
+    });
+
 
 
     jour();
     mois();
-    choixNbJoueur();
 
 
 
