@@ -1,5 +1,5 @@
 <?php
-require_once('model/connectionBdd.php');
+require_once('connectionBdd.php');
 
 $requete = "SELECT * FROM tchat WHERE id_tchat > '" .$_GET["idMessage"]."' ORDER BY id_tchat DESC";
 $result = $bdd->query($requete);

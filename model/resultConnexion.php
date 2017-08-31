@@ -2,7 +2,7 @@
 
 if(isset($_POST['send'])){
 
-    require_once('model/connectionBdd.php');
+    require_once('connectionBdd.php');
     
     $pseudo = $_POST['pseudo'];
     $mdp = $_POST['mdp'];
@@ -16,10 +16,10 @@ if(isset($_POST['send'])){
     if(password_verify($mdp, $donnees['mdp'])){
         session_start();
         $_SESSION['pseudo'] = $pseudo;
-        header('location: vue/espaceMembre.php');
+        header('location: ../vue/espaceMembre.php');
         exit();
     }
     else{
-        header('location: vue/connexion.php');
+        header('location: ../vue/connexion.php');
     }
 };
