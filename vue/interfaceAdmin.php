@@ -26,15 +26,19 @@ session_start();
             <legend class="text-center">Ajouter convocation</legend>    
                 <div class="form-group">
                     <label for="equipeConvoc">Equipe</label>
-                    <input type="text" name="equipeConvoc" class="form-control" id="equipeConvoc" required>
+                    <input type="text" name="equipeConvoc" class="form-control" id="equipeConvoc" maxlength="20" required>
                 </div>
                 <div class="form-group">
                     <label for="adversaireConvoc">Adversaire</label>
-                    <input type="text" name="adversaireConvoc" class="form-control" id="adversaireConvoc" required>
+                    <input type="text" name="adversaireConvoc" class="form-control" id="adversaireConvoc" maxlength="35" required>
                 </div>
                 <div class="form-group">
-                    <label for="commentaireConvoc">Adversaire</label>
-                    <input type="text" name="commentaireConvoc" class="form-control" id="commentaireConvoc" r>
+                    <label for="commentaireConvoc">Commentaire</label>
+                    <textarea name="commentaireConvoc" class="form-control" id="commentaireConvoc"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="heureConvoc">Heure de la rencontre</label>
+                    <input type="text" name="heureConvoc" class="form-control" id="heureConvoc" maxlength="5" required>
                 </div>
                 <div class="form-group">
                     <label>Jour</label>
