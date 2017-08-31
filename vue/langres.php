@@ -1,5 +1,6 @@
 <?php
 session_start();
+//connexion bdd
 require_once('../model/connectionBdd.php');
 ?>
 <!doctype html>
@@ -91,6 +92,7 @@ require_once('../model/connectionBdd.php');
         <div class="row">
             <h2 class="col-xs-12 placement text-center">
             <?php
+            //requete titre
             require_once('../model/titre/selectionTitre.php');
             ?>
             </h2>
@@ -107,6 +109,7 @@ require_once('../model/connectionBdd.php');
                     <div class="thumbnail">
                         
                         <?php
+                        //requete photo article1
                         require_once('../model/articles/selectionPhoto1.php');
                         ?>
                         
@@ -115,16 +118,19 @@ require_once('../model/connectionBdd.php');
                         <div class="caption">
                             <h3 class="colorRed">
                             <?php
+                            //requete titre article1
                             require_once('../model/articles/selectionTitre1.php');                       
                             ?>
                             </h3>
                             <p class="text-center">
                             <?php
+                            //requete contenu article1
                             require_once('../model/articles/selectionContenu1.php');                   
                             ?>
                            </p>
                            <p class="text-left">
                             <?php
+                            //requete date article1
                             require_once('../model/articles/selectionDate1.php');
                             ?>
                            </p>
@@ -136,6 +142,7 @@ require_once('../model/connectionBdd.php');
                     <div class="thumbnail">
 
                         <?php
+                        //requete photo article2
                         require_once('../model/articles/selectionPhoto2.php');
                         ?>
                         
@@ -144,16 +151,19 @@ require_once('../model/connectionBdd.php');
                         <div class="caption">
                             <h3 class="colorBlue">
                             <?php
+                            //requete titre article2
                             require_once('../model/articles/selectionTitre2.php');                       
                             ?>
                             </h3>
                             <p class="text-center">
                             <?php
+                            //requete contenu article2
                             require_once('../model/articles/selectionContenu2.php');
                             ?>
                             </p>
                             <p class="text-right">
                             <?php
+                            //requete date article2
                             require_once('../model/articles/selectionDate2.php');
                             ?>
                            </p>
@@ -182,18 +192,21 @@ require_once('../model/connectionBdd.php');
                             <div class="carousel-inner" role="listbox">
                                 <div class="item active">
                                     <?php
+                                    //requete photo carousel1
                                     require_once('../model/photos/selectionCarousel1.php');
                                     ?>
                                     <img src="<?php echo $donnees['cheminPhoto'];?>" alt="photo du club"/>
                                 </div>
                                 <div class="item">
                                     <?php
+                                    //requete photo carousel2
                                     require_once('../model/photos/selectionCarousel2.php');
                                     ?>
                                     <img src="<?php echo $donnees['cheminPhoto'];?>" alt="photo de joueurs"/>
                                 </div>
                                 <div class="item">
                                     <?php
+                                    //requete photo carousel3
                                     require_once('../model/photos/selectionCarousel3.php');
                                     ?>
                                     <img src="<?php echo $donnees['cheminPhoto'];?>" alt="photo evenement"/>
@@ -265,6 +278,7 @@ require_once('../model/connectionBdd.php');
                         <div class="col-xs-4">
                             <div class="thumbnail">
                                 <?php
+                                //requete photo tresorier
                                 require_once('../model/bureau/selectionPhotoTresorier.php');   
                                 ?>
                                 <img src="<?php echo $donnees['photo'];?>" alt="trésorier"/>
@@ -272,10 +286,12 @@ require_once('../model/connectionBdd.php');
                                     <p class="text-center">TRESORIER</p>
                                     <p class="text-center">
                                     <?php
+                                    //requete prenom tresorier
                                     require_once('../model/bureau/selectionPrenomTresorier.php');
                                     ?>
                                     </br>
                                     <?php
+                                    //requete nom tresorier
                                     require_once('../model/bureau/selectionNomTresorier.php');
                                     ?>
                                     </p>
@@ -285,17 +301,20 @@ require_once('../model/connectionBdd.php');
                         <div class="col-xs-4">
                             <div class="thumbnail">
                                 <?php
-                                    require_once('../model/bureau/selectionPhotoPresident.php');
+                                //requete photo president
+                                require_once('../model/bureau/selectionPhotoPresident.php');
                                 ?>
                                 <img src="<?php echo $donnees['photo'];?>" alt="president"/>
                                 <div class="caption">
                                     <p class="text-center">PRESIDENT</p>
                                     <p class="text-center">
                                     <?php
+                                    //requete prenom president
                                     require_once('../model/bureau/selectionPrenomPresident.php');                                  
                                     ?>
                                     </br>
                                     <?php
+                                    //requete nom president
                                     require_once('../model/bureau/selectionNomPresident.php');
                                     ?>
                                     </p>
@@ -305,6 +324,7 @@ require_once('../model/connectionBdd.php');
                         <div class="col-xs-4">
                             <div class="thumbnail">
                                 <?php
+                                //requete photo secretaire
                                 require_once('../model/bureau/selectionPhotoSecretaire.php');                                   
                                 ?>
                                 <img src="<?php echo $donnees['photo'];?>" alt="secrétaire"/>
@@ -312,10 +332,12 @@ require_once('../model/connectionBdd.php');
                                     <p class="text-center">SECRETAIRE</p>
                                     <p class="text-center">
                                     <?php
+                                    //requete prenom secretaire
                                     require_once('../model/bureau/selectionPrenomSecretaire.php');                               
                                     ?>
                                     </br>
                                     <?php
+                                    //requete nom secretaire
                                     require_once('../model/bureau/selectionNomSecretaire.php');
                                     ?>
                                     </p>
@@ -371,33 +393,40 @@ require_once('../model/connectionBdd.php');
                     <div class="col-xs-offset-2 col-xs-8 text-center">
                         <p>Président :
                         <?php
+                        //requete tel tresorier
                         require_once('../model/bureau/selectionTelPresident.php');                        
                         ?>
                         ou 
                         <?php
+                        //requete mail president
                         require_once('../model/bureau/selectionMailPresident.php');                        
                         ?>
                         <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
                         <p>Trésorier :
                         <?php 
+                        //requete tel tresorier
                         require_once('../model/bureau/selectionTelTresorier.php');                      
                         ?> 
                         ou 
                         <?php
+                        //requete mail tresorier
                         require_once('../model/bureau/selectionMailTresorier.php');                     
                         ?>
                         <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
                         <p>Secrétaire : 
                         <?php
+                        //requete tel secretaire
                         require_once('../model/bureau/selectionTelSecretaire.php');                       
                         ?> 
                         ou 
                         <?php 
+                        //requete mail secretaire
                         require_once('../model/bureau/selectionMailSecretaire.php');                     
                         ?>
                         <a href="mailto:<?php echo $donnees['mail']?>"><?php echo $donnees['mail']?></a></p>
                         <p>Adresse gymnase : 
                         <?php
+                        //requete adresse gymnase
                         require_once('../model/gymnase/selectionGymnase.php'); 
                         ?>
                         </p>

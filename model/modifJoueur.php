@@ -22,7 +22,7 @@ if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['
     $imageTemp = $_FILES['photoJoueur']['tmp_name'];
 
     if($nameImage == ''){
-        $photo = 'logofinal.png';
+        $photo = '../images/logofinal.png';
         $requete = "INSERT INTO joueur VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$photo')";
         //echo $requete;
         $bdd->exec($requete);
@@ -63,12 +63,12 @@ if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['
 
             //verifie si l'extension est valide'
             if(in_array($extension, $extensionOK)){
-			    $dossierImage = "imageUpload";
+			    $dossierImage = "../images/imageUpload";
                 //echo $nameImage. "</br>";
                 //echo $imageTemp. "</br>";
                 $imageChiffre = replaceRandom($nameImage);
                 //echo $imageChiffre;
-                move_uploaded_file($imageTemp, "../vue/$dossierImage/$imageChiffre");
+                move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
                 $requete = "INSERT INTO joueur VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$photo')";
