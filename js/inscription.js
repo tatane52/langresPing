@@ -30,7 +30,7 @@ var recupInputPseudo = $("#pseudo");
 recupInputPseudo.blur(function(e) {
     var recupValuePseudo = recupInputPseudo.val();
     $.ajax({
-        url: '../pseudo.php', // La ressource ciblée
+        url: '../model/pseudo.php', // La ressource ciblée
         type: 'GET', // Le type de la requête HTTP
         data: 'pseudo=' + recupValuePseudo, //paramètre
         success: function(code_html, statut) { //fonction en cas de succès

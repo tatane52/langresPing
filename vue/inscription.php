@@ -22,7 +22,7 @@ require_once('../model/connectionBdd.php');
         <p>(*) : données à remplir obligatoirement</p>
     </div>
 
-    <form method="post" action="../resultInscription.php">
+    <form method="post" action="../model/resultInscription.php">
 
         <div class="form-group col-xs-offset-2 col-xs-8">
             <label for="name">Nom(*) :</label>

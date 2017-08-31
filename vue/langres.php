@@ -71,8 +71,8 @@ require_once('../model/connectionBdd.php');
                     <li class="col-xs-6 col-sm-2 lienCalend"><a href="#calendrier">Calendrier</a></li>
                     <li class="col-xs-6 col-sm-2 lienCont"><a href="#contact">Contact</a></li>
                     <li class="col-xs-6 col-sm-2"><a href="http://www.fftt.com/site/"><span class="f">F</span><span class="ft">FT</span><span class="t">T</span></a></li>
-                    <li class="col-xs-6 col-sm-6 "><a href="inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
-                    <li class="col-xs-6 col-sm-6 "><a href="connexion.php"><span class="colorHoverBlue"><span class="glyphicon glyphicon-log-in"></span> Connection</span></a></li>
+                    <li class="col-xs-6 col-sm-6 "><a href="../vue/inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>
+                    <li class="col-xs-6 col-sm-6 "><a href="../vue/connexion.php"><span class="colorHoverBlue"><span class="glyphicon glyphicon-log-in"></span> Connection</span></a></li>
                 </ul>
             </div>
         </div>
@@ -174,7 +174,7 @@ require_once('../model/connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 text-center">
-                        <a href="articles.php"><button type="button" class="btn btn-default btn-block">Voir les derniers articles</button></a>
+                        <a href="../vue/articles.php"><button type="button" class="btn btn-default btn-block">Voir les derniers articles</button></a>
                     </div>
                 </div>
 
@@ -227,7 +227,7 @@ require_once('../model/connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 text-center">
-                        <a href="photos.php"><button type="button" class="btn btn-default btn-block">Voir les dernières photos</button></a>
+                        <a href="../vue/photos.php"><button type="button" class="btn btn-default btn-block">Voir les dernières photos</button></a>
                     </div>
                 </div>
             </div>
