@@ -39,7 +39,7 @@ require_once('../model/connectionBdd.php');
         <h4 class="modal-title">N'ayez pas peur c'est gratuit!!!</h4>
       </div>
       <div class="modal-body text-center">
-       <img src="../balleMembre.png" alt="devenez membre">
+       <img src="../images/balleMembre.png" alt="devenez membre">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>      
@@ -58,7 +58,7 @@ require_once('../model/connectionBdd.php');
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                   <img alt="logo du club" id="monLogo" src="logofinal.png"/> 
+                   <img alt="logo du club" id="monLogo" src="../images/logofinal.png"/> 
                 </a>
                 <h1>BBLangres</h1>
             </div>
@@ -95,7 +95,7 @@ require_once('../model/connectionBdd.php');
             ?>
             </h2>
         </div>       
-        <img src="../langresBanniere.jpg" id="banniere" alt="rempard de Langres" title="rempard de Langres" />
+        <img src="../images/langresBanniere.jpg" id="banniere" alt="rempard de Langres" title="rempard de Langres" />
     </header>
     <!--end header-->
 
@@ -232,15 +232,15 @@ require_once('../model/connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <img src="../raquettefinal.png" alt="raquette de ping"/>
+                        <img src="../images/raquettefinal.png" alt="raquette de ping"/>
                         <p class="histo-para">- Le club de Langres a vu le jour en 1992 et est affilié à la FFTT depuis 1996</br>
                         </br>
                         - Il est fondé par Pierre GARNIER, Jean-Marie DANJOU et Pascal VALENTIN</br>
                         </p>
 
-                        <img src="../gymnase1.jpg" class="img-circle img-gymnase1" alt="photo du gymnase"/>
-                        <img src="../gymnase2.jpg" class="img-circle img-gymnase2" alt="photo du gymnase"/>
-                        <img src="../gymnase3.jpg" class="img-circle img-gymnase3" alt="photo du gymnase"/>
+                        <img src="../images/gymnase1.jpg" class="img-circle img-gymnase1" alt="photo du gymnase"/>
+                        <img src="../images/gymnase2.jpg" class="img-circle img-gymnase2" alt="photo du gymnase"/>
+                        <img src="../images/gymnase3.jpg" class="img-circle img-gymnase3" alt="photo du gymnase"/>
                     </div>
                 </div>
             </div>
@@ -331,7 +331,7 @@ require_once('../model/connectionBdd.php');
                 </div>
                 <div class="row">
                     <div class="col-xs-offset-1 col-xs-10 thumbnail">
-                        <img src="../joueurs.jpg" alt="equipe de joueurs"/>
+                        <img src="../images/joueurs.jpg" alt="equipe de joueurs"/>
                     </div>
                 </div>
                 <div class="row">
@@ -434,7 +434,7 @@ require_once('../model/connectionBdd.php');
             </div>
 
             <div class="col-xs-6 text-right">
-                <p><img src="../minionPing.gif" alt="image animee minions ping"/></p>
+                <p><img src="../images/minionPing.gif" alt="image animee minions ping"/></p>
             </div>
         </div>
     </footer>

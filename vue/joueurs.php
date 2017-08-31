@@ -10,16 +10,16 @@
 <?php
 //inclusion d'entête php
 include('enTeteAnnexe.php');
-//fin inclusion
 
+//connexion bdd
 require_once('../model/connectionBdd.php');
 
-$requete = "SELECT * FROM joueur ORDER BY id_joueur DESC";
-$result = $bdd->query($requete);
+//requete * joueur
+require_once('../model/traitementJoueurComplet.php');
 while($donnees = $result->fetch()){
     ?>   
     <div class="thumbnail text-center">
-        <img src="<?php echo $donnees['photo'];?>" alt="..."/>
+        <img src="<?php echo $donnees['photo'];?>" alt="joueurs loisir et competition"/>
         <p class="text-center"> 
         <?php 
         echo $donnees['nom']. " " .$donnees['prenom'];

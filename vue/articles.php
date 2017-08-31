@@ -10,16 +10,17 @@
 <?php
 //inclusion d'entête php
 include('enTeteAnnexe.php');
-//fin inclusion
 
+
+//connexion bdd
 require_once('../model/connectionBdd.php');
 
-$requete = "SELECT * FROM article ORDER BY id_article DESC";
-$result = $bdd->query($requete);
-    while($donnees = $result->fetch()){
+//requette * article
+require_once('../model/articles/traitementArticleComplet.php');
+while($donnees = $result->fetch()){
         ?>   
         <div class="thumbnail text-center">
-            <img src="<?php echo $donnees['photo'];?>" alt="..."/>   
+            <img src="<?php echo $donnees['photo'];?>" alt="article bb langres"/>   
             <div class="caption">
                 <h3 class="colorBlue">
                 <?php 
@@ -33,9 +34,8 @@ $result = $bdd->query($requete);
                 </p>
                 <p class="text-center">
                 <?php
-                $date = new DateTime($donnees["date_envoi"]);
-                $dateFormat = date_format($date, 'd-m-Y');
-                echo $dateFormat;
+                //requete date article
+                require_once('../model/articles/traitementArticleDate.php');
                 ?>
                 </p>
             </div>

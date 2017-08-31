@@ -12,14 +12,15 @@
 include('enTeteAnnexe.php');
 //fin inclusion
 
+//connexion bdd
 require_once('../model/connectionBdd.php');
 
-$requete = "SELECT cheminPhoto FROM photo ORDER BY id_photo DESC";
-$result = $bdd->query($requete);
+//requete chemin photo
+require_once('../model/photos/traitementPhotoChemin.php');
 while($donnees = $result->fetch()){
     ?>   
     <div class="thumbnail text-center">
-        <img src="<?php echo $donnees['cheminPhoto'];?>" alt="..."/>   
+        <img src="<?php echo $donnees['cheminPhoto'];?>" alt="photo du club"/>   
     </div>
     <?php
     }

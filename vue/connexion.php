@@ -11,7 +11,7 @@
 <body>
     <!--inclusion d'entête php-->
     <?php include('enTeteAnnexe.php'); ?>
-    <!--fin inclusion-->
+
     <form method="POST" action="../model/resultConnexion.php">
         <div class="form-group col-xs-offset-2 col-xs-8">
             <label for="pseudo">Pseudo :</label>

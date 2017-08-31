@@ -17,7 +17,6 @@ require_once('../model/connectionBdd.php');
 <body>
     <!--inclusion d'entête php-->
     <?php include('enTeteAnnexe.php'); ?>
-    <!--fin inclusion-->
 
     <div class="col-xs-offset-2 col-xs-8 text-center">
         <p>(*) : données à remplir obligatoirement</p>
