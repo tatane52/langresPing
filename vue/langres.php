@@ -72,7 +72,6 @@ require_once('../model/connectionBdd.php');
                     <li class="col-xs-6 col-sm-2 lienCalend"><a href="#calendrier">Calendrier</a></li>
                     <li class="col-xs-6 col-sm-2 lienCont"><a href="#contact">Contact</a></li>
                     <li class="col-xs-6 col-sm-2"><a href="http://www.fftt.com/site/"><span class="f">F</span><span class="ft">FT</span><span class="t">T</span></a></li>
-                    <!--<li class="col-xs-6 col-sm-6 "><a href="../vue/inscription.php"><span class="colorHoverRed"><span class="glyphicon glyphicon-user"></span> Inscription</span></a></li>-->
                     
                     <?php
                     //lien connexion ou deconnection
