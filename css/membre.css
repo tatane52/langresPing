@@ -2,6 +2,16 @@ main {
     margin-top: 30px;
 }
 
+#convoc {
+    margin-bottom: 50px;
+}
+
+td,
+tr {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
 body>p {
     margin-top: 15px;
     font-weight: bold;

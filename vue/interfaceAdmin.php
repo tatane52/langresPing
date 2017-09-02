@@ -18,8 +18,13 @@ session_start();
     <?php include('enTeteAnnexe.php'); ?>
     <!--fin inclusion-->
 
-    
-    
+    <?php
+    //message confirmation
+    if ($_SESSION['messageConvoc']){
+        echo "<script>alert('" .$_SESSION['messageConvoc']. "')</script>";
+        session_destroy();
+    }
+    ?>
 
     <form action="../model/modifConvoc.php" method="post">
         <fieldset class="col-xs-offset-1 col-xs-10">
@@ -33,6 +38,11 @@ session_start();
                     <input type="text" name="adversaireConvoc" class="form-control" id="adversaireConvoc" maxlength="35" required>
                 </div>
                 <div class="form-group">
+                    <label>lieu : </label>
+                    <input type="radio" name="lieu" value="domicile"> Domicile
+                    <input type="radio" name="lieu" value="exterieur"> Exterieur
+                </div>
+                <div class="form-group">
                     <label for="commentaireConvoc">Commentaire</label>
                     <textarea name="commentaireConvoc" class="form-control" id="commentaireConvoc"></textarea>
                 </div>
@@ -42,12 +52,12 @@ session_start();
                 </div>
                 <div class="form-group">
                     <label>Jour</label>
-                    <select id="jour">                      
+                    <select id="jour" name="jour">                      
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Mois</label>
-                    <select id="mois">                   
+                    <select id="mois" name="mois">                   
                     </select>
                 </div>
                 <div class="form-group">
