@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html>
 
@@ -11,6 +14,14 @@
 <body>
     <!--inclusion d'entête php-->
     <?php include('enTeteAnnexe.php'); ?>
+    
+    <div id="erreur" class="text-center">
+    <?php
+    if ($_SESSION['erreur']){
+        echo $_SESSION['erreur'];
+    }
+    ?>
+    </div>
 
     <form method="POST" action="../model/resultConnexion.php">
         <div class="form-group col-xs-offset-2 col-xs-8">

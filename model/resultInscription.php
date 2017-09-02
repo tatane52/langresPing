@@ -27,7 +27,7 @@ if(isset($_POST['send']) && !empty($_POST['nom']) && !empty($_POST['prenom']) &&
     session_start();
     $_SESSION['messageInscription'] = "Félicitation " .$pseudo.", tu fais parti de nos membres!!!";
 
-    header('location: ../vue/langres.php');
+    header('location: ../index.php');
 }
 
 

@@ -249,7 +249,7 @@ footer {
     color: white;
     font-size: 10px;
     position: absolute;
-    top: 85px;
+    top: 70px;
     margin-left: 9%;
 }
 
@@ -338,7 +338,7 @@ footer {
     .histo-para {
         width: 29%;
         font-size: 15px;
-        top: 113px;
+        top: 70px;
     }
     #historique img {
         margin-left: -50%;

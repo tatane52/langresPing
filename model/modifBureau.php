@@ -33,7 +33,7 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
     $imageTemp = $_FILES['photoBureau']['tmp_name'];
 
     if($nameImage == ''){
-        $photo = '../images/logofinal.png';
+        $photo = 'images/logofinal.png';
         $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$poste', '$photo', '$tel', '$mail')";
         //echo $requete;
         $bdd->exec($requete);
@@ -78,12 +78,12 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
 
             //verifie si l'extension est valide'
             if(in_array($extension, $extensionOK)){
-			    $dossierImage = "../images/imageUpload";
+			    $dossierImage = "images/imageUpload";
                 //echo $nameImage. "</br>";
                 //echo $imageTemp. "</br>";
                 $imageChiffre = replaceRandom($nameImage);
                 //echo $imageChiffre;
-                move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
+                move_uploaded_file($imageTemp, "../$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
                 $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$poste', '$photo', '$tel', '$mail')";

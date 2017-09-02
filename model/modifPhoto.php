@@ -12,7 +12,7 @@ if(isset($_POST['sendPhoto'])){
     $imageTemp = $_FILES['photoCaroussel']['tmp_name'];
 
     if($nameImage == ''){
-        $photo = '../images/logoFinalPhoto.png';
+        $photo = 'images/logoFinalPhoto.png';
 
         $requete = "INSERT INTO photo VALUES (null, '$photo')";
         $bdd->exec($requete);
@@ -57,12 +57,12 @@ if(isset($_POST['sendPhoto'])){
 
             //verifie si l'extension est valide'
             if(in_array($extension, $extensionOK)){
-			    $dossierImage = "../images/imageUpload";
+			    $dossierImage = "images/imageUpload";
                 //echo $nameImage. "</br>";
                 //echo $imageTemp. "</br>";
                 $imageChiffre = replaceRandom($nameImage);
                 //echo $imageChiffre;
-                move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
+                move_uploaded_file($imageTemp, "../$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
                 $requete = "INSERT INTO photo VALUES (null, '$photo')";

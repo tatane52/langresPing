@@ -36,3 +36,8 @@ body {
 .btn-primary:focus {
     background-color: #3e3eef !important;
 }
+
+#erreur {
+    color: #f10d0d;
+    font-weight: bold;
+}

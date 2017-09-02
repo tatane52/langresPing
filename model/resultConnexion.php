@@ -20,6 +20,8 @@ if(isset($_POST['send'])){
         exit();
     }
     else{
+        session_start();
+        $_SESSION['erreur'] = "le pseudo et/ou le mot de passe n'est pas correct";
         header('location: ../vue/connexion.php');
     }
 };

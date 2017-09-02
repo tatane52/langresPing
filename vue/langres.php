@@ -265,7 +265,7 @@ if (!$_SESSION['pseudo']){
                         <img src="images/raquettefinal.png" alt="raquette de ping"/>
                         <p class="histo-para">- Le club de Langres a vu le jour en 1992 et est affilié à la FFTT depuis 1996</br>
                         </br>
-                        - Il est fondé par Pierre GARNIER, Jean-Marie DANJOU et Pascal VALENTIN</br>
+                        - Il est fondé par Benoit DECRON (président), Serge LEFEVRE (secrétaire) et Roger GARNIER (trésorier)</br>
                         </p>
 
                         <img src="images/gymnase1.jpg" class="img-circle img-gymnase1" alt="photo du gymnase"/>
