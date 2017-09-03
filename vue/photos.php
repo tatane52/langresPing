@@ -20,7 +20,7 @@ require_once('../model/photos/traitementPhotoChemin.php');
 while($donnees = $result->fetch()){
     ?>   
     <div class="thumbnail text-center">
-        <img src="<?php echo $donnees['cheminPhoto'];?>" alt="photo du club"/>   
+        <img src="<?php echo "../" .$donnees['cheminPhoto'];?>" alt="photo du club"/>   
     </div>
     <?php
     }

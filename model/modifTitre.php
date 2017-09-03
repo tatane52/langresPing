@@ -20,7 +20,7 @@ if(isset($_POST['sendTitre']) && !empty($_POST['mainTitle'])){
 }
 else{
     header('location: ../vue/interfaceAdmin.php');
-    exit();
+    
 }
 
 

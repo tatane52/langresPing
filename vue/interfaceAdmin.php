@@ -76,6 +76,35 @@ session_start();
 
     <?php
     //message confirmation
+    if ($_SESSION['messageCalendrier']){
+        echo "<script>alert('" .$_SESSION['messageCalendrier']. "')</script>";
+        session_destroy();
+    }
+    ?>
+
+    <form action="../model/modifCalendrier.php" method="post">
+        <fieldset class="col-xs-offset-1 col-xs-10">
+            <legend class="text-center">Ajouter évènement</legend>    
+                <div class="form-group">
+                    <label for="dateCalendrier">Date</label>
+                    <input type="text" name="dateCalendrier" class="form-control" id="dateCalendrier" maxlength="10" placeholder="écrire sous forme : 02-08-2018" pattern="^[0-3][0-9]-[0-1][0-9]-20[1-5][0-9]$" required>
+                </div>
+                <div class="form-group">
+                    <label for="heureCalendrier">Heure début</label>
+                    <input type="text" name="heureCalendrier" class="form-control" id="heureCalendrier" maxlength="5" placeholder="écrire sous forme : 09:05" pattern="^[0-2][0-9]:[0-5][0-9]$" required>
+                </div>
+                <div class="form-group">
+                    <label for="titreCalendrier">Titre</label>
+                    <input type="text" name="titreCalendrier" class="form-control" id="titreCalendrier" required>
+                </div>
+                <div>
+                    <button type="submit" name="sendCalendrier" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
+                </div>            
+         </fieldset>
+    </form>
+
+    <?php
+    //message confirmation
     if ($_SESSION['messageTitre']){
         echo "<script>alert('" .$_SESSION['messageTitre']. "')</script>";
         session_destroy();
@@ -172,7 +201,7 @@ session_start();
                 </div>
                 <div class="form-group">
                     <label for="telBureau">Téléphone</label>
-                    <input type="phone" name="telBureau" class="form-control" placeholder="ex : 0606060606" id="telBureau" pattern="^0[1-9][0-9]{8}$" required>
+                    <input type="phone" name="telBureau" class="form-control" placeholder="écrire sous forme : : 0606060606" id="telBureau" maxlength="10" pattern="^0[1-9][0-9]{8}$" required>
                 </div>
                 <div class="form-group">
                     <label for="mailBureau">Email</label>

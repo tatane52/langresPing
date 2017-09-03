@@ -20,7 +20,7 @@ require_once('../model/articles/traitementArticleComplet.php');
 while($donnees = $result->fetch()){
         ?>   
         <div class="thumbnail text-center">
-            <img src="<?php echo $donnees['photo'];?>" alt="article bb langres"/>   
+            <img src="<?php echo "../" .$donnees['photo'];?>" alt="article bb langres"/>   
             <div class="caption">
                 <h3 class="colorBlue">
                 <?php 
