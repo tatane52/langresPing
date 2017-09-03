@@ -11,6 +11,7 @@ require_once('../model/connectionBdd.php');
     <title>espace membre</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/membre.css">
+    <link rel="stylesheet" href="../css/calculatrice.css">
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
@@ -58,14 +59,55 @@ require_once('../model/connectionBdd.php');
         </section>
         
         <section class="container" id="calculatrice">
-            <!--<object data="calculatrice.jar" width=300 height=300>
-            le navigateur ne peut pas lire l'application
-            </object>-->
+            <div class="row col-xs-offset-2 col-xs-8 text-center">
+                <h2>Calculatrice</h2>
+            </div>
+            <div class="col-xs-offset-2 col-xs-8 text-center" id="calculBorder">         
+                <div class="col-xs-12">
+                    <div class="col-xs-12 col-sm-6 text-center">
+                        <label for="myPoint" id="myLabel">Mes points : </label></br>
+                        <input type="text" name="myPoint" id="myPoint" class="text-center" pattern="^[1-9]{3,4}$" maxlength="4">               
+                    </div>
+                    <div class="col-xs-12 col-sm-6 text-center">
+                        <label for="pointAdv" id="advLabel">points adversaires : </label></br>
+                        <input type="text" name="pointAdv" id="pointAdv" class="text-center" pattern="^[1-9]{3,4}$" maxlength="4">
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="col-xs-12 text-center coefMargin">
+                        <label>coeff : </label></br>
+                        <select>
+                            <option value="0.5">0.5</option>
+                            <option value="0.75">0.75</option>
+                            <option value="1" selected>1</option>
+                            <option value="1.25">1.25</option>
+                            <option value="1.5">1.5</option>
+                        </select>               
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="col-xs-12 text-center resultMargin">
+                        <div class="col-xs-6 text-center">
+                            <input type="radio" name="resultat" value="victoire">Victoire
+                        </div>
+                        <div class="col-xs-6 text-center">
+                            <input type="radio" name="resultat" value="defaite">Défaite
+                        </div>          
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="col-xs-12 text-center">
+                        <button type="button" id="calculButton">Résultat</button>          
+                    </div>
+                </div>
+            </div>
         </section>
 
 
     </main>
 <script src="../js/espaceMembre.js"> 
-</script>   
+</script>
+<script src="../js/calculatrice.js"> 
+</script> 
 </body>
 </html>

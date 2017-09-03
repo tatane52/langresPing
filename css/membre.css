@@ -2,7 +2,9 @@ main {
     margin-top: 30px;
 }
 
-#convoc {
+#convoc,
+#tchat,
+#calculatrice {
     margin-bottom: 50px;
 }
 

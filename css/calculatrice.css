@@ -1,0 +1,23 @@
+#calculBorder {
+    border: 2px solid black;
+    border-radius: 100px;
+}
+
+.coefMargin,
+.resultMargin {
+    margin-bottom: 10px;
+}
+
+#myLabel {
+    color: #3e3eef;
+}
+
+#advLabel {
+    color: #f10d0d;
+}
+
+#pointAdv,
+#myPoint,
+#calculButton {
+    border-radius: 50px;
+}
