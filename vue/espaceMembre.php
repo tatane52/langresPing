@@ -29,7 +29,7 @@ require_once('../model/connectionBdd.php');
             <div class="row col-xs-offset-2 col-xs-8 text-center">
                 <h2>Convocations sportives</h2>
             </div>
-             <div class="row col-xs-offset-2 col-xs-8">
+             <div class="col-xs-offset-2 col-xs-8 text-center">
                 <?php
                 //requete * tchat
                 require_once('../model/traitementConvocMembre.php');

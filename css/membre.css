@@ -14,6 +14,10 @@ tr {
     border-collapse: collapse;
 }
 
+table {
+    margin-bottom: 20px;
+}
+
 body>p {
     margin-top: 15px;
     font-weight: bold;

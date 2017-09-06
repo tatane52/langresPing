@@ -47,18 +47,12 @@ session_start();
                     <textarea name="commentaireConvoc" class="form-control" id="commentaireConvoc"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="heureConvoc">Heure de la rencontre</label>
-                    <input type="text" name="heureConvoc" class="form-control" id="heureConvoc" maxlength="5" required>
+                    <label for="dateConvoc">Date</label>
+                    <input type="text" name="dateConvoc" class="form-control" id="dateConvoc" maxlength="10" placeholder="écrire sous forme : 02-08-2018" pattern="^[0-3][0-9]-[0-1][0-9]-20[1-5][0-9]$" required>
                 </div>
                 <div class="form-group">
-                    <label>Jour</label>
-                    <select id="jour" name="jour">                      
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Mois</label>
-                    <select id="mois" name="mois">                   
-                    </select>
+                    <label for="heureConvoc">Heure</label>
+                    <input type="text" name="heureConvoc" class="form-control" id="heureConvoc" maxlength="5" placeholder="écrire sous forme : 09:05" pattern="^[0-2][0-9]:[0-5][0-9]$" required>
                 </div>
                 <div class="form-group">
                     <label>Joueurs : </label>

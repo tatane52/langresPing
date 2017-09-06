@@ -7,10 +7,10 @@ while($donnees = $result->fetch()){
     $dateFormat = date_format($date_envoi, 'd-m-Y H:i');
     if($donnees['pseudo'] == $_SESSION['pseudo']){
         echo "<p id='" .$donnees["id_message"]. "'><span class='pseudoMoi'>" .$donnees['pseudo']. "</span> : le " .$dateFormat. "</br>"
-        .$donnees['message']."</p>";
+        .$donnees['contenu']."</p>";
     }
     else{
         echo "<p id='" .$donnees["id_message"]. "' class='text-right'><span class='pseudoAutre'>" .$donnees['pseudo']. "</span> : le " .$dateFormat. "</br>"
-        .$donnees['message']."</p>";
+        .$donnees['contenu']."</p>";
     }
 }
