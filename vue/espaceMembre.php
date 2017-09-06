@@ -100,7 +100,7 @@ require_once('../model/connectionBdd.php');
                         <button type="button" id="calculButton">Résultat</button>          
                     </div>
                     <div class="col-xs-12 text-center">
-                        <input type="text" name="resultFinal" id="resultFinal" readonly>          
+                        <input type="text" name="resultFinal" id="resultFinal" class="text-center" readonly>          
                     </div>
                 </div>
             </div>
