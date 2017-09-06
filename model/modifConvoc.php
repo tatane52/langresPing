@@ -7,10 +7,10 @@ if(isset($_POST['sendConvoc']) && !empty($_POST['equipeConvoc']) && !empty($_POS
     $equipe = htmlspecialchars($_POST['equipeConvoc']);
     $adversaire = htmlspecialchars($_POST['adversaireConvoc']);
     if($_POST['lieu'] == "domicile"){
-        $poste = "A domicile";
+        $lieu = "A domicile";
     }
     else{
-        $poste = "A l'exterieur";
+        $lieu = "A l\'exterieur";
     }
     $commentaire = htmlspecialchars($_POST['commentaireConvoc']);    
     $jour = $_POST['jour'];
@@ -158,8 +158,8 @@ if(isset($_POST['sendConvoc']) && !empty($_POST['equipeConvoc']) && !empty($_POS
     $nom3 = htmlspecialchars($_POST['nomConvoc3']);
     $nom4 = htmlspecialchars($_POST['nomConvoc4']);
 
-    $requete = "INSERT INTO convoc VALUES (null, '$equipe', '$adversaire', '$poste', '$commentaire', $jour, '$mois', '$heure', '$prenom1', '$prenom2', '$prenom3', '$prenom4', '$nom1', '$nom2', '$nom3', '$nom4')";
-    echo $requete;
+    $requete = "INSERT INTO convoc VALUES (null, '$equipe', '$adversaire', '$lieu', '$commentaire', $jour, '$mois', '$heure', '$prenom1', '$prenom2', '$prenom3', '$prenom4', '$nom1', '$nom2', '$nom3', '$nom4')";
+    //echo $requete;
     $bdd->exec($requete);
     session_start();
     $_SESSION['messageConvoc'] = "Ajout convoc OK";

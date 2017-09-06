@@ -3,10 +3,6 @@
 require_once('connectionBdd.php');
 
 $date = date('Y-m-d');
-//echo $date;
-/*$dateCreate = date_create($date);
-$dateFormat = date_format($dateCreate, 'd-m-Y');
-echo $dateFormat;*/
 
 $requete = "SELECT * FROM calendrier WHERE date>='$date'";
 $result = $bdd->query($requete);

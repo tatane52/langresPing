@@ -17,18 +17,3 @@ while($donnees = $result->fetch()) {
     }
     
 }   
-
-/*$madate = "2017-09-01";
-$monheure = "08:00";
-$start_date = strtotime("$madate $monheure");
-$end_date   = strtotime("$madate $monheure +2 hours"); // Date de début + 2h
-
-$tab[] = array('id'        => $ligne['id'],
-		  'title'     => $ligne['title'],
-		  'start'     => $start_date,
-		 'end'       => $end_date,
-		 'allDay'    => false,
-		 'url'       => "#");
-
- 
-echo json_encode($tab);*/
