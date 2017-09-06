@@ -35,7 +35,7 @@ while($donnees = $result->fetch()){
                 <p class="text-center">
                 <?php
                 //requete date article
-                require_once('../model/articles/traitementArticleDate.php');
+                require('../model/articles/traitementArticleDate.php');
                 ?>
                 </p>
             </div>

@@ -66,17 +66,17 @@ require_once('../model/connectionBdd.php');
                 <div class="col-xs-12">
                     <div class="col-xs-12 col-sm-6 text-center">
                         <label for="myPoint" id="myLabel">Mes points : </label></br>
-                        <input type="text" name="myPoint" id="myPoint" class="text-center" pattern="^[1-9]{3,4}$" maxlength="4">               
+                        <input type="text" name="myPoint" id="myPoint" class="text-center" pattern="^[1-9][0-9]{2,3}$" maxlength="4" required>               
                     </div>
                     <div class="col-xs-12 col-sm-6 text-center">
                         <label for="pointAdv" id="advLabel">points adversaires : </label></br>
-                        <input type="text" name="pointAdv" id="pointAdv" class="text-center" pattern="^[1-9]{3,4}$" maxlength="4">
+                        <input type="text" name="pointAdv" id="pointAdv" class="text-center" pattern="^[1-9][0-9]{2,3}$" maxlength="4" required>
                     </div>
                 </div>
                 <div class="col-xs-12">
                     <div class="col-xs-12 text-center coefMargin">
                         <label>coeff : </label></br>
-                        <select>
+                        <select id="calculSelect">
                             <option value="0.5">0.5</option>
                             <option value="0.75">0.75</option>
                             <option value="1" selected>1</option>
@@ -88,7 +88,7 @@ require_once('../model/connectionBdd.php');
                 <div class="col-xs-12">
                     <div class="col-xs-12 text-center resultMargin">
                         <div class="col-xs-6 text-center">
-                            <input type="radio" name="resultat" value="victoire">Victoire
+                            <input type="radio" name="resultat" value="victoire" checked>Victoire
                         </div>
                         <div class="col-xs-6 text-center">
                             <input type="radio" name="resultat" value="defaite">Défaite
@@ -98,6 +98,9 @@ require_once('../model/connectionBdd.php');
                 <div class="col-xs-12">
                     <div class="col-xs-12 text-center">
                         <button type="button" id="calculButton">Résultat</button>          
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <input type="text" name="resultFinal" id="resultFinal" readonly>          
                     </div>
                 </div>
             </div>
