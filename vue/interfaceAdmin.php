@@ -147,6 +147,37 @@ session_start();
          </fieldset>
     </form>
 
+     <?php
+    //message confirmation
+    if ($_SESSION['updateJoueur']){
+        echo "<script>alert('" .$_SESSION['updateJoueur']. "')</script>";
+        session_destroy();
+    }
+    ?>
+
+    <form action="traitementModifArticle.php" method="post">
+        <fieldset class="col-xs-offset-1 col-xs-10">
+            <legend class="text-center">Modification article</legend>    
+                <div class="form-group">
+                    <label for="nomUpdateArticle">Sélection article</label>
+                    <select name="nomUpdateArticle" class="form-control" id="nomUpdateArticle">
+                    <?php 
+                    require_once('../model/connectionBdd.php');
+                    require_once('../model/traitementArticleComplet.php');
+                    while ($donnees = $result->fetch()){
+                    ?>
+                        <option value="<?php echo $donnees['id_article']; ?>"><?php echo $donnees['titre']. " du " .$donnees['date_envoi']?></option>
+                    <?php
+                    }                  
+                    ?>             
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" name="updateArticle" class="btn col-xs-offset-4 col-xs-4">Modifier</button>
+                </div>            
+         </fieldset>
+    </form>
+
     <?php
     //message confirmation
     if ($_SESSION['messagePhoto']){
@@ -269,6 +300,37 @@ session_start();
                 </div>
                 <div>
                     <button type="submit" name="sendJoueur" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
+                </div>            
+         </fieldset>
+    </form>
+
+    <?php
+    //message confirmation
+    if ($_SESSION['deleteJoueur']){
+        echo "<script>alert('" .$_SESSION['deleteJoueur']. "')</script>";
+        session_destroy();
+    }
+    ?>
+
+    <form action="../model/traitementSuppressionJoueur.php" method="post">
+        <fieldset class="col-xs-offset-1 col-xs-10">
+            <legend class="text-center">Suppression joueur</legend>    
+                <div class="form-group">
+                    <label for="nomDeleteJoueur">Sélection nom</label>
+                    <select name="nomDeleteJoueur" class="form-control" id="nomDeleteJoueur">
+                    <?php 
+                    require_once('../model/connectionBdd.php');
+                    require_once('../model/traitementJoueurComplet.php');
+                    while ($donnees = $result->fetch()){
+                    ?>
+                        <option value="<?php echo $donnees['id_joueur']; ?>"><?php echo $donnees['nom']. " " .$donnees['prenom']?></option>
+                    <?php
+                    }                  
+                    ?>             
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" name="deleteJoueur" class="btn col-xs-offset-4 col-xs-4">Supprimer</button>
                 </div>            
          </fieldset>
     </form>
