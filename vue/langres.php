@@ -83,7 +83,7 @@ if (!$_SESSION['pseudo']){
                     //lien connexion ou deconnection
                     if ($_SESSION['pseudo']){
                         echo "<li class='col-xs-6 col-sm-6 '><a href='model/deconnexion.php'><span class='colorHoverBlue'><span class='glyphicon glyphicon-log-in'></span> Deconnexion</span></a></li>";
-                        echo "<li class='col-xs-6 col-sm-6 '><a href='vue/espaceMembre.php'><span class='glyphicon glyphicon-eye-open'></span> Espace membres</span></a></li>";
+                        echo "<li class='col-xs-6 col-sm-6 '><a href='vue/1espace2Membre3.php'><span class='glyphicon glyphicon-eye-open'></span> Espace membres</span></a></li>";
                     }
                     else {
                         echo "<li class='col-xs-6 col-sm-6 '><a href='vue/inscription.php'><span class='colorHoverRed'><span class='glyphicon glyphicon-user'></span> Inscription</span></a></li>";
