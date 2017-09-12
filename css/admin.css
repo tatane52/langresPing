@@ -41,3 +41,7 @@ header .btn-danger {
 .btn {
     color: white;
 }
+
+button[name="sendConvoc"] {
+    margin-top: 15px;
+}

@@ -24,6 +24,10 @@ session_start();
         echo "<script>alert('" .$_SESSION['messageConvoc']. "')</script>";
         session_destroy();
     }
+    else if ($_SESSION['messageErreur']){
+        echo "<script>alert('" .$_SESSION['messageErreur']. "')</script>";
+        session_destroy();
+    }
     ?>
 
     <form action="../model/modifConvoc.php" method="post">
@@ -58,10 +62,9 @@ session_start();
                     <label>Joueurs : </label>
                     <input type="radio" name="joueur" value="trois"> 3 joueurs
                     <input type="radio" name="joueur" value="quatre"> 4 joueurs
-                    <div id="joueurCache">            
-                    </div>
                 </div>
-
+                <div id="joueurCache">            
+                </div>
                 <div>
                     <button type="submit" name="sendConvoc" class="btn col-xs-offset-4 col-xs-4">Ajouter</button>
                 </div>            

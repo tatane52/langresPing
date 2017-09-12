@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['sendConvoc']) && !empty($_POST['equipeConvoc']) && !empty($_POST['adversaireConvoc']) && !empty($_POST['dateConvoc']) && !empty($_POST['heureConvoc'])){
+if(isset($_POST['sendConvoc']) && !empty($_POST['equipeConvoc']) && !empty($_POST['adversaireConvoc']) && isset($_POST['lieu']) && !empty($_POST['dateConvoc']) && !empty($_POST['heureConvoc']) && isset($_POST['joueur'])){
     //connexion bdd
     require_once('connectionBdd.php');
 
@@ -33,9 +33,11 @@ if(isset($_POST['sendConvoc']) && !empty($_POST['equipeConvoc']) && !empty($_POS
     $bdd->exec($requete);
     session_start();
     $_SESSION['messageConvoc'] = "Ajout convoc OK";
-
     header('location: ../vue/interfaceAdmin.php');
+    exit();
 }
 else{
+    session_start();
+    $_SESSION['messageErreur'] = "Tu as oublié de cocher quelque chose!!!";
     header('location: ../vue/interfaceAdmin.php');
 }
