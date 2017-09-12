@@ -6,7 +6,7 @@ function replaceRandom($nameImage){
             return $chiffreDebut.$nameImage;
         }
 
-if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['prenomBureau']) && !empty($_POST['telBureau']) && !empty($_POST['mailBureau'])){
+if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['prenomBureau']) && isset($_POST['poste']) && !empty($_POST['telBureau']) && !empty($_POST['mailBureau'])){
     require_once('connectionBdd.php');
     //htmlentities ne marche pas avec str_replace
     $nom = htmlspecialchars($_POST['nomBureau']);  
@@ -103,5 +103,7 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
     }
 }
 else{
+    session_start();
+    $_SESSION['messageErreurPoste'] = "Tu as oublié de cocher le poste";
     header('location: ../vue/interfaceAdmin.php');
 }

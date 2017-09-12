@@ -208,6 +208,10 @@ session_start();
         echo "<script>alert('" .$_SESSION['messageBureau']. "')</script>";
         session_destroy();
     }
+    else if ($_SESSION['messageErreurPoste']){
+        echo "<script>alert('" .$_SESSION['messageErreurPoste']. "')</script>";
+        session_destroy();
+    }
     ?>
 
     <form action="../model/modifBureau.php" method="post" enctype="multipart/form-data">
@@ -223,7 +227,7 @@ session_start();
                 </div>
                 <div class="form-group">
                     <label>Poste</label></br>
-                    <input type="radio" name="poste" value="president" checked> Président
+                    <input type="radio" name="poste" value="president"> Président
                     <input type="radio" name="poste" value="tresorier"> Trésorier
                     <input type="radio" name="poste" value="secretaire"> Secrétaire
                 </div>

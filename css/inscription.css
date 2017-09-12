@@ -39,3 +39,8 @@ header .btn-danger {
 .btn-danger:focus {
     background-color: #f10d0d !important;
 }
+
+#analyseMdp {
+    color: yellow;
+    font-weight: bold;
+}
