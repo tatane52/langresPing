@@ -1,13 +1,15 @@
 <?php
 
-if(isset($_POST['send'])){
+if(isset($_POST['send']) && !empty($_POST['pseudo']) && !empty($_POST['mdp'])){
 
     require_once('connectionBdd.php');
     
-    $pseudo = $_POST['pseudo'];
-    $mdp = $_POST['mdp'];
+    $pseudo = htmlspecialchars($_POST['pseudo']);
+    $pseudoSansQuote = str_replace("'", " ", $pseudo);
+
+    $mdp = htmlspecialchars($_POST['mdp']);
     
-    $requete = "SELECT * FROM membre WHERE pseudo='" .$pseudo. "'";
+    $requete = "SELECT * FROM membre WHERE pseudo='" .$pseudoSansQuote. "'";
     
     $result = $bdd->query($requete);
     
@@ -24,4 +26,5 @@ if(isset($_POST['send'])){
         $_SESSION['erreur'] = "le pseudo et/ou le mot de passe n'est pas correct";
         header('location: ../vue/connexion.php');
     }
-};
+}
+

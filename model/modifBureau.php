@@ -16,8 +16,10 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
     $nomMaj = strtoupper($nomSansAccent);
     $prenom = htmlspecialchars($_POST['prenomBureau']);
     $prenomFirstLetterMaj = ucfirst($prenom);
-    $tel = $_POST['telBureau'];
-    $mail = $_POST['mailBureau'];
+    $prenomSansQuote = str_replace("'", " ", $prenomFirstLetterMaj);
+    
+    $tel = htmlspecialchars($_POST['telBureau']);
+    $mail = htmlspecialchars($_POST['mailBureau']);
     
     if($_POST['poste'] == "president"){
         $poste = "PRESIDENT";
@@ -34,8 +36,8 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
 
     if($nameImage == ''){
         $photo = 'images/logofinal.png';
-        $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$poste', '$photo', '$tel', '$mail')";
-        //echo $requete;
+        $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomSansQuote', '$poste', '$photo', '$tel', '$mail')";
+        echo $requete;
         $bdd->exec($requete);
 
         session_start();
@@ -86,7 +88,7 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
                 move_uploaded_file($imageTemp, "../$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$poste', '$photo', '$tel', '$mail')";
+                $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomSansQuote', '$poste', '$photo', '$tel', '$mail')";
                 //echo $requete;
                 $bdd->exec($requete);
 

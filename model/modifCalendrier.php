@@ -11,8 +11,9 @@ if(isset($_POST['sendCalendrier']) && !empty($_POST['dateCalendrier']) && !empty
 
     $heure = htmlspecialchars($_POST['heureCalendrier']);
     $titre = htmlspecialchars($_POST['titreCalendrier']);
+    $titreSansQuote = str_replace("'", " ", $titre);
 
-    $requete = "INSERT INTO calendrier VALUES (null, '$dateUs', '$heure', '$titre')";
+    $requete = "INSERT INTO calendrier VALUES (null, '$dateUs', '$heure', '$titreSansQuote')";
     $bdd->exec($requete);
 
     session_start();

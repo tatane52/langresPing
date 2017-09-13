@@ -17,13 +17,14 @@ if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['
 
     $prenom = htmlspecialchars($_POST['prenomJoueur']);
     $prenomFirstLetterMaj = ucfirst($prenom);
+    $prenomSansQuote = str_replace("'", " ", $prenomFirstLetterMaj);
     
     $nameImage = $_FILES['photoJoueur']['name'];
     $imageTemp = $_FILES['photoJoueur']['tmp_name'];
 
     if($nameImage == ''){
         $photo = '../images/logofinal.png';
-        $requete = "INSERT INTO joueur VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$photo')";
+        $requete = "INSERT INTO joueur VALUES (null, '$nomMaj', '$prenomSansQuote', '$photo')";
         //echo $requete;
         $bdd->exec($requete);
         header('location: ../vue/interfaceAdmin.php');
@@ -71,7 +72,7 @@ if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['
                 move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "INSERT INTO joueur VALUES (null, '$nomMaj', '$prenomFirstLetterMaj', '$photo')";
+                $requete = "INSERT INTO joueur VALUES (null, '$nomMaj', '$prenomSansQuote', '$photo')";
                 //echo $requete;
                 $bdd->exec($requete);
 

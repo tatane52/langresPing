@@ -233,7 +233,7 @@ session_start();
                 </div>
                 <div class="form-group">
                     <label for="telBureau">Téléphone</label>
-                    <input type="phone" name="telBureau" class="form-control" placeholder="écrire sous forme : : 0606060606" id="telBureau" maxlength="10" pattern="^0[1-9][0-9]{8}$" required>
+                    <input type="phone" name="telBureau" class="form-control" placeholder="écrire sous forme : 0606060606" id="telBureau" maxlength="10" pattern="^0[1-9][0-9]{8}$" required>
                 </div>
                 <div class="form-group">
                     <label for="mailBureau">Email</label>

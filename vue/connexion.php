@@ -14,7 +14,7 @@ session_start();
 <body>
     <!--inclusion d'entête php-->
     <?php include('enTeteAnnexe.php'); ?>
-    
+
     <div id="erreur" class="text-center">
     <?php
     if ($_SESSION['erreur']){
