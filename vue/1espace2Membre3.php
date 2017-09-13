@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+if($_SESSION['pseudo']){
 //connexion bdd
 require_once('../model/connectionBdd.php');
 ?>
@@ -114,3 +116,9 @@ require_once('../model/connectionBdd.php');
 </script> 
 </body>
 </html>
+<?php
+}
+else{
+    header('location:../index.php');
+}
+?>
