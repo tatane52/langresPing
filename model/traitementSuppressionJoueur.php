@@ -9,9 +9,9 @@ if(isset($_POST['deleteJoueur'])){
     $bdd->query($requete);
     session_start();
     $_SESSION['deleteJoueur'] = "Joueur supprimé";
-    header('location:../model/interfaceAdmin.php');
+    header('location:../vue/interfaceAdmin.php');
     
 }
 else {
-   header('location:../model/interfaceAdmin.php');
+   header('location:../vue/interfaceAdmin.php');
 }
