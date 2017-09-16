@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
     $(".lienHisto").click(function(e) {
         var larg = document.body.clientWidth;
         if (larg > 767) {

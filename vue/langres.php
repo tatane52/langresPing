@@ -396,7 +396,7 @@ if (!$_SESSION['pseudo']){
                 </div>
                 <div class="row">
                    <div id="calendar"></div>
-
+                </div>
             </div>
         </section>
         <!--end section calendrier-->
