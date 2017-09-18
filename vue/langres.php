@@ -102,7 +102,7 @@ if (!$_SESSION['pseudo']){
         echo "<script>alert('" .$_SESSION['messageInscription']. "')</script>";
         session_destroy();
     }
-    elseif ($_SESSION['messageInscriptionErreur']) {
+    elseif (isset($_SESSION['messageInscriptionErreur'])) {
         echo "<script>alert('" .$_SESSION['messageInscriptionErreur']. "')</script>";
         session_destroy();
     }
