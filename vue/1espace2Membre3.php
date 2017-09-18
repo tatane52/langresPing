@@ -54,10 +54,8 @@ require_once('../model/connectionBdd.php');
                 <form method="post" action="">
                     <textarea id="messageAjax" name="message"></textarea></br>
                     <button id="sendAjax" type="submit" name="send">Envoyer</button>        
-                </form>
-                
+                </form>          
             </div>
-        </div>
         </section>
         
         <section class="container" id="calculatrice">

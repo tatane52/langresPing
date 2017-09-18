@@ -81,7 +81,7 @@ if (!$_SESSION['pseudo']){
                     
                     <?php
                     //lien connexion ou deconnection
-                    if ($_SESSION['pseudo']){
+                    if (isset($_SESSION['pseudo'])){
                         echo "<li class='col-xs-6 col-sm-6 '><a href='model/deconnexion.php'><span class='colorHoverBlue'><span class='glyphicon glyphicon-log-in'></span> Deconnexion</span></a></li>";
                         echo "<li class='col-xs-6 col-sm-6 '><a href='vue/1espace2Membre3.php'><span class='glyphicon glyphicon-eye-open'></span> Espace membres</span></a></li>";
                     }
@@ -98,7 +98,7 @@ if (!$_SESSION['pseudo']){
 
     <?php
     //message confirmation
-    if ($_SESSION['messageInscription']){
+    if (isset($_SESSION['messageInscription'])){
         echo "<script>alert('" .$_SESSION['messageInscription']. "')</script>";
         session_destroy();
     }

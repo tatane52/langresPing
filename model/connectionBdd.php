@@ -4,7 +4,6 @@ $dbname = "langresPing";
 $username = "root";
 $password = "root";
 
-
 //creation connection
 try
 {

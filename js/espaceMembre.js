@@ -1,9 +1,8 @@
 // rafraichissement message tchat AJAX
-
-
 $("#sendAjax").click(function(e) {
     e.preventDefault();
     var dernierId = $(".talk p:first").attr("id");
+    console.log(dernierId);
     var message = $("#messageAjax");
     var valeurMessage = message.val();
     var messageSansQuote = valeurMessage.replace("'", " ")

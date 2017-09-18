@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
     require_once('connectionBdd.php');
 
     $date_envoi = date('Y-m-d H:i:s');
@@ -18,11 +17,13 @@ session_start();
         $date_message = new Datetime($donnees['date_envoi']);  
         $dateFormat = date_format($date_message, 'd-m-Y H:i');
         if($donnees['pseudo'] == $_SESSION['pseudo']){
-            echo "<p id='" .$donnees['id_message']."' class='text-left'><span class='pseudoMoi'>" .$donnees['pseudo']. "</span> : le " .$dateFormat. "</br>"
+            echo "<p id='" .$donnees['id_message']."' class='text-left'><span class='pseudoMoi'>" .$donnees['pseudo'].
+             "</span> : le " .$dateFormat. "</br>"
             .$donnees['contenu']."</p>";
         }
         else{
-            echo "<p id='" .$donnees['id_message']. "' class='text-right'><span class='pseudoAutre'>" .$donnees['pseudo']. "</span> : le " .$dateFormat. "</br>"
+            echo "<p id='" .$donnees['id_message']. "' class='text-right'><span class='pseudoAutre'>" .$donnees['pseudo'].
+             "</span> : le " .$dateFormat. "</br>"
             .$donnees['contenu']."</p>";
         }
     }

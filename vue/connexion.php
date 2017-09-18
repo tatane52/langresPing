@@ -17,7 +17,7 @@ session_start();
 
     <div id="erreur" class="text-center">
     <?php
-    if ($_SESSION['erreur']){
+    if (isset($_SESSION['erreur'])){
         echo $_SESSION['erreur'];
     }
     ?>
