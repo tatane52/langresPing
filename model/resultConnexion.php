@@ -17,7 +17,8 @@ if(isset($_POST['send']) && !empty($_POST['pseudo']) && !empty($_POST['mdp'])){
       
     if(password_verify($mdp, $donnees['mdp'])){
         session_start();
-        $_SESSION['pseudo'] = $pseudo;
+        $_SESSION['id_membre'] = $donnees['id_membre'];
+        $_SESSION['pseudo'] = $donnees['pseudo'];
         header('location: ../vue/1espace2Membre3.php');
         exit();
     }

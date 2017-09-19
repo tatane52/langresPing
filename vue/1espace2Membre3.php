@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if($_SESSION['pseudo']){
+if(isset($_SESSION['pseudo'])){
 //connexion bdd
 require_once('../model/connectionBdd.php');
 ?>

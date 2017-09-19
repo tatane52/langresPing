@@ -1,6 +1,8 @@
 <?php
 
-$requeteSelect = "SELECT * FROM message ORDER BY id_message DESC LIMIT 10";
+//$requeteSelect = "SELECT * FROM message ORDER BY id_message DESC LIMIT 10";
+$requeteSelect = "SELECT date_envoi, pseudo, id_message, contenu FROM membre INNER JOIN message
+ON membre.id_membre = message.id_membre ORDER BY id_message DESC LIMIT 10";
 $result = $bdd->query($requeteSelect);
 while($donnees = $result->fetch()){
     $date_envoi = new Datetime($donnees['date_envoi']);

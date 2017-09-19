@@ -5,12 +5,15 @@ session_start();
 
     $date_envoi = date('Y-m-d H:i:s');
     $message = $_POST["messageAjax"];
-    $pseudo = $_SESSION["pseudo"];
-    $requeteInsert = "INSERT INTO message VALUES(null, '$message', '$pseudo', '$date_envoi')";
 
+    $id = $_SESSION['id_membre'];
+    $requeteInsert = "INSERT INTO message VALUES(null, '$message', '$date_envoi', $id)";
     $bdd->exec($requeteInsert);
 
-    $requete = "SELECT * FROM message WHERE id_message > '" .$_POST["idMessage"]."' ORDER BY id_message DESC";
+    //$requete = "SELECT * FROM message WHERE id_message > '" .$_POST["idMessage"]."' ORDER BY id_message DESC";
+    $requete = "SELECT date_envoi, pseudo, id_message, contenu FROM membre INNER JOIN message
+    ON membre.id_membre = message.id_membre WHERE id_message > '" .$_POST["idMessage"]."' 
+    ORDER BY id_message DESC";
     $result = $bdd->query($requete);
 
     while($donnees = $result->fetch()) {

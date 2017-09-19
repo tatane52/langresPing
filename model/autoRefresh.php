@@ -1,7 +1,8 @@
 <?php
 require_once('connectionBdd.php');
 
-$requete = "SELECT * FROM message WHERE id_message > '" .$_GET["idMessage"]."' ORDER BY id_message DESC";
+$requete = "SELECT date_envoi, pseudo, id_message, contenu FROM membre INNER JOIN message
+    ON membre.id_membre = message.id_membre WHERE id_message > '" .$_GET["idMessage"]."' ORDER BY id_message DESC";
 $result = $bdd->query($requete);
 
 while($donnees = $result->fetch()) {
