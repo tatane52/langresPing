@@ -2,7 +2,6 @@
 $("#sendAjax").click(function(e) {
     e.preventDefault();
     var dernierId = $(".talk p:first").attr("id");
-    console.log(dernierId);
     var message = $("#messageAjax");
     var valeurMessage = message.val();
     var messageSansQuote = valeurMessage.replace("'", " ")
@@ -34,4 +33,4 @@ setInterval(function autoRefresh(e) {
             $(".talk").prepend(code_html);
         }
     })
-}, 5000);
+}, 30000);
