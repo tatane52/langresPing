@@ -34,7 +34,7 @@ require_once('model/connectionBdd.php');
 
 <!--fenetre membre js bootstrap-->
 <?php
-if (!$_SESSION['pseudo']){
+if (!isset($_SESSION['pseudo'])){
 ?>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -107,7 +107,9 @@ if (!$_SESSION['pseudo']){
         session_destroy();
     }
     ?>
-
+    <?php
+echo $_SERVER['DOCUMENT_ROOT'];
+?>
     <!--header-->
     <header class="container">
         <div class="row">

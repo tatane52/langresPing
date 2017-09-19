@@ -33,7 +33,7 @@ include('enTeteAnnexe.php');
                 </div>
                 <div class='form-group'>
                     <label for='contenu'>Contenu</label>
-                    <input type='text' value='" .$donnees['contenu']. "' name='contenu' class='form-control' id='contenu' required>
+                    <textarea name='contenu' class='form-control' id='contenu' required> ".$donnees['contenu']." </textarea>
                 </div>
                 <div class='form-group'>
                     <label for='photoArticle'>Photo (par défaut logo du club)</label>

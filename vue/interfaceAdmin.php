@@ -20,11 +20,11 @@ session_start();
 
     <?php
     //message confirmation
-    if ($_SESSION['messageConvoc']){
+    if (isset($_SESSION['messageConvoc'])){
         echo "<script>alert('" .$_SESSION['messageConvoc']. "')</script>";
         session_destroy();
     }
-    else if ($_SESSION['messageErreur']){
+    else if (isset($_SESSION['messageErreur'])){
         echo "<script>alert('" .$_SESSION['messageErreur']. "')</script>";
         session_destroy();
     }
@@ -73,7 +73,7 @@ session_start();
 
     <?php
     //message confirmation
-    if ($_SESSION['messageCalendrier']){
+    if (isset($_SESSION['messageCalendrier'])){
         echo "<script>alert('" .$_SESSION['messageCalendrier']. "')</script>";
         session_destroy();
     }
@@ -102,7 +102,7 @@ session_start();
 
     <?php
     //message confirmation
-    if ($_SESSION['messageTitre']){
+    if (isset($_SESSION['messageTitre'])){
         echo "<script>alert('" .$_SESSION['messageTitre']. "')</script>";
         session_destroy();
     }
@@ -123,7 +123,7 @@ session_start();
 
     <?php
     //message confirmation
-    if ($_SESSION['messageArticle']){
+    if (isset($_SESSION['messageArticle'])){
         echo "<script>alert('" .$_SESSION['messageArticle']. "')</script>";
         session_destroy();
     }
@@ -138,7 +138,7 @@ session_start();
                 </div>
                 <div class="form-group">
                     <label for="contenu">Contenu</label>
-                    <input type="text" name="contenu" class="form-control" id="contenu" required>
+                    <textarea name="contenu" class="form-control" id="contenu" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="photoArticle">Photo (par défaut logo du club)</label>
@@ -152,7 +152,7 @@ session_start();
 
      <?php
     //message confirmation
-    if ($_SESSION['updateJoueur']){
+    if (isset($_SESSION['updateJoueur'])){
         echo "<script>alert('" .$_SESSION['updateJoueur']. "')</script>";
         session_destroy();
     }
@@ -183,7 +183,7 @@ session_start();
 
     <?php
     //message confirmation
-    if ($_SESSION['messagePhoto']){
+    if (isset($_SESSION['messagePhoto'])){
         echo "<script>alert('" .$_SESSION['messagePhoto']. "')</script>";
         session_destroy();
     }
@@ -204,11 +204,11 @@ session_start();
 
     <?php
     //message confirmation
-    if ($_SESSION['messageBureau']){
+    if (isset($_SESSION['messageBureau'])){
         echo "<script>alert('" .$_SESSION['messageBureau']. "')</script>";
         session_destroy();
     }
-    else if ($_SESSION['messageErreurPoste']){
+    else if (isset($_SESSION['messageErreurPoste'])){
         echo "<script>alert('" .$_SESSION['messageErreurPoste']. "')</script>";
         session_destroy();
     }
@@ -251,7 +251,7 @@ session_start();
 
      <?php
     //message confirmation
-    if ($_SESSION['messageGymnase']){
+    if (isset($_SESSION['messageGymnase'])){
         echo "<script>alert('" .$_SESSION['messageGymnase']. "')</script>";
         session_destroy();
     }
@@ -284,7 +284,7 @@ session_start();
 
     <?php
     //message confirmation
-    if ($_SESSION['messageJoueur']){
+    if (isset($_SESSION['messageJoueur'])){
         echo "<script>alert('" .$_SESSION['messageJoueur']. "')</script>";
         session_destroy();
     }
@@ -313,7 +313,7 @@ session_start();
 
     <?php
     //message confirmation
-    if ($_SESSION['deleteJoueur']){
+    if (isset($_SESSION['deleteJoueur'])){
         echo "<script>alert('" .$_SESSION['deleteJoueur']. "')</script>";
         session_destroy();
     }
