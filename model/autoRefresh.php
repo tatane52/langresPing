@@ -6,7 +6,7 @@ $result = $bdd->query($requete);
 
 while($donnees = $result->fetch()) {
     $date_message = new Datetime($donnees['date_envoi']);  
-    $dateFormat = date_format($date_message, 'd-m-Y H:i:s');
+    $dateFormat = date_format($date_message, 'd-m-Y H:i');
     if($donnees['pseudo'] == $_SESSION['pseudo']){
         echo "<p id='" .$donnees['id_message']."' class='text-left'><span class='pseudoMoi'>" .$donnees['pseudo'].
          "</span> : le " .$dateFormat. "</br>"
