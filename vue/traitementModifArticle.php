@@ -1,13 +1,15 @@
 <?php
 
 if(isset($_POST['updateArticle'])){
+    //connexion bdd
     require_once('../model/connectionBdd.php');
 
     $numeroArticle = $_POST['nomUpdateArticle'];
 
-    $requete = "SELECT * FROM article WHERE id_article=$numeroArticle";
-    $result = $bdd->query($requete);
-    $donnees = $result->fetch();
+    $requete = "SELECT * FROM article WHERE id_article=?";
+    $sql = $bdd->prepare($requete);
+    $sql->execute(array($numeroArticle));
+    $donnees = $sql->fetch();
 
     session_start();
     $_SESSION['id'] = $donnees['id_article'];

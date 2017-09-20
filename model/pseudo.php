@@ -1,12 +1,14 @@
 <?php
+//connexion bdd
 require_once('connectionBdd.php');
 
+$pseudo = $_GET["pseudo"];
+$requete = "SELECT pseudo FROM membre WHERE pseudo=?";
+$sql = $bdd->prepare($requete);
+$sql->execute(array($pseudo));
 
-$requete = "SELECT pseudo FROM membre WHERE pseudo='" .$_GET["pseudo"]."'";
-$result = $bdd->query($requete);
-
-while ($donnee = $result->fetch()) {  
-    if ($donnee['pseudo'] == $_GET['pseudo']) {
+while ($donnee = $sql->fetch()) {  
+    if ($donnee['pseudo'] == $pseudo) {
         echo true;
         return;
     }

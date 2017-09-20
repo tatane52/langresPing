@@ -1,6 +1,7 @@
 <?php
 
 if(isset($_POST['sendGymnase']) && !empty($_POST['nomGymnase']) && !empty($_POST['adresseGymnase']) && !empty($_POST['codeGymnase']) && !empty($_POST['villeGymnase'])){
+    //connexion bdd
     require_once('connectionBdd.php');
 
     $nom = htmlspecialchars($_POST['nomGymnase']);
@@ -19,9 +20,9 @@ if(isset($_POST['sendGymnase']) && !empty($_POST['nomGymnase']) && !empty($_POST
     $villeSansQuote = str_replace('\'', ' ', $ville);
     $villeMaj = ucfirst($villeSansQuote);
 
-    $requete = "INSERT INTO gymnase VALUES (null, '$nomMaj', '$adresseSansQuote', '$codePostal', '$villeMaj')";
-        //echo $requete;
-        $bdd->exec($requete);
+    $requete = "INSERT INTO gymnase VALUES (null, ?, ?, ?, ?)";
+    $sql = $bdd->prepare($requete);
+    $sql->execute(array($nomMaj, $adresseSansQuote, $codePostal, $villeMaj));
 
         session_start();
         $_SESSION['messageGymnase'] = "Ajout gymnase OK";

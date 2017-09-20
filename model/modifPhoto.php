@@ -7,6 +7,7 @@ function replaceRandom($nameImage){
         }
 
 if(isset($_POST['sendPhoto'])){
+    //connexion bdd
     require_once('connectionBdd.php');
     $nameImage = $_FILES['photoCaroussel']['name'];
     $imageTemp = $_FILES['photoCaroussel']['tmp_name'];
@@ -14,8 +15,9 @@ if(isset($_POST['sendPhoto'])){
     if($nameImage == ''){
         $photo = 'images/logoFinalPhoto.png';
 
-        $requete = "INSERT INTO photo VALUES (null, '$photo')";
-        $bdd->exec($requete);
+        $requete = "INSERT INTO photo VALUES (null, ?)";
+        $sql = $bdd->prepare($requete);
+        $sql->execute(array($photo));
 
         session_start();
         $_SESSION['messagePhoto'] = "Ajout photo ok";
@@ -65,8 +67,9 @@ if(isset($_POST['sendPhoto'])){
                 move_uploaded_file($imageTemp, "../$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "INSERT INTO photo VALUES (null, '$photo')";
-                $bdd->exec($requete);
+                $requete = "INSERT INTO photo VALUES (null, ?)";
+                $sql = $bdd->prepare($requete);
+                $sql->execute(array($photo));
 
                 session_start();
                 $_SESSION['messagePhoto'] = "Ajout photo ok";

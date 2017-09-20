@@ -1,20 +1,24 @@
 <?php
 
 if(isset($_POST['send']) && !empty($_POST['pseudo']) && !empty($_POST['mdp'])){
-
+    //connexion bdd
     require_once('connectionBdd.php');
     
     $pseudo = htmlspecialchars($_POST['pseudo']);
     $pseudoSansQuote = str_replace("'", " ", $pseudo);
 
+    
+    
+    $requete = "SELECT * FROM membre WHERE pseudo=?";
+    
+    $sql = $bdd->prepare($requete);
+    $sql->execute(array($pseudoSansQuote));
+    
+    $donnees = $sql->fetch();
+
     $mdp = htmlspecialchars($_POST['mdp']);
-    
-    $requete = "SELECT * FROM membre WHERE pseudo='" .$pseudoSansQuote. "'";
-    
-    $result = $bdd->query($requete);
-    
-    $donnees = $result->fetch();
-      
+    //vérification mot de passe rentré par membre en clair
+    //comparé au mot de passe haché en bdd
     if(password_verify($mdp, $donnees['mdp'])){
         session_start();
         $_SESSION['id_membre'] = $donnees['id_membre'];

@@ -50,9 +50,10 @@ if(isset($_POST['sendConvoc']) && !empty($_POST['equipeConvoc']) && !empty($_POS
     $nom4 = htmlspecialchars($_POST['nomConvoc4']);
     $nom4SansQuote = str_replace("'", " ", $nom4);
 
-    $requete = "INSERT INTO convoc VALUES (null, '$equipeSansQuote', '$adversaireSansQuote', '$lieu', '$commentaireSansQuote', '$dateUs', '$heure', '$prenom1SansQuote', '$prenom2SansQuote', '$prenom3SansQuote', '$prenom4SansQuote', '$nom1SansQuote', '$nom2SansQuote', '$nom2SansQuote', '$nom2SansQuote')";
-    //echo $requete;
-    $bdd->exec($requete);
+    $requete = "INSERT INTO convoc VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = $bdd->prepare($requete);
+    $sql->execute(array($equipeSansQuote, $adversaireSansQuote, $lieu, $commentaireSansQuote, $dateUs, $heure, $prenom1SansQuote, $prenom2SansQuote, $prenom3SansQuote, $prenom4SansQuote, $nom1SansQuote, $nom2SansQuote, $nom3SansQuote, $nom4SansQuote));
+    
     session_start();
     $_SESSION['messageConvoc'] = "Ajout convoc OK";
     header('location: ../vue/interfaceAdmin.php');

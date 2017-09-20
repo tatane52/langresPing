@@ -7,6 +7,7 @@ function replaceRandom($nameImage){
         }
 
 if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['prenomJoueur'])){
+    //connexion bdd
     require_once('connectionBdd.php');
     //htmlentities ne marche pas avec str_replace
     $nom = htmlspecialchars($_POST['nomJoueur']);  
@@ -24,9 +25,11 @@ if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['
 
     if($nameImage == ''){
         $photo = '../images/logofinal.png';
-        $requete = "INSERT INTO joueur VALUES (null, '$nomMaj', '$prenomSansQuote', '$photo')";
-        //echo $requete;
-        $bdd->exec($requete);
+
+        $requete = "INSERT INTO joueur VALUES (null, ?, ?, ?)";
+        $sql = $bdd->prepare($requete);
+        $sql->execute(array($nomMaj, $prenomSansQuote, $photo));
+
         header('location: ../vue/interfaceAdmin.php');
         exit();
     }
@@ -72,9 +75,9 @@ if(isset($_POST['sendJoueur']) && !empty($_POST['nomJoueur']) && !empty($_POST['
                 move_uploaded_file($imageTemp, "$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "INSERT INTO joueur VALUES (null, '$nomMaj', '$prenomSansQuote', '$photo')";
-                //echo $requete;
-                $bdd->exec($requete);
+                $requete = "INSERT INTO joueur VALUES (null, ?, ?, ?)";
+                $sql = $bdd->prepare($requete);
+                $sql->execute(array($nomMaj, $prenomSansQuote, $photo));
 
                 session_start();
                 $_SESSION['messageJoueur'] = "Ajout joueur OK";

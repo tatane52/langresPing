@@ -3,9 +3,11 @@
 $dDay = date('Y-m-d');
 
 
-$requete = "SELECT * FROM convoc WHERE jour>='$dDay'";
-$result = $bdd->query($requete);
-while ($donnees = $result->fetch()) {
+$requete = "SELECT * FROM convoc WHERE jour>=?";
+$sql = $bdd->prepare($requete);
+$sql->execute(array($dDay));
+
+while ($donnees = $sql->fetch()) {
     $date = new Datetime($donnees['jour']);  
     $dateFormat = date_format($date, 'd-m-Y');
     if (!empty($donnees['prenomJoueur4']) && !empty($donnees['nomJoueur4'])){

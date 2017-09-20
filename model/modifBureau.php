@@ -7,6 +7,7 @@ function replaceRandom($nameImage){
         }
 
 if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['prenomBureau']) && isset($_POST['poste']) && !empty($_POST['telBureau']) && !empty($_POST['mailBureau'])){
+    //connexion bdd
     require_once('connectionBdd.php');
     //htmlentities ne marche pas avec str_replace
     $nom = htmlspecialchars($_POST['nomBureau']);  
@@ -36,9 +37,10 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
 
     if($nameImage == ''){
         $photo = 'images/logofinal.png';
-        $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomSansQuote', '$poste', '$photo', '$tel', '$mail')";
-        echo $requete;
-        $bdd->exec($requete);
+        $requete = "INSERT INTO bureau VALUES (null, ?, ?, ?, ?, ?, ?)";
+        $sql = $bdd->prepare($requete);
+        $sql->execute(array($nomMaj, $prenomSansQuote, $poste, $photo, $tel, $mail));
+        
 
         session_start();
         $_SESSION['messageBureau'] = "Ajout bureau OK";
@@ -81,16 +83,15 @@ if(isset($_POST['sendBureau']) && !empty($_POST['nomBureau']) && !empty($_POST['
             //verifie si l'extension est valide'
             if(in_array($extension, $extensionOK)){
 			    $dossierImage = "images/imageUpload";
-                //echo $nameImage. "</br>";
-                //echo $imageTemp. "</br>";
+            
                 $imageChiffre = replaceRandom($nameImage);
-                //echo $imageChiffre;
+                
                 move_uploaded_file($imageTemp, "../$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "INSERT INTO bureau VALUES (null, '$nomMaj', '$prenomSansQuote', '$poste', '$photo', '$tel', '$mail')";
-                //echo $requete;
-                $bdd->exec($requete);
+                $requete = "INSERT INTO bureau VALUES (null, ?, ?, ?, ?, ?, ?)";
+                $sql = $bdd->prepare($requete);
+                $sql->execute(array($nomMaj, $prenomSansQuote, $poste, $photo, $tel, $mail));
 
                 session_start();
                 $_SESSION['messageBureau'] = "Ajout bureau OK";

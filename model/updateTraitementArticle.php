@@ -7,6 +7,7 @@ function replaceRandom($nameImage){
         }
 
 if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['contenu'])){
+    //connexion bdd
     require_once('connectionBdd.php');
 
     $titre = htmlspecialchars($_POST['title']);
@@ -28,8 +29,11 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
 
     if($nameImage == ''){
         $photo = 'images/logofinal.png';
-        $requete = "UPDATE article SET titre = '$titreMajuscule', contenu = '$contenuSansQuote', date_envoi = '$date', photo = '$photo' WHERE id_article=$idArticle";  
-        $bdd->exec($requete);
+        
+        $requete = "UPDATE article SET titre = ?, contenu = ?, date_envoi = ?, photo = ? WHERE id_article=?";  
+        $sql = $bdd->prepare($requete);
+        $sql->execute(array($titreMajuscule, $contenuSansQuote, $date, $photo, $idArticle));
+    
 
         session_start();
         $_SESSION['messageArticle'] = "Modification article OK";
@@ -79,8 +83,9 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
                 move_uploaded_file($imageTemp, "../$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "UPDATE article SET titre = '$titreMajuscule', contenu = '$contenuSansQuote', date_envoi = '$date', photo = '$photo' WHERE id_article=$idArticle";
-                $bdd->exec($requete);
+                $requete = "UPDATE article SET titre = ?, contenu = ?, date_envoi = ?, photo = ? WHERE id_article=?";  
+                $sql = $bdd->prepare($requete);
+                $sql->execute(array($titreMajuscule, $contenuSansQuote, $date, $photo, $idArticle));
 
                 session_start();
                 $_SESSION['messageArticle'] = "Modification article OK";

@@ -2,11 +2,11 @@
 
 function replaceRandom($nameImage){
             $chiffreDebut = rand(1, 1000000);
-            
             return $chiffreDebut.$nameImage;
         }
 
 if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['contenu'])){
+    //connexion bdd
     require_once('connectionBdd.php');
 
     $titre = htmlspecialchars($_POST['title']);
@@ -26,8 +26,9 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
 
     if($nameImage == ''){
         $photo = 'images/logofinal.png';
-        $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$date', '$photo')";
-        $bdd->exec($requete);
+        $requete = "INSERT INTO article VALUES (null, ?, ?, ?, ?)";
+        $sql = $bdd->prepare($requete);
+        $sql->execute(array($titreMajuscule, $contenuSansQuote, $date, $photo));
 
         session_start();
         $_SESSION['messageArticle'] = "Ajout article OK";
@@ -77,8 +78,10 @@ if(isset($_POST['sendArticle']) && !empty($_POST['title']) && !empty($_POST['con
                 move_uploaded_file($imageTemp, "../$dossierImage/$imageChiffre");
                 $photo = "$dossierImage/$imageChiffre";
             
-                $requete = "INSERT INTO article VALUES (null, '$titreMajuscule', '$contenuSansQuote', '$date', '$photo')";
-                $bdd->exec($requete);
+                $requete = "INSERT INTO article VALUES (null, ?, ?, ?, ?)";
+                $sql = $bdd->prepare($requete);
+                $sql->execute(array($titreMajuscule, $contenuSansQuote, $date, $photo));
+                
 
                 session_start();
                 $_SESSION['messageArticle'] = "Ajout article OK";

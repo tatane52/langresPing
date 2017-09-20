@@ -107,9 +107,6 @@ if (!isset($_SESSION['pseudo'])){
         session_destroy();
     }
     ?>
-    <?php
-echo $_SERVER['DOCUMENT_ROOT'];
-?>
     <!--header-->
     <header class="container">
         <div class="row">
