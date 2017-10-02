@@ -21,6 +21,7 @@ $sql->execute(array($idMessage));
 
 while($donnees = $sql->fetch()) {
     $date_message = new Datetime($donnees['date_envoi']);  
+    $date_message->modify('+2 hours');
     $dateFormat = date_format($date_message, 'd-m-Y H:i');
     if($donnees['pseudo'] == $_SESSION['pseudo']){
         echo "<p id='" .$donnees['id_message']."' class='text-left'><span class='pseudoMoi'>" .$donnees['pseudo'].

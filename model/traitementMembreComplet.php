@@ -5,6 +5,7 @@ ON membre.id_membre = message.id_membre ORDER BY id_message DESC LIMIT 10";
 $result = $bdd->query($requeteSelect);
 while($donnees = $result->fetch()){
     $date_envoi = new Datetime($donnees['date_envoi']);
+    $date_envoi->modify('+2 hours');
     $dateFormat = date_format($date_envoi, 'd-m-Y H:i');
     if($donnees['pseudo'] == $_SESSION['pseudo']){
         echo "<p id='" .$donnees["id_message"]. "'><span class='pseudoMoi'>" .$donnees['pseudo'].
