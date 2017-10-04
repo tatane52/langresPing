@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <title>articles</title>
-    <meta charset="utf_8"/>
+    <meta charset="utf-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/articles.css">
 </head>

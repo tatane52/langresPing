@@ -51,8 +51,8 @@ require_once('../model/connectionBdd.php');
                 ?>            
             </div>
             <div class="row send col-xs-offset-2 col-xs-8 text-center">
-                <form method="post" action="">
-                    <textarea id="messageAjax" name="message"></textarea></br>
+                <form method="post" action="#">
+                    <textarea id="messageAjax" name="message"></textarea><br>
                     <button id="sendAjax" type="submit" name="send">Envoyer</button>        
                 </form>          
             </div>
@@ -65,17 +65,17 @@ require_once('../model/connectionBdd.php');
             <div class="col-xs-offset-2 col-xs-8 text-center" id="calculBorder">         
                 <div class="col-xs-12">
                     <div class="col-xs-12 col-sm-6 text-center">
-                        <label for="myPoint" id="myLabel">Mes points : </label></br>
+                        <label for="myPoint" id="myLabel">Mes points : </label><br>
                         <input type="text" name="myPoint" id="myPoint" class="text-center" pattern="^[1-9][0-9]{2,3}$" maxlength="4" required>               
                     </div>
                     <div class="col-xs-12 col-sm-6 text-center">
-                        <label for="pointAdv" id="advLabel">points adversaires : </label></br>
+                        <label for="pointAdv" id="advLabel">points adversaires : </label><br>
                         <input type="text" name="pointAdv" id="pointAdv" class="text-center" pattern="^[1-9][0-9]{2,3}$" maxlength="4" required>
                     </div>
                 </div>
                 <div class="col-xs-12">
                     <div class="col-xs-12 text-center coefMargin">
-                        <label>coeff : </label></br>
+                        <label>coeff : </label><br>
                         <select id="calculSelect">
                             <option value="0.5">0.5</option>
                             <option value="0.75">0.75</option>

@@ -233,11 +233,11 @@ session_start();
                 </div>
                 <div class="form-group">
                     <label for="telBureau">Téléphone</label>
-                    <input type="phone" name="telBureau" class="form-control" placeholder="écrire sous forme : 0606060606" id="telBureau" maxlength="10" pattern="^0[1-9][0-9]{8}$" required>
+                    <input type="tel" name="telBureau" class="form-control" placeholder="écrire sous forme : 0606060606" id="telBureau" maxlength="10" pattern="^0[1-9][0-9]{8}$" required>
                 </div>
                 <div class="form-group">
                     <label for="mailBureau">Email</label>
-                    <input type="mail" name="mailBureau" class="form-control" id="mailBureau" maxlength="50" pattern="^[a-z0-9.-_]+@[a-z0-9.-_]{2,}\.[a-z]{2,4}$" required>
+                    <input type="email" name="mailBureau" class="form-control" id="mailBureau" maxlength="50" pattern="^[a-z0-9.-_]+@[a-z0-9.-_]{2,}\.[a-z]{2,4}$" required>
                 </div>
                 <div class="form-group">
                     <label for="photoBureau">Photo (par défaut logo du club)</label>

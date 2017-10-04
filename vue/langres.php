@@ -3,7 +3,6 @@ session_start();
 //connexion bdd
 require_once('model/connectionBdd.php');
 ?>
-
 <!doctype html>
 <html lang="fr">
 
@@ -15,7 +14,7 @@ require_once('model/connectionBdd.php');
     <!--css général-->
     <link rel="stylesheet" href="css/langres.css" />
     <!--fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Ranga|Roboto" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Ranga%7CRoboto" rel="stylesheet">  
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--bootstrap js-->
@@ -27,7 +26,7 @@ require_once('model/connectionBdd.php');
     <script src='fullcalendar/locale/fr.js'></script>
     <script src='fullcalendar/functionCalendar.js'></script>
 
-    <meta name="viewport, width=device-width" />
+    <meta name="viewport" content="width=device-width" />
 </head>
 
 <body>
@@ -194,7 +193,9 @@ if (!isset($_SESSION['pseudo'])){
                 </div>
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 text-center">
-                        <a href="vue/articles.php"><button type="button" class="btn btn-default btn-block">Voir les derniers articles</button></a>
+                        <form action="vue/articles.php">
+                            <button type="submit" class="btn btn-default btn-block">Voir les derniers articles</button>
+                        </form>
                     </div>
                 </div>
 
@@ -247,7 +248,9 @@ if (!isset($_SESSION['pseudo'])){
                 </div>
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 text-center">
-                        <a href="vue/photos.php"><button type="button" class="btn btn-default btn-block">Voir les dernières photos</button></a>
+                        <form action="vue/photos.php">
+                            <button type="submit" class="btn btn-default btn-block">Voir les dernières photos</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -266,9 +269,9 @@ if (!isset($_SESSION['pseudo'])){
                 <div class="row">
                     <div class="col-xs-12 text-center">
                         <img src="images/raquettefinal.png" alt="raquette de ping"/>
-                        <p class="histo-para">- Le club de Langres a vu le jour en 1992 et est affilié à la FFTT depuis 1996</br>
-                        </br>
-                        - Il est fondé par Benoit DECRON (président), Serge LEFEVRE (secrétaire) et Roger GARNIER (trésorier)</br>
+                        <p class="histo-para">- Le club de Langres a vu le jour en 1992 et est affilié à la FFTT depuis 1996<br>
+                        <br>
+                        - Il est fondé par Benoit DECRON (président), Serge LEFEVRE (secrétaire) et Roger GARNIER (trésorier)<br>
                         </p>
 
                         <img src="images/gymnase1.jpg" class="img-circle img-gymnase1" alt="photo du gymnase"/>
@@ -309,7 +312,7 @@ if (!isset($_SESSION['pseudo'])){
                                     //requete prenom tresorier
                                     require_once('model/bureau/selectionPrenomTresorier.php');
                                     ?>
-                                    </br>
+                                    <br>
                                     <?php
                                     //requete nom tresorier
                                     require_once('model/bureau/selectionNomTresorier.php');
@@ -332,7 +335,7 @@ if (!isset($_SESSION['pseudo'])){
                                     //requete prenom president
                                     require_once('model/bureau/selectionPrenomPresident.php');                                  
                                     ?>
-                                    </br>
+                                    <br>
                                     <?php
                                     //requete nom president
                                     require_once('model/bureau/selectionNomPresident.php');
@@ -355,7 +358,7 @@ if (!isset($_SESSION['pseudo'])){
                                     //requete prenom secretaire
                                     require_once('model/bureau/selectionPrenomSecretaire.php');                               
                                     ?>
-                                    </br>
+                                    <br>
                                     <?php
                                     //requete nom secretaire
                                     require_once('model/bureau/selectionNomSecretaire.php');
@@ -378,7 +381,9 @@ if (!isset($_SESSION['pseudo'])){
                 </div>
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1 text-center">
-                        <a href="vue/joueurs.php" <button type="button" class="btn btn-default btn-block">Découvrir nos joueurs</button></a>
+                        <form action="vue/joueurs.php">
+                            <button type="submit" class="btn btn-default btn-block">Découvrir nos joueurs</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -406,7 +411,6 @@ if (!isset($_SESSION['pseudo'])){
                 <div class="row">
                     <div class="col-xs-offset-1 col-xs-10 text-center">
                         <h2>CONTACT</h2>
-
                     </div>
                 </div>
                 <div class="row">
@@ -454,11 +458,11 @@ if (!isset($_SESSION['pseudo'])){
                 </div>
                 <div class="row">
                     <div class="col-xs-12 text-center margeBotomPlan">
-                        <iframe width="auto" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAeAVQ9_Jj6VJNwU8Ui9hn1HL0nvjtY48k
-                        &q=880 avenue de l'europe, Langres'" allowfullscreen>
+                        <iframe width="300" height="300" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAeAVQ9_Jj6VJNwU8Ui9hn1HL0nvjtY48k&q=880avenuedel'europe,Langres'" allowfullscreen>
                         </iframe>
                     </div>
                 </div>
+            </div>
         </section>
         <!--end section contact-->
     </main>

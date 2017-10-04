@@ -15,6 +15,10 @@ header {
     top: 80px;
 }
 
+iframe {
+    border: 0px;
+}
+
 .margeTopFooter {
     margin-top: 20px;
 }
